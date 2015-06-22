@@ -5,8 +5,10 @@
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.ivy2/cache/com.twitter/parquet-format/docs/parquet-format-2.2.0-rc1-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.twitter/parquet-format/docs/parquet-format-2.2.0-rc1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.twitter/parquet-format/srcs/parquet-format-2.2.0-rc1-sources.jar!/" />
       <root url="jar://$USER_HOME$/.ivy2/cache/com.twitter/parquet-format/srcs/parquet-format-2.2.0-rc1-sources.jar!/" />
     </SOURCES>
   </library>

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quintorsparkoutlier.iml" filepath="$PROJECT_DIR$/.idea/modules/quintorsparkoutlier.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quintorsparkoutlier-build.iml" filepath="$PROJECT_DIR$/.idea/modules/quintorsparkoutlier-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sparkoutlierdetection.iml" filepath="$PROJECT_DIR$/.idea/modules/sparkoutlierdetection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sparkoutlierdetection-build.iml" filepath="$PROJECT_DIR$/.idea/modules/sparkoutlierdetection-build.iml" />
     </modules>
   </component>
 </project>
