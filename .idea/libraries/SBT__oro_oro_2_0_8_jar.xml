@@ -6,7 +6,6 @@
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.ivy2/cache/oro/oro/srcs/oro-2.0.8-sources.jar!/" />
-      <root url="jar://$USER_HOME$/.ivy2/cache/oro/oro/srcs/oro-2.0.8-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

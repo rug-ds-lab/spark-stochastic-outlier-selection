@@ -5,10 +5,8 @@
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.ivy2/cache/com.github.rwl/jtransforms/docs/jtransforms-2.4.0-javadoc.jar!/" />
-      <root url="jar://$USER_HOME$/.ivy2/cache/com.github.rwl/jtransforms/docs/jtransforms-2.4.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.ivy2/cache/com.github.rwl/jtransforms/srcs/jtransforms-2.4.0-sources.jar!/" />
       <root url="jar://$USER_HOME$/.ivy2/cache/com.github.rwl/jtransforms/srcs/jtransforms-2.4.0-sources.jar!/" />
     </SOURCES>
   </library>

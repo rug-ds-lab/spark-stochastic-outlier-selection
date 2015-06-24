@@ -5,10 +5,8 @@
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.ivy2/cache/org.spark-project.akka/akka-slf4j_2.11/docs/akka-slf4j_2.11-2.3.4-spark-javadoc.jar!/" />
-      <root url="jar://$USER_HOME$/.ivy2/cache/org.spark-project.akka/akka-slf4j_2.11/docs/akka-slf4j_2.11-2.3.4-spark-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.ivy2/cache/org.spark-project.akka/akka-slf4j_2.11/srcs/akka-slf4j_2.11-2.3.4-spark-sources.jar!/" />
       <root url="jar://$USER_HOME$/.ivy2/cache/org.spark-project.akka/akka-slf4j_2.11/srcs/akka-slf4j_2.11-2.3.4-spark-sources.jar!/" />
     </SOURCES>
   </library>

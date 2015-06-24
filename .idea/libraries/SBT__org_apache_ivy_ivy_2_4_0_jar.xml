@@ -5,10 +5,8 @@
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.ivy/ivy/docs/ivy-2.4.0-javadoc.jar!/" />
-      <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.ivy/ivy/docs/ivy-2.4.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.ivy/ivy/srcs/ivy-2.4.0-sources.jar!/" />
       <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.ivy/ivy/srcs/ivy-2.4.0-sources.jar!/" />
     </SOURCES>
   </library>

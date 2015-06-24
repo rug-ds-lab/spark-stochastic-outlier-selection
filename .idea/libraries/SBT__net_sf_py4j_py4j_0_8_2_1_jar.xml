@@ -5,10 +5,8 @@
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.ivy2/cache/net.sf.py4j/py4j/docs/py4j-0.8.2.1-javadoc.jar!/" />
-      <root url="jar://$USER_HOME$/.ivy2/cache/net.sf.py4j/py4j/docs/py4j-0.8.2.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.ivy2/cache/net.sf.py4j/py4j/srcs/py4j-0.8.2.1-sources.jar!/" />
       <root url="jar://$USER_HOME$/.ivy2/cache/net.sf.py4j/py4j/srcs/py4j-0.8.2.1-sources.jar!/" />
     </SOURCES>
   </library>

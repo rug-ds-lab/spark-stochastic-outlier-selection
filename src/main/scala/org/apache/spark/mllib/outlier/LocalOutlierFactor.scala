@@ -121,6 +121,7 @@ object LocalOutlierFactor {
       //.reduceByKey((a,b) => Math.max(a._2, b._2) )
 
 
+    /*
 
     val dist = kClosest.flatMap {
       case (idxA: Long, nearest: List[(Long, Double)]) =>{
@@ -141,12 +142,6 @@ object LocalOutlierFactor {
       }
     }
 
-
-    val collected = dist.cogroup(ldr) {
-
-    }
-
-    /*
     val closest = dataidx.cartesian(dataidx).map {
       case (a: (Long, VectorWithNormAndClass), b: (Long, VectorWithNormAndClass)) =>
         (a._1, (b._1, MLUtils.fastSquaredDistance(a._2.vector, a._2.norm, b._2.vector, b._2.norm)))

@@ -5,10 +5,8 @@
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.ivy2/cache/org.spark-project.protobuf/protobuf-java/docs/protobuf-java-2.5.0-spark-javadoc.jar!/" />
-      <root url="jar://$USER_HOME$/.ivy2/cache/org.spark-project.protobuf/protobuf-java/docs/protobuf-java-2.5.0-spark-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.ivy2/cache/org.spark-project.protobuf/protobuf-java/srcs/protobuf-java-2.5.0-spark-sources.jar!/" />
       <root url="jar://$USER_HOME$/.ivy2/cache/org.spark-project.protobuf/protobuf-java/srcs/protobuf-java-2.5.0-spark-sources.jar!/" />
     </SOURCES>
   </library>
