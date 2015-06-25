@@ -1,10 +1,5 @@
 package org.apache.spark.mllib.outlier
 
-import com.quintor.VectorWithNormAndClass
-import org.apache.spark.SparkContext
-import org.apache.spark.mllib.util.MLUtils
-import org.apache.spark.rdd.RDD
-
 /**
  * Created by Fokko on 21-4-15.
  */
@@ -79,30 +74,30 @@ object LocalOutlierFactor {
     ss
   }
 
-  def run(sc: SparkContext, data: RDD[VectorWithNormAndClass]) = {
-    val n = data.count()
+  /*
+def run(data: RDD[Vector[Double]]) = {
+  val n = data.count()
 
-    val dataidx = data.zipWithUniqueId().map(_.swap)
+  val dataidx = data.zipWithUniqueId().map(_.swap)
 
-    /*
-        // TODO Alles wordt nu dubbel uitgerekend, dit kan worden geoptimaliseerd, maar niet nu :)
-        // val simss = dataidx.cartesian(dataidx).filter(a => a._1._2 < a._2._2).map {
-        val simss = dataidx.cartesian(dataidx).filter(a => a._1._2 != a._2._2).map {
-          case (a: (VectorWithNormAndClass, Long), b: (VectorWithNormAndClass, Long)) =>
-            ((a._2, b._2), MLUtils.fastSquaredDistance(a._1.vector, a._1.norm, b._1.vector, b._1.norm))
-        }.map { case ((i, j), sim) =>
-          // The diagonal doesn't cary any information
-          MatrixEntry(i, j,  Math.sqrt(sim))
-        }
+      // TODO Alles wordt nu dubbel uitgerekend, dit kan worden geoptimaliseerd, maar niet nu :)
+      // val simss = dataidx.cartesian(dataidx).filter(a => a._1._2 < a._2._2).map {
+      val simss = dataidx.cartesian(dataidx).filter(a => a._1._2 != a._2._2).map {
+        case (a: (VectorWithNormAndClass, Long), b: (VectorWithNormAndClass, Long)) =>
+          ((a._2, b._2), MLUtils.fastSquaredDistance(a._1.vector, a._1.norm, b._1.vector, b._1.norm))
+      }.map { case ((i, j), sim) =>
+        // The diagonal doesn't cary any information
+        MatrixEntry(i, j,  Math.sqrt(sim))
+      }
 
 
-        val simss = dataidx.cartesian(dataidx).filter(a => a._1._2 != a._2._2).map {
-          case (a: (VectorWithNormAndClass, Long), b: (VectorWithNormAndClass, Long)) =>
-            ((a._2, b._2), MLUtils.fastSquaredDistance(a._1.vector, a._1.norm, b._1.vector, b._1.norm))
-        }.map { case ((i, j), sim) =>
-          // The diagonal doesn't cary any information
-          MatrixEntry(i, j,  Math.sqrt(sim))
-        }*/
+      val simss = dataidx.cartesian(dataidx).filter(a => a._1._2 != a._2._2).map {
+        case (a: (VectorWithNormAndClass, Long), b: (VectorWithNormAndClass, Long)) =>
+          ((a._2, b._2), MLUtils.fastSquaredDistance(a._1.vector, a._1.norm, b._1.vector, b._1.norm))
+      }.map { case ((i, j), sim) =>
+        // The diagonal doesn't cary any information
+        MatrixEntry(i, j,  Math.sqrt(sim))
+      }
 
     // Some edge-cases still need to be removed.
     // - do not compute the distance with itself
@@ -120,8 +115,6 @@ object LocalOutlierFactor {
 
       //.reduceByKey((a,b) => Math.max(a._2, b._2) )
 
-
-    /*
 
     val dist = kClosest.flatMap {
       case (idxA: Long, nearest: List[(Long, Double)]) =>{
@@ -164,7 +157,7 @@ object LocalOutlierFactor {
 
 
     System.out.println(closest.toDebugString)
-*/
+
     1.0
-  }
+  }*/
 }
