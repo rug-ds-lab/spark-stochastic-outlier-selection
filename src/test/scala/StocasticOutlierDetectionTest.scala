@@ -14,7 +14,7 @@ class StocasticOutlierDetectionTest extends FlatSpec with Matchers with BeforeAn
   val conf = new SparkConf().setAppName(appName).setMaster(master)
   val sc = new SparkContext(conf)
 
-  val perplexity = 1
+  val perplexity = 3
   val tolerance = 0
 
   val epsilon = 1e-9f
@@ -77,24 +77,44 @@ class StocasticOutlierDetectionTest extends FlatSpec with Matchers with BeforeAn
 
   "Computing the affinity matrix " should "give the correct affinity" in {
 
-    // The distance matrix
-    val D = sc.parallelize(
+    // The datapoints
+    val data = sc.parallelize(
       Seq(
-        (0L, new DenseVector(Array(Math.sqrt(2.0), Math.sqrt(10.0))).toVector),
-        (1L, new DenseVector(Array(Math.sqrt(2.0), Math.sqrt(16.0))).toVector),
-        (2L, new DenseVector(Array(Math.sqrt(16.0), Math.sqrt(10.0))).toVector)
+        new DenseVector(Array(1.0, 1.0)).toVector,
+        new DenseVector(Array(2.0, 1.0)).toVector,
+        new DenseVector(Array(1.0, 2.0)).toVector,
+        new DenseVector(Array(2.0, 2.0)).toVector,
+        new DenseVector(Array(5.0, 8.0)).toVector // The outlier!
       ))
 
+    val D = StocasticOutlierDetection.computeDistanceMatrix(data)
     val A = StocasticOutlierDetection.computeAfinity(D, perplexity).map(_._2).sortBy(dist => sum(dist)).collect()
 
-    assert(A(0)(0) === 6.61626106e-112)
-    assert(A(0)(1) === 1.27343495e-088)
+    assert(A.length == 5)
+    assert(A(0)(0) === 1.65024581e-06)
+    assert(A(0)(1) === 3.44967758e-06)
+    assert(A(0)(2) === 6.73004970e-06)
+    assert(A(0)(3) === 1.54422167e-05)
 
-    assert(A(1)(0) === 2.21858114e-020)
-    assert(A(1)(1) === 1.12846575e-044)
+    assert(A(1)(0) === 2.83704489e-01)
+    assert(A(1)(1) === 4.10315559e-01)
+    assert(A(1)(2) === 4.10315559e-01)
+    assert(A(1)(3) === 2.53931482e-03)
 
-    assert(A(2)(0) === 1.48949023e-010)
-    assert(A(2)(1) === 1.60381089e-028)
+    assert(A(2)(0) === 4.31925256e-01)
+    assert(A(2)(1) === 3.05063253e-01)
+    assert(A(2)(2) === 4.31925256e-01)
+    assert(A(2)(3) === 2.34905952e-03)
+
+    assert(A(3)(0) === 4.48046267e-01)
+    assert(A(3)(1) === 3.21289154e-01)
+    assert(A(3)(2) === 4.48046267e-01)
+    assert(A(3)(3) === 2.21082335e-03)
+
+    assert(A(4)(0) === 4.64662765e-01)
+    assert(A(4)(1) === 4.64662765e-01)
+    assert(A(4)(2) === 3.38268739e-01)
+    assert(A(4)(3) === 2.07195221e-03)
   }
 
   "Verify the binding probabilities " should "give the correct probabilities" in {
@@ -147,8 +167,8 @@ class StocasticOutlierDetectionTest extends FlatSpec with Matchers with BeforeAn
     val data = sc.parallelize(
       Seq(
         new DenseVector(Array(1.0, 1.0)).toVector,
-        new DenseVector(Array(1.0, 2.0)).toVector,
         new DenseVector(Array(2.0, 1.0)).toVector,
+        new DenseVector(Array(1.0, 2.0)).toVector,
         new DenseVector(Array(2.0, 2.0)).toVector,
         new DenseVector(Array(5.0, 8.0)).toVector // The outlier!
       ))
@@ -158,8 +178,13 @@ class StocasticOutlierDetectionTest extends FlatSpec with Matchers with BeforeAn
 
     // Process the steps of the algorithm
     val D = StocasticOutlierDetection.computeDistanceMatrix(data)
+    val outD = D.collect()
+
     val A = StocasticOutlierDetection.computeAfinity(D, perplexity)
+    val outA = A.collect()
+
     val B = StocasticOutlierDetection.computeBindingProbabilities(A)
+    val outB = B.collect()
 
     val O = StocasticOutlierDetection.computeOutlierProbability(B)
 
@@ -167,11 +192,11 @@ class StocasticOutlierDetectionTest extends FlatSpec with Matchers with BeforeAn
     val output = O.map(_._2).sortBy(rank => rank).collect
 
     assert(output.length == 5)
-    assert(output(0) === 0.11240777825013754943)
-    assert(output(1) === 0.23265631826249269509)
-    assert(output(2) === 0.27136924729480282892)
-    assert(output(3) === 0.28980746572456678178)
-    assert(output(4) === 0.94237591774211593165) // The outlier!
+    assert(output(0) === 0.12707053787018440794)
+    assert(output(1) === 0.22136130977995771563)
+    assert(output(2) === 0.25775014551682556840)
+    assert(output(3) === 0.27900944792028958830)
+    assert(output(4) === 0.99227799024537555184) // The outlier!
   }
 
 }

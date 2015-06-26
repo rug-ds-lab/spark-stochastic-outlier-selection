@@ -28,7 +28,8 @@ object StocasticOutlierDetection {
 
     val newAffinity = affinity.map(d => Math.exp(-d * beta))
     val sumA = sum(newAffinity)
-    val hDiff = (Math.log(sumA) + beta * sum(affinity :* newAffinity) / sumA) - logPerplexity
+    val H = (Math.log(sumA) + beta * sum(affinity :* newAffinity) / sumA)
+    val hDiff = H - logPerplexity
 
     if (iteration < maxIterations && Math.abs(hDiff) > tolerance) {
       val search = if (hDiff > 0)
@@ -75,7 +76,7 @@ object StocasticOutlierDetection {
     rows.flatMap(r => r._2.toArray.zipWithIndex.map(p => (p._2 + (if (p._2 >= r._1) 1L else 0L), p._1))).foldByKey(1.0)((a, b) => a * (1.0 - b))
 
 
-  def run(data: RDD[Vector[Double]], tolerance: Double = 1e-5) = {
+  def run(data: RDD[Vector[Double]]) = {
     // Perplexity cannot be larger than n-1
     val perplexity = Math.min(data.count() - 1, 30)
 
