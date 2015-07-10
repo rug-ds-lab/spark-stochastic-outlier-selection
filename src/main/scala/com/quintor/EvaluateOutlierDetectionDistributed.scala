@@ -15,7 +15,10 @@ import scala.util.Random
  * Created by Fokko on 26-6-15.
  */
 object EvaluateOutlierDetectionDistributed {
-  val brokers = "kafka"
+  //val brokers = "kafka:9092"
+
+  val kafkaBrokers = System.getenv("ADDR_KAFKA")
+  val sparkMaster = System.getenv("ADDR_SPARK")
   val topic = UUID.randomUUID().toString
 
   // Zookeeper connection properties
@@ -23,14 +26,13 @@ object EvaluateOutlierDetectionDistributed {
 
   props.put("producer.type", "sync")
   props.put("client.id", UUID.randomUUID().toString)
-  props.put("metadata.broker.list", brokers)
+  props.put("metadata.broker.list", kafkaBrokers)
   props.put("serializer.class", "kafka.serializer.StringEncoder")
 
   val m = 10
   val n = 100000
 
   val appName = "OutlierDetector"
-  val master = "local"
 
   def main(args: Array[String]) {
     System.out.println("Populating Kafka with test-data")
@@ -59,7 +61,7 @@ object EvaluateOutlierDetectionDistributed {
 
   def performOutlierDetection(): Unit = {
 
-    val conf = new SparkConf().setAppName(appName).setMaster(master)
+    val conf = new SparkConf().setAppName(appName).setMaster(sparkMaster)
     val sc = new SparkContext(conf)
 
     val now = System.nanoTime
@@ -68,7 +70,7 @@ object EvaluateOutlierDetectionDistributed {
       OffsetRange(topic, 0, 0, n)
     )
 
-    val kafkaParams = Map("metadata.broker.list" -> brokers)
+    val kafkaParams = Map("metadata.broker.list" -> kafkaBrokers)
     val rdd = KafkaUtils.createRDD[String, String, StringDecoder, StringDecoder](sc, kafkaParams, offsetRanges);
 
     // Map from string to Vector

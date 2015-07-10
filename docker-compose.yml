@@ -20,7 +20,6 @@ master:
     - 8080:8080
   volumes:
     - ./conf/master:/conf
-    - ./data:/tmp/data
 
 worker:
   image: gettyimages/spark
@@ -52,6 +51,9 @@ task:
   links:
     - master
     - kafka
+  environment:
+    ADDR_SPARK: "kafka:9092"
+    ADDR_KAFKA: "master"
 
 #  image: fokkodriesprong/outlierdetection
 
