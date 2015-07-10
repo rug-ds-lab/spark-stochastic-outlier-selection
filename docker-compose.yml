@@ -47,13 +47,13 @@ worker:
     - ./conf/worker:/conf
     - ./data:/tmp/data
 
-#task:
-#  image: gettyimages/spark
-#  command: /usr/spark/bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://master:7077 /tmp/data/examples.jar 1000
-#  links:
-#    - master
-#  volumes:
-#    - ./jars:/tmp/data
+task:
+  build: .
+  links:
+    - master
+    - kafka
+
+#  image: fokkodriesprong/outlierdetection
 
 kafka:
   image: wurstmeister/kafka

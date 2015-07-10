@@ -15,8 +15,8 @@ import scala.util.Random
  * Created by Fokko on 26-6-15.
  */
 object EvaluateOutlierDetectionDistributed {
-  val brokers = "localhost:32885";
-  val topic = "topic111c"
+  val brokers = "kafka"
+  val topic = UUID.randomUUID().toString
 
   // Zookeeper connection properties
   val props = new Properties()
@@ -26,15 +26,20 @@ object EvaluateOutlierDetectionDistributed {
   props.put("metadata.broker.list", brokers)
   props.put("serializer.class", "kafka.serializer.StringEncoder")
 
-  val m = 10;
-  val n = 100000;
+  val m = 10
+  val n = 100000
 
   val appName = "OutlierDetector"
   val master = "local"
 
   def main(args: Array[String]) {
+    System.out.println("Populating Kafka with test-data")
     populateKafka(n)
+    System.out.println("Done")
+
+    System.out.println("Applying outlier detection")
     performOutlierDetection
+    System.out.println("Done")
   }
 
   def generateNormalVector: String = {
@@ -44,7 +49,12 @@ object EvaluateOutlierDetectionDistributed {
 
   def populateKafka(n: Int): Unit = {
     val producer = new Producer[String, String](new ProducerConfig(props))
-    (1 to n).foreach(_ => producer.send(new KeyedMessage(topic, generateNormalVector)))
+    (1 to n).foreach(pos =>{
+      producer.send(new KeyedMessage(topic, generateNormalVector))
+      if(pos == (n/10)) {
+        System.out.println("At " + pos + " of " + n)
+      }
+    })
   }
 
   def performOutlierDetection(): Unit = {
