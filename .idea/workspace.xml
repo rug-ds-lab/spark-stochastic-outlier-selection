@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b72c34e-1547-4145-9838-133d07f7fbd7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateClusteringAlgorithms.scala" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="1b72c34e-1547-4145-9838-133d07f7fbd7" name="Default" comment="" />
     <ignored path="QuintorSparkOutlier.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -970,12 +967,12 @@
       <workItem from="1435829522646" duration="82000" />
       <workItem from="1435829651608" duration="1624000" />
       <workItem from="1435833232751" duration="8998000" />
-      <workItem from="1436517227335" duration="461000" />
+      <workItem from="1436517227335" duration="865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289145000" />
+    <option name="totallyTimeSpent" value="289549000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1739" y="306" width="1307" height="744" extended-state="6" />
