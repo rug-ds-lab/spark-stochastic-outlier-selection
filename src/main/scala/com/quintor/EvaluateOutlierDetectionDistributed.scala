@@ -14,7 +14,7 @@ import scala.util.Random
 /**
  * Created by Fokko on 26-6-15.
  */
-object KafkaOutlierDetection {
+object EvaluateOutlierDetectionDistributed {
   val brokers = "localhost:32885";
   val topic = "topic111c"
 
@@ -44,7 +44,7 @@ object KafkaOutlierDetection {
 
   def populateKafka(n: Int): Unit = {
     val producer = new Producer[String, String](new ProducerConfig(props))
-    (1 to n).foreach(_ => producer.send(new KeyedMessage(topic, generateNormalVector)))3
+    (1 to n).foreach(_ => producer.send(new KeyedMessage(topic, generateNormalVector)))
   }
 
   def performOutlierDetection(): Unit = {

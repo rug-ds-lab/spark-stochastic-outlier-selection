@@ -67,8 +67,6 @@ class StocasticOutlierDetectionTest extends FlatSpec with Matchers with BeforeAn
 
     // Standard beta
     val beta = 1.0
-
-    // even 1 iteratie
     val search = StocasticOutlierDetection.binarySearch(vector, Math.log(perplexity), 500, beta).toArray
 
     assert(search.length == output.length)

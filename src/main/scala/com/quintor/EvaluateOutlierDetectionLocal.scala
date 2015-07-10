@@ -7,9 +7,9 @@ import org.apache.spark.{SparkConf, SparkContext}
 /**
  * Created by Fokko on 21-4-15.
  */
-object EvaluateOutlierDetection {
+object EvaluateOutlierDetectionLocal {
   val appName = "OutlierDetector"
-  val master = "spark://sparkmaster:7077"
+  val master = "spark://local"
 
   def main(args: Array[String]): Unit = {
 
