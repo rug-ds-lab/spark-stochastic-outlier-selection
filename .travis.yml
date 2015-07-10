@@ -1,7 +1,5 @@
 language: scala
 scala:
   - 2.11.6
-before_install:
-  pip install codecov
 after_success:
-  codecov
+  - bash <(curl -s https://codecov.io/bash)
