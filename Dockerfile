@@ -8,6 +8,8 @@ ENV SBT_JAR      https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/s
 ADD  $SBT_JAR  /usr/local/bin/sbt-launch.jar
 COPY sbt.sh    /usr/local/bin/sbt
 
+WORKDIR .
+
 RUN sbt clean package
 
 COPY target/scala-2.11/quintorsparkoutlier_2.11-1.0.jar /tmp/task.jar
