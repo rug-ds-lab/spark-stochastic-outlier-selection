@@ -1,0 +1,75 @@
+master:
+  image: gettyimages/spark
+  command: /usr/spark/bin/spark-class org.apache.spark.deploy.master.Master -h master
+  hostname: master
+  environment:
+    SPARK_CONF_DIR: /conf
+  expose:
+    - 7001
+    - 7002
+    - 7003
+    - 7004
+    - 7005
+    - 7006
+    - 7077
+    - 6066
+  ports:
+    - 4040:4040
+    - 6066:6066
+    - 7077:7077
+    - 8080:8080
+  volumes:
+    - ./conf/master:/conf
+    - ./data:/tmp/data
+
+worker:
+  image: gettyimages/spark
+  command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
+  hostname: worker
+  environment:
+    SPARK_CONF_DIR: /conf
+    SPARK_WORKER_CORES: 2
+    SPARK_WORKER_MEMORY: 1g
+    SPARK_WORKER_PORT: 8881
+    SPARK_WORKER_WEBUI_PORT: 8081
+  links:
+    - master
+  expose:
+    - 7012
+    - 7013
+    - 7014
+    - 7015
+    - 7016
+    - 8881
+  ports:
+    - 8081
+  volumes:
+    - ./conf/worker:/conf
+    - ./data:/tmp/data
+
+#task:
+#  image: gettyimages/spark
+#  command: /usr/spark/bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://master:7077 /tmp/data/examples.jar 1000
+#  links:
+#    - master
+#  volumes:
+#    - ./jars:/tmp/data
+
+kafka:
+  image: wurstmeister/kafka
+  ports:
+    - 9092
+  links: 
+    - zookeeper:zk
+  environment:
+    KAFKA_ADVERTISED_HOST_NAME: 10.0.4.189
+    KAFKA_ZOOKEEPER_CONNECT: zk:2181
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+
+zookeeper:
+  image: wurstmeister/zookeeper
+  ports: 
+    - 2181
+  expose:
+    - 2181

@@ -7,9 +7,9 @@ import org.apache.spark.{SparkConf, SparkContext}
 /**
  * Created by Fokko on 21-4-15.
  */
-object EvaluateClusteringAlgorithms {
+object EvaluateOutlierDetection {
   val appName = "OutlierDetector"
-  val master = "local"
+  val master = "spark://sparkmaster:7077"
 
   def main(args: Array[String]): Unit = {
 
