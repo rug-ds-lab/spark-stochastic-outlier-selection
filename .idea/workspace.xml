@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b72c34e-1547-4145-9838-133d07f7fbd7" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetection.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetectionLocal.scala" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/com/quintor/KafkaOutlierDetection.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetectionDistributed.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/StocasticOutlierDetectionTest.scala" afterPath="$PROJECT_DIR$/src/test/scala/StocasticOutlierDetectionTest.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
     </list>
     <ignored path="QuintorSparkOutlier.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +31,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StocasticOutlierDetectionTest.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StocasticOutlierDetectionTest.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/StocasticOutlierDetectionTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.8917197" vertical-offset="0" max-vertical-offset="3654">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3654">
               <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.sbt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.sbt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.056162246" vertical-offset="0" max-vertical-offset="641">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -106,6 +123,7 @@
         <option value="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetection.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetectionDistributed.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/StocasticOutlierDetectionTest.scala" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -984,12 +1002,12 @@
       <workItem from="1435829522646" duration="82000" />
       <workItem from="1435829651608" duration="1624000" />
       <workItem from="1435833232751" duration="8998000" />
-      <workItem from="1436517227335" duration="1582000" />
+      <workItem from="1436517227335" duration="1777000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290266000" />
+    <option name="totallyTimeSpent" value="290461000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1739" y="306" width="1307" height="744" extended-state="6" />
@@ -1114,6 +1132,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="396">
           <caret line="14" column="67" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1152,6 +1171,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="396">
           <caret line="14" column="67" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1190,6 +1210,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="396">
           <caret line="14" column="67" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1235,6 +1256,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="396">
           <caret line="14" column="67" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1321,13 +1343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
-          <caret line="14" column="67" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.11/srcs/scalatest_2.11-2.2.4-sources.jar!/org/scalatest/Transformer.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.61463416" vertical-offset="0" max-vertical-offset="306">
@@ -1382,8 +1397,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/StocasticOutlierDetectionTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8917197" vertical-offset="0" max-vertical-offset="3654">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3654">
           <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.056162246" vertical-offset="0" max-vertical-offset="641">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding />
         </state>
       </provider>
