@@ -3,6 +3,7 @@ package org.apache.spark.mllib.outlier
 import breeze.linalg.functions.euclideanDistance
 import breeze.linalg.{DenseVector, Vector, sum}
 import org.apache.spark.rdd.RDD
+import scala.language.implicitConversions
 
 /**
  * Created by Fokko on 21-4-15.
