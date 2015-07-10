@@ -8,12 +8,10 @@ ENV SBT_JAR      https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/s
 ADD  $SBT_JAR  /usr/local/bin/sbt-launch.jar
 COPY sbt.sh    /usr/local/bin/sbt
 
-RUN echo "==> fetch all sbt jars from Maven repo..."       && \
-    echo "==> [CAUTION] this may take several minutes!!!"  && \
-    sbt
+RUN sbt
 
-RUN ["sbt", "package"]
+RUN sbt clean package
 
-ADD ./target/scala-2.11/quintorsparkoutlier_2.11-1.0.jar /tmp/task.jar
+ADD target/scala-2.11/quintorsparkoutlier_2.11-1.0.jar /tmp/task.jar
 
 CMD "/usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed --master spark://master:7077 /tmp/task.jar
