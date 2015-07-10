@@ -11,12 +11,7 @@ object StocasticOutlierDetection {
   val tolerance: Double = 0.0
   val maxIterations: Int = 50
 
-  implicit object compareByDistance extends Ordering[(Long, Double)] {
-    override def compare(x: (Long, Double), y: (Long, Double)): Int = x._2 compare y._2
-  }
-
   implicit def toBreeze(vector: org.apache.spark.mllib.linalg.Vector): breeze.linalg.Vector[Double] = vector.toBreeze
-
   implicit def fromBreeze(breezeVector: breeze.linalg.Vector[Double]): org.apache.spark.mllib.linalg.Vector = org.apache.spark.mllib.linalg.Vectors.fromBreeze(breezeVector)
 
   def binarySearch(affinity: Vector[Double],
@@ -28,8 +23,8 @@ object StocasticOutlierDetection {
 
     val newAffinity = affinity.map(d => Math.exp(-d * beta))
     val sumA = sum(newAffinity)
-    val H = (Math.log(sumA) + beta * sum(affinity :* newAffinity) / sumA)
-    val hDiff = H - logPerplexity
+    val hCurr = (Math.log(sumA) + beta * sum(affinity :* newAffinity) / sumA)
+    val hDiff = hCurr - logPerplexity
 
     if (iteration < maxIterations && Math.abs(hDiff) > tolerance) {
       val search = if (hDiff > 0)
@@ -49,9 +44,9 @@ object StocasticOutlierDetection {
       newAffinity
   }
 
-  def computeAfinity(D: RDD[(Long, Vector[Double])], perplexity: Double): RDD[(Long, Vector[Double])] = {
+  def computeAfinity(dMatrix: RDD[(Long, Vector[Double])], perplexity: Double): RDD[(Long, Vector[Double])] = {
     val logPerplexity = Math.log(perplexity)
-    D.map(r => (r._1, binarySearch(r._2, logPerplexity)))
+    dMatrix.map(r => (r._1, binarySearch(r._2, logPerplexity)))
   }
 
   def computeBindingProbabilities(rows: RDD[(Long, Vector[Double])]) = rows.map(r => (r._1, r._2 :/ sum(r._2)))
@@ -80,12 +75,12 @@ object StocasticOutlierDetection {
     // Perplexity cannot be larger than n-1
     val perplexity = Math.min(data.count() - 1, 30)
 
-    val D = computeDistanceMatrix(data)
-    val A = computeAfinity(D, perplexity)
-    val B = computeBindingProbabilities(A)
-    val O = computeOutlierProbability(B)
+    val dMatrix = computeDistanceMatrix(data)
+    val aMatrix = computeAfinity(dMatrix, perplexity)
+    val bMatrix = computeBindingProbabilities(aMatrix)
+    val oMatrix = computeOutlierProbability(bMatrix)
 
     // Do a distributed sort, and then collect to driver
-    O.sortBy(rank => rank._2).collect
+    oMatrix.sortBy(rank => rank._2).collect
   }
 }
