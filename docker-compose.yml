@@ -20,7 +20,7 @@ master:
     - 8080:8080
   volumes:
     - ./conf/master:/conf
-    - ./target/scala-2.11/:/tasks
+    - ./target/scala-2.10/:/tasks
 
 task:
   build: .
