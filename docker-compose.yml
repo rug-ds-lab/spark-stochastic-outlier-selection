@@ -1,7 +1,7 @@
 master:
   image: gettyimages/spark
-  command: /usr/spark/bin/spark-class org.apache.spark.deploy.master.Master -h master
-  hostname: master
+  command: /usr/spark/bin/spark-class org.apache.spark.deploy.master.Master -h dockerhost.summercamp.local
+  hostname: dockerhost.summercamp.local
   environment:
     SPARK_CONF_DIR: /conf
   expose:
@@ -23,7 +23,7 @@ master:
 
 worker:
   image: gettyimages/spark
-  command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
+  command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://dockerhost.summercamp.local:7077
   hostname: worker
   environment:
     SPARK_CONF_DIR: /conf
@@ -44,27 +44,17 @@ worker:
     - 8081
   volumes:
     - ./conf/worker:/conf
-    - ./data:/tmp/data
-
-task:
-  build: .
-  links:
-    - master
-    - kafka
-  environment:
-    ADDR_SPARK: "kafka:9092"
-    ADDR_KAFKA: "master"
-
-#  image: fokkodriesprong/outlierdetection
 
 kafka:
   image: wurstmeister/kafka
-  ports:
+  expose:
     - 9092
+  ports:
+    - 9092:9092
   links: 
     - zookeeper:zk
   environment:
-    KAFKA_ADVERTISED_HOST_NAME: 10.0.4.189
+    KAFKA_ADVERTISED_HOST_NAME: 10.5.2.41
     KAFKA_ZOOKEEPER_CONNECT: zk:2181
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
