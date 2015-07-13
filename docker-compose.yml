@@ -20,6 +20,7 @@ master:
     - 8080:8080
   volumes:
     - ./conf/master:/conf
+    - ./target/scala-2.11/:/tasks
 
 worker:
   image: gettyimages/spark
@@ -47,11 +48,11 @@ worker:
 
 kafka:
   image: wurstmeister/kafka
+  ports:
+    - 9092:9092 
   expose:
     - 9092
-  ports:
-    - 9092:9092
-  links: 
+  links:
     - zookeeper:zk
   environment:
     KAFKA_ADVERTISED_HOST_NAME: 10.5.2.41
