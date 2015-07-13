@@ -68,7 +68,6 @@ object EvaluateOutlierDetectionDistributed {
     val conf = new SparkConf().setAppName(appName).setMaster(sparkMaster)
     val sc = new SparkContext(conf)
 
-    val now = System.nanoTime
 
     val offsetRanges = Array[OffsetRange](
       OffsetRange(topic, 0, 0, n)
@@ -77,8 +76,11 @@ object EvaluateOutlierDetectionDistributed {
     val kafkaParams = Map("metadata.broker.list" -> kafkaBrokers)
     val rdd = KafkaUtils.createRDD[String, String, StringDecoder, StringDecoder](sc, kafkaParams, offsetRanges);
 
-    // Map from string to Vector
     val dataset = rdd.map(record => new DenseVector[Double](record._2.split(',').map(_.toDouble)).toVector)
+
+
+    // Start recording.
+    val now = System.nanoTime
 
     val output = StocasticOutlierDetection.run(dataset)
 

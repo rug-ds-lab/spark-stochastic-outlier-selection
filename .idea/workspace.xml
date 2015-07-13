@@ -66,8 +66,8 @@
       <file leaf-file-name="EvaluateOutlierDetectionDistributed.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetectionDistributed.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334" vertical-offset="553" max-vertical-offset="1692">
-              <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.26147705" vertical-offset="1147" max-vertical-offset="1728">
+              <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
               <folding>
                 <element signature="e#21#56#0" expanded="true" />
               </folding>
@@ -1019,12 +1019,12 @@
       <workItem from="1435829651608" duration="1624000" />
       <workItem from="1435833232751" duration="8998000" />
       <workItem from="1436517227335" duration="17837000" />
-      <workItem from="1436773787532" duration="17433000" />
+      <workItem from="1436773787532" duration="17533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="323954000" />
+    <option name="totallyTimeSpent" value="324054000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="336" width="1307" height="744" extended-state="6" />
@@ -1473,8 +1473,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetectionDistributed.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="553" max-vertical-offset="1692">
-          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.26147705" vertical-offset="1147" max-vertical-offset="1728">
+          <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
           <folding>
             <element signature="e#21#56#0" expanded="true" />
           </folding>
