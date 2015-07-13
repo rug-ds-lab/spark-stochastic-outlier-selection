@@ -12,11 +12,9 @@ resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repos
 libraryDependencies ++= Seq(
   "org.apache.spark" % "spark-core_2.11" % "1.4.0" % "provided",
   "org.apache.spark" % "spark-mllib_2.11" % "1.4.0" % "provided",
-  "org.apache.spark" % "spark-streaming-kafka_2.11" % "1.4.0" % "provided",
+  "org.apache.spark" % "spark-streaming-kafka_2.11" % "1.4.0",
 
-  "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test",
-
-  "org.apache.kafka" % "kafka-clients" % "0.8.2.1"
+  "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test"
 )
 
 assemblyMergeStrategy in assembly := {
@@ -29,6 +27,10 @@ assemblyMergeStrategy in assembly := {
       case "plexus" :: xs =>
         MergeStrategy.discard
       case "pom.xml" :: xs =>
+        MergeStrategy.discard
+      case "license" :: xs =>
+        MergeStrategy.discard
+      case "notice" :: xs =>
         MergeStrategy.discard
       case "services" :: xs =>
         MergeStrategy.filterDistinctLines
