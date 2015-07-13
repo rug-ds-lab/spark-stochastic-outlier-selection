@@ -12,4 +12,6 @@ WORKDIR /tmp/app
 
 RUN sbt package
 
+RUN sbt
+
 CMD /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed --master spark://master:7077 /tmp/app/target/scala-2.11/quintorsparkoutlier_2.11-1.0.jar

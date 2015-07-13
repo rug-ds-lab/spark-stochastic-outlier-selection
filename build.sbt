@@ -15,3 +15,5 @@ libraryDependencies += "org.apache.spark" % "spark-mllib_2.11" % "1.4.0"
 libraryDependencies += "org.apache.spark" % "spark-streaming-kafka_2.11" % "1.4.0"
 
 libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test"
+
+libraryDependencies += "org.apache.kafka" % "kafka-clients" % "0.8.2.0"

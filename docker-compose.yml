@@ -44,7 +44,6 @@ worker:
     - 8081
   volumes:
     - ./conf/worker:/conf
-    - ./data:/tmp/data
 
 task:
   build: .
@@ -52,16 +51,17 @@ task:
     - master
     - kafka
   environment:
-    ADDR_SPARK: "kafka:9092"
-    ADDR_KAFKA: "master"
+    ADDR_SPARK: "master"
+    ADDR_KAFKA: "kafka:9092"
 
-#  image: fokkodriesprong/outlierdetection
 
 kafka:
   image: wurstmeister/kafka
   ports:
     - 9092
-  links: 
+  ex:
+    - 9092
+  links:
     - zookeeper:zk
   environment:
     KAFKA_ADVERTISED_HOST_NAME: 10.0.4.189
