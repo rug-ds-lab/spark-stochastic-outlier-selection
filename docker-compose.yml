@@ -22,6 +22,15 @@ master:
     - ./conf/master:/conf
     - ./target/scala-2.11/:/tasks
 
+task:
+  build: .
+  links:
+    - master
+    - kafka
+  environment:
+    ADDR_SPARK: "master"
+    ADDR_KAFKA: "kafka:9092"
+
 worker:
   image: gettyimages/spark
   command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://dockerhost.summercamp.local:7077
