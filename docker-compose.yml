@@ -28,8 +28,8 @@ task:
     - master
     - kafka
   environment:
-    ADDR_SPARK: "master"
-    ADDR_KAFKA: "kafka:9092"
+    ADDR_SPARK: "spark://dockerhost.summercamp.local:7077"
+    ADDR_KAFKA: "dockerhost.summercamp.local:9092"
 
 worker:
   image: gettyimages/spark
