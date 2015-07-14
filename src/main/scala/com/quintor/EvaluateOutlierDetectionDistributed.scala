@@ -15,8 +15,8 @@ import scala.util.Random
  * Created by Fokko on 26-6-15.
  */
 object EvaluateOutlierDetectionDistributed {
-  val kafkaBrokers = "dockerhost.summercamp.local:9092"
-  val sparkMaster = "spark://dockerhost.summercamp.local:7077"
+  val kafkaBrokers = sys.env("ADDR_KAFKA")
+  val sparkMaster = sys.env("ADDR_SPARK")
   val topic = UUID.randomUUID().toString
 
   // Zookeeper connection properties
@@ -28,17 +28,21 @@ object EvaluateOutlierDetectionDistributed {
   props.put("serializer.class", "kafka.serializer.StringEncoder")
 
   val m = 10
-  val n = 1000
 
   val appName = "OutlierDetector"
 
   def main(args: Array[String]) {
+    val n = Integer.parseInt(args(0))
+
     System.out.println("Populating Kafka with test-data")
     populateKafka(n)
     System.out.println("Done")
 
+    // Wait 5 seconds to flush Kafka.
+    Thread.sleep(5000);
+
     System.out.println("Applying outlier detection")
-    performOutlierDetection
+    performOutlierDetection(n)
     System.out.println("Done")
   }
 
@@ -59,12 +63,11 @@ object EvaluateOutlierDetectionDistributed {
 
   }
 
-  def performOutlierDetection(): Unit = {
+  def performOutlierDetection(n: Int): Unit = {
 
     val conf = new SparkConf().setAppName(appName).setMaster(sparkMaster)
     val sc = new SparkContext(conf)
 
-    val now = System.nanoTime
 
     val offsetRanges = Array[OffsetRange](
       OffsetRange(topic, 0, 0, n)
@@ -73,14 +76,15 @@ object EvaluateOutlierDetectionDistributed {
     val kafkaParams = Map("metadata.broker.list" -> kafkaBrokers)
     val rdd = KafkaUtils.createRDD[String, String, StringDecoder, StringDecoder](sc, kafkaParams, offsetRanges);
 
-    // Map from string to Vector
     val dataset = rdd.map(record => new DenseVector[Double](record._2.split(',').map(_.toDouble)).toVector)
+
+
+    // Start recording.
+    val now = System.nanoTime
 
     val output = StocasticOutlierDetection.run(dataset)
 
     val micros = (System.nanoTime - now) / 1000
     println("%d microseconds".format(micros))
-
-    output.foreach(a => System.out.println(a._1 + ":" + a._2))
   }
 }
