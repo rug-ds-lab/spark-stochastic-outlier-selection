@@ -82,6 +82,6 @@ object StocasticOutlierDetection {
     val oMatrix = computeOutlierProbability(bMatrix)
 
     // Do a distributed sort, and then collect to driver
-    oMatrix.sortBy(rank => rank._2).collect
+    oMatrix.collect
   }
 }

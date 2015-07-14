@@ -1,6 +1,6 @@
 package com.quintor
 
-import java.util.{Properties, UUID}
+import java.util.{Calendar, Properties, UUID}
 
 import breeze.linalg.DenseVector
 import kafka.producer.{KeyedMessage, Producer, ProducerConfig}
@@ -56,9 +56,9 @@ object EvaluateOutlierDetectionDistributed {
     val producer = new Producer[String, String](new ProducerConfig(props))
     (1 to n).foreach(pos =>{
       producer.send(new KeyedMessage(topic, generateNormalVector))
-      if(pos % (n/10) == 0) {
+     /* if(pos % (n/10) == 0) {
         System.out.println("At " + pos + " of " + n)
-      }
+      }*/
     })
 
   }
@@ -85,6 +85,9 @@ object EvaluateOutlierDetectionDistributed {
     val output = StocasticOutlierDetection.run(dataset)
 
     val micros = (System.nanoTime - now) / 1000
-    println("%d microseconds".format(micros))
+
+    val fw = new java.io.FileWriter("/tmp/results/test.txt", true) ;
+    fw.write(Calendar.getInstance().getTime() + "," + output.length + "," + micros )
+    fw.close()
   }
 }
