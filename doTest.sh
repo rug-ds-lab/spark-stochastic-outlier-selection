@@ -10,7 +10,7 @@ do
    docker-compose up -d master zookeeper kafka worker
    docker-compose scale worker=$a
    
-   sec=`expr $a * 5`
+   sec=`expr $a \* 5`
    sleep $sec
 
    docker-compose run task
