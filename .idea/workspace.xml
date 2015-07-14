@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1b72c34e-1547-4145-9838-133d07f7fbd7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetectionDistributed.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetectionDistributed.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/org/apache/spark/mllib/outlier/StocasticOutlierDetection.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/apache/spark/mllib/outlier/StocasticOutlierDetection.scala" />
     </list>
     <ignored path="QuintorSparkOutlier.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,8 +45,8 @@
       <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="1494">
-              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="201" max-vertical-offset="1512">
+              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -65,21 +65,11 @@
       <file leaf-file-name="EvaluateOutlierDetectionDistributed.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetectionDistributed.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.11708861" vertical-offset="880" max-vertical-offset="1782">
-              <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.7436709" vertical-offset="1114" max-vertical-offset="1746">
+              <caret line="88" column="71" selection-start-line="88" selection-start-column="71" selection-end-line="88" selection-end-column="71" />
               <folding>
                 <element signature="e#21#56#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sbt.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sbt.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="252">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -115,11 +105,11 @@
         <option value="$PROJECT_DIR$/src/test/scala/StocasticOutlierDetectionTest.scala" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/project/plugins.sbt" />
-        <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/mllib/outlier/StocasticOutlierDetection.scala" />
         <option value="$PROJECT_DIR$/project/assembly.sbt" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/build.sbt" />
+        <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/mllib/outlier/StocasticOutlierDetection.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetectionDistributed.scala" />
       </list>
     </option>
@@ -1044,12 +1034,12 @@
       <workItem from="1435829651608" duration="1624000" />
       <workItem from="1435833232751" duration="8998000" />
       <workItem from="1436517227335" duration="17837000" />
-      <workItem from="1436773787532" duration="20222000" />
+      <workItem from="1436773787532" duration="20500000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="326743000" />
+    <option name="totallyTimeSpent" value="327021000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1425" y="24" width="1861" height="1056" extended-state="6" />
@@ -1428,16 +1418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/mllib/outlier/StocasticOutlierDetection.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3773585" vertical-offset="0" max-vertical-offset="1674">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding>
-            <element signature="e#40#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docker-clean.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="732">
@@ -1488,16 +1468,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="1494">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="201" max-vertical-offset="1512">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/mllib/outlier/StocasticOutlierDetection.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7436709" vertical-offset="1042" max-vertical-offset="1674">
+          <caret line="84" column="11" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="11" />
+          <folding>
+            <element signature="e#40#88#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetectionDistributed.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11708861" vertical-offset="880" max-vertical-offset="1782">
-          <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.7436709" vertical-offset="1114" max-vertical-offset="1746">
+          <caret line="88" column="71" selection-start-line="88" selection-start-column="71" selection-end-line="88" selection-end-column="71" />
           <folding>
             <element signature="e#21#56#0" expanded="true" />
           </folding>

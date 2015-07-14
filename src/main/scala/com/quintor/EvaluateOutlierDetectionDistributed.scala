@@ -83,11 +83,9 @@ object EvaluateOutlierDetectionDistributed {
     val now = System.nanoTime
 
     val output = StocasticOutlierDetection.run(dataset)
-    val sum = output.reduce((a,b) => a._2 + b._2)
 
     val micros = (System.nanoTime - now) / 1000
 
-    println("%d microseconds".format(micros))
-    println("sum: %d".format(sum))
+    println("Output: %d microseconds n=%d".format(micros, output.length))
   }
 }
