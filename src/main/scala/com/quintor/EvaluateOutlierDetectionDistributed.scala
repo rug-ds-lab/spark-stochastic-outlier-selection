@@ -86,7 +86,7 @@ object EvaluateOutlierDetectionDistributed {
 
     val micros = (System.nanoTime - now) / 1000
 
-    val fw = new java.io.FileWriter("test.txt", true) ;
+    val fw = new java.io.FileWriter("/tmp/results/test.txt", true) ;
     fw.write(Calendar.getInstance().getTime() + "," + output.length + "," + micros )
     fw.close()
   }

@@ -31,6 +31,8 @@ task:
   environment:
     ADDR_SPARK: "spark://dockerhost.summercamp.local:7077"
     ADDR_KAFKA: "dockerhost.summercamp.local:9092"
+  volumes:
+    - ./results:/tmp/results
 
 worker:
   image: gettyimages/spark
