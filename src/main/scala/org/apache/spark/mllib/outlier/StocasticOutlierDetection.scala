@@ -12,9 +12,6 @@ object StocasticOutlierDetection {
   val tolerance: Double = 0.0
   val maxIterations: Int = 50
 
-  implicit def toBreeze(vector: org.apache.spark.mllib.linalg.Vector): breeze.linalg.Vector[Double] = vector.toBreeze
-  implicit def fromBreeze(breezeVector: breeze.linalg.Vector[Double]): org.apache.spark.mllib.linalg.Vector = org.apache.spark.mllib.linalg.Vectors.fromBreeze(breezeVector)
-
   def binarySearch(affinity: Vector[Double],
                    logPerplexity: Double,
                    iteration: Int = 0,

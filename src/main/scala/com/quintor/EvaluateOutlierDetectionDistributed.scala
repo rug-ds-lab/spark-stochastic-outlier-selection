@@ -2,7 +2,7 @@ package com.quintor
 
 import java.util.{Calendar, Properties, UUID}
 
-import breeze.linalg.DenseVector
+import breeze.linalg.{DenseVector, Vector}
 import kafka.producer.{KeyedMessage, Producer, ProducerConfig}
 import kafka.serializer.StringDecoder
 import org.apache.spark.mllib.outlier.StocasticOutlierDetection
@@ -25,7 +25,6 @@ object EvaluateOutlierDetectionDistributed {
   props.put("producer.type", "sync")
   props.put("client.id", UUID.randomUUID().toString)
   props.put("metadata.broker.list", kafkaBrokers)
-  props.put("serializer.class", "kafka.serializer.StringEncoder")
 
   val m = 10
 
@@ -46,21 +45,17 @@ object EvaluateOutlierDetectionDistributed {
     System.out.println("Done")
   }
 
-  def generateNormalVector: String = {
+  def generateNormalVector: Vector[Double] = {
     val rnd = new Random()
-    (1 to m).map(_ => rnd.nextGaussian()).mkString(",")
+    new DenseVector[Double]((1 to m).map(_ => rnd.nextGaussian).toArray).toVector
   }
 
   def populateKafka(n: Int): Unit = {
     System.out.println("Connecting to kafka cluster: " + kafkaBrokers)
-    val producer = new Producer[String, String](new ProducerConfig(props))
+    val producer = new Producer[String, Vector[Double]](new ProducerConfig(props))
     (1 to n).foreach(pos =>{
       producer.send(new KeyedMessage(topic, generateNormalVector))
-     /* if(pos % (n/10) == 0) {
-        System.out.println("At " + pos + " of " + n)
-      }*/
     })
-
   }
 
   def performOutlierDetection(n: Int): Unit = {
@@ -74,15 +69,12 @@ object EvaluateOutlierDetectionDistributed {
     )
 
     val kafkaParams = Map("metadata.broker.list" -> kafkaBrokers)
-    val rdd = KafkaUtils.createRDD[String, String, StringDecoder, StringDecoder](sc, kafkaParams, offsetRanges);
-
-    val dataset = rdd.map(record => new DenseVector[Double](record._2.split(',').map(_.toDouble)).toVector)
-
+    val rdd = KafkaUtils.createRDD[String, Vector[Double], StringDecoder, StringDecoder](sc, kafkaParams, offsetRanges);
 
     // Start recording.
     val now = System.nanoTime
 
-    val output = StocasticOutlierDetection.run(dataset)
+    val output = StocasticOutlierDetection.run(rdd.map(record => record._2))
 
     val micros = (System.nanoTime - now) / 1000
 
