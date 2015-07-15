@@ -14,6 +14,6 @@ class CoderTest extends FlatSpec with Matchers with BeforeAndAfter {
     val enc = new ArrayDoubleEncoder
     val dec = new ArrayDoubleDecoder
 
-    inputVector should be(enc.fromBytes(dec.toBytes(inputVector)))
+    inputVector should be(dec.fromBytes(enc.toBytes(inputVector)))
   }
 }

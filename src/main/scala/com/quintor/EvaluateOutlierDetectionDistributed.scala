@@ -4,7 +4,7 @@ import java.util.{Calendar, Properties, UUID}
 
 import breeze.linalg.DenseVector
 import kafka.producer.{KeyedMessage, Producer, ProducerConfig}
-import kafka.serializer.{ArrayDoubleEncoder, StringDecoder}
+import kafka.serializer.{ArrayDoubleDecoder, StringDecoder}
 import org.apache.spark.mllib.outlier.StocasticOutlierDetection
 import org.apache.spark.streaming.kafka.{KafkaUtils, OffsetRange}
 import org.apache.spark.{SparkConf, SparkContext}
@@ -25,7 +25,7 @@ object EvaluateOutlierDetectionDistributed {
   props.put("producer.type", "sync")
   props.put("client.id", UUID.randomUUID().toString)
   props.put("metadata.broker.list", kafkaBrokers)
-  props.put("serializer.class", "kafka.serializer.ArrayDoubleDecoder");
+  props.put("serializer.class", "kafka.serializer.ArrayDoubleEncoder");
 
   val m = 10
 
@@ -54,7 +54,7 @@ object EvaluateOutlierDetectionDistributed {
   def populateKafka(n: Int): Unit = {
     System.out.println("Connecting to kafka cluster: " + kafkaBrokers)
     val producer = new Producer[String, Array[Double]](new ProducerConfig(props))
-    (1 to n).foreach(pos =>{
+    (1 to n).foreach(pos => {
       producer.send(new KeyedMessage(topic, generateNormalVector))
     })
   }
@@ -70,7 +70,7 @@ object EvaluateOutlierDetectionDistributed {
     )
 
     val kafkaParams = Map("metadata.broker.list" -> kafkaBrokers)
-    val rdd = KafkaUtils.createRDD[String, Array[Double], StringDecoder, ArrayDoubleEncoder](sc, kafkaParams, offsetRanges);
+    val rdd = KafkaUtils.createRDD[String, Array[Double], StringDecoder, ArrayDoubleDecoder](sc, kafkaParams, offsetRanges);
 
     // Start recording.
     val now = System.nanoTime
@@ -79,8 +79,8 @@ object EvaluateOutlierDetectionDistributed {
 
     val micros = (System.nanoTime - now) / 1000
 
-    val fw = new java.io.FileWriter("/tmp/results/test.txt", true) ;
-    fw.write(Calendar.getInstance().getTime() + "," + output.length + "," + micros + sys.props("line.separator") )
+    val fw = new java.io.FileWriter("/tmp/results/test.txt", true);
+    fw.write(Calendar.getInstance().getTime() + "," + output.length + "," + micros + sys.props("line.separator"))
     fw.close()
   }
 }
