@@ -28,15 +28,13 @@ object EvaluateOutlierDetectionDistributed {
   props.put("client.id", UUID.randomUUID().toString)
   props.put("metadata.broker.list", kafkaBrokers)
   props.put("serializer.class", "kafka.serializer.ArrayDoubleEncoder")
+  props.put("key.serializer.class", "kafka.serializer.StringEncoder")
 
   val m = 10
 
   val appName = "OutlierDetector"
 
   def main(args: Array[String]) {
-    new kafka.serializer.ArrayDoubleEncoder
-
-    
     val n = Integer.parseInt(args(0))
 
     System.out.println("Populating Kafka with test-data")
