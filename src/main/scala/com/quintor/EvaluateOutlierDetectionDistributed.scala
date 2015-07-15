@@ -15,6 +15,8 @@ import scala.util.Random
  * Created by Fokko on 26-6-15.
  */
 object EvaluateOutlierDetectionDistributed {
+  val LS = System.getProperty("line.separator")
+
   val kafkaBrokers = sys.env("ADDR_KAFKA")
   val sparkMaster = sys.env("ADDR_SPARK")
   val topic = UUID.randomUUID().toString
@@ -76,11 +78,12 @@ object EvaluateOutlierDetectionDistributed {
     val now = System.nanoTime
 
     val output = StocasticOutlierDetection.run(rdd.map(record => new DenseVector[Double](record._2).toVector))
+    val outcol = output.collect
 
     val micros = (System.nanoTime - now) / 1000
 
     val fw = new java.io.FileWriter("/tmp/results/test.txt", true);
-    fw.write(Calendar.getInstance().getTime() + "," + output.length + "," + micros + sys.props("line.separator"))
+    fw.write(Calendar.getInstance().getTime() + "," + outcol.length + "," + micros + LS + output.toDebugString + LS + LS+ LS + LS )
     fw.close()
   }
 }
