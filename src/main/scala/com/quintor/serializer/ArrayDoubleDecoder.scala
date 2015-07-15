@@ -1,4 +1,6 @@
-package kafka.serializer
+package com.quintor.serializer
+
+import kafka.serializer.Decoder
 
 import scala.pickling.Defaults._
 import scala.pickling.binary._

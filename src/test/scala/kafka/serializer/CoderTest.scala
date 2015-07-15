@@ -1,4 +1,4 @@
-package kafka.serializer
+package com.quintor.serializer
 
 import org.scalatest._
 

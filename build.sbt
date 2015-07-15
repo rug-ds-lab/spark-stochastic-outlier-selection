@@ -9,10 +9,11 @@ resolvers += "Spark Packages Repo" at "http://dl.bintray.com/spark-packages/mave
 resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 
 libraryDependencies ++= Seq(
-  "org.apache.spark" % "spark-core_2.10" % "1.4.0" % "provided",
-  "org.apache.spark" % "spark-mllib_2.10" % "1.4.0" % "provided",
+  "org.apache.spark" % "spark-core_2.10" % "1.4.0",
+  "org.apache.spark" % "spark-mllib_2.10" % "1.4.0",
   "org.apache.spark" % "spark-streaming-kafka_2.10" % "1.4.0",
   "org.scala-lang.modules" %% "scala-pickling" % "0.10.1",
+
   "org.scalatest" % "scalatest_2.10" % "2.2.4" % "test"
 )
 

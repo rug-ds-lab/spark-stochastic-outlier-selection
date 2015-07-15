@@ -15,11 +15,11 @@ import scala.util.Random
 /**
  * Created by Fokko on 26-6-15.
  */
-object EvaluateOutlierDetectionDistributed {
+object EvaluateOutlierDetectionLocal {
   val LS = System.getProperty("line.separator")
 
-  val kafkaBrokers = sys.env("ADDR_KAFKA")
-  val sparkMaster = sys.env("ADDR_SPARK")
+  val kafkaBrokers = "10.0.4.189:9092"
+  val sparkMaster = "local"
   val topic = UUID.randomUUID().toString
 
   // Zookeeper connection properties
@@ -28,7 +28,7 @@ object EvaluateOutlierDetectionDistributed {
   props.put("producer.type", "sync")
   props.put("client.id", UUID.randomUUID().toString)
   props.put("metadata.broker.list", kafkaBrokers)
-  props.put("serializer.class", "kafka.serializer.ArrayDoubleEncoder")
+  props.put("serializer.class", "com.quintor.serializer.ArrayDoubleEncoder")
   props.put("key.serializer.class", "kafka.serializer.StringEncoder")
 
   val m = 10
@@ -36,14 +36,15 @@ object EvaluateOutlierDetectionDistributed {
   val appName = "OutlierDetector"
 
   def main(args: Array[String]) {
-    val n = Integer.parseInt(args(0))
+    val n = if(args.length > 0) {
+      Integer.parseInt(args(0))
+    } else {
+      1000
+    }
 
     System.out.println("Populating Kafka with test-data")
     populateKafka(n)
     System.out.println("Done")
-
-    // Wait 5 seconds to flush Kafka.
-    Thread.sleep(5000);
 
     System.out.println("Applying outlier detection")
     performOutlierDetection(n)
@@ -68,7 +69,6 @@ object EvaluateOutlierDetectionDistributed {
     val conf = new SparkConf().setAppName(appName).setMaster(sparkMaster)
     val sc = new SparkContext(conf)
 
-
     val offsetRanges = Array[OffsetRange](
       OffsetRange(topic, 0, 0, n)
     )
@@ -84,7 +84,7 @@ object EvaluateOutlierDetectionDistributed {
 
     val micros = (System.nanoTime - now) / 1000
 
-    val fw = new java.io.FileWriter("/tmp/results/test.txt", true);
+    val fw = new java.io.FileWriter("/tmp/test.txt", true);
     fw.write(Calendar.getInstance().getTime() + "," + outcol.length + "," + micros + LS + output.toDebugString + LS + LS+ LS + LS )
     fw.close()
   }
