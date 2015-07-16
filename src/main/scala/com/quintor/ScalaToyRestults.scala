@@ -5,14 +5,12 @@ import org.apache.spark.mllib.outlier.StocasticOutlierDetection
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
- * Created by fokko on 16-7-15.
+ * Created by Fokko on 16-7-15.
  */
 object ScalaToyRestults {
-  val appName = "OutlierDetector"
-
   def main(args: Array[String]) {
 
-    val conf = new SparkConf().setAppName(appName).setMaster("local")
+    val conf = new SparkConf().setAppName("OutlierDetector").setMaster("local")
     val sc = new SparkContext(conf)
 
     val rdd = sc.parallelize(Array(
@@ -28,6 +26,4 @@ object ScalaToyRestults {
 
     outcol.foreach(System.out.println)
   }
-
-
 }

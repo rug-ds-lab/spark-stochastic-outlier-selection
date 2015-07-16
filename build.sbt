@@ -30,7 +30,11 @@ assemblyMergeStrategy in assembly := {
         MergeStrategy.discard
       case "license" :: xs =>
         MergeStrategy.discard
+      case "license.txt" :: xs =>
+        MergeStrategy.discard
       case "notice" :: xs =>
+        MergeStrategy.discard
+      case "notice.txt" :: xs =>
         MergeStrategy.discard
       case "services" :: xs =>
         MergeStrategy.filterDistinctLines

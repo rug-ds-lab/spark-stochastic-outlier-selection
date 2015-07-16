@@ -18,7 +18,7 @@ import scala.util.Random
 object EvaluateOutlierDetectionLocal {
   val LS = System.getProperty("line.separator")
 
-  val kafkaBrokers = "10.0.4.189:9092"
+  val kafkaBrokers = "localhost:9092"
   val sparkMaster = "local"
   val topic = UUID.randomUUID().toString
 
@@ -70,10 +70,12 @@ object EvaluateOutlierDetectionLocal {
     val sc = new SparkContext(conf)
 
     val offsetRanges = Array[OffsetRange](
-      OffsetRange(topic, 0, 0, n)
+      OffsetRange.create(topic, 0, 0, n)
     )
 
-    val kafkaParams = Map("metadata.broker.list" -> kafkaBrokers)
+    val kafkaParams = Map(
+      "metadata.broker.list" -> kafkaBrokers
+    )
     val rdd = KafkaUtils.createRDD[String, Array[Double], StringDecoder, ArrayDoubleDecoder](sc, kafkaParams, offsetRanges);
 
     // Start recording.
