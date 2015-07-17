@@ -21,6 +21,8 @@ master:
   volumes:
     - ./conf/master:/conf
     - ./target/scala-2.10/:/tasks
+  extra_hosts:
+   - "dockerhost.summercamp.local:192.168.0.100"
 
 task:
   image: fokkodriesprong/outlierdetection
@@ -33,6 +35,8 @@ task:
     ADDR_KAFKA: "dockerhost.summercamp.local:9092"
   volumes:
     - ./results:/tmp/results
+  extra_hosts:
+   - "dockerhost.summercamp.local:192.168.0.100"
 
 worker:
   image: gettyimages/spark
@@ -57,6 +61,8 @@ worker:
     - 8081
   volumes:
     - ./conf/worker:/conf
+  extra_hosts:
+   - "dockerhost.summercamp.local:192.168.0.100"
 
 kafka:
   image: wurstmeister/kafka
@@ -71,6 +77,8 @@ kafka:
     KAFKA_ZOOKEEPER_CONNECT: zk:2181
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
+  extra_hosts:
+   - "dockerhost.summercamp.local:192.168.0.100"
 
 zookeeper:
   image: wurstmeister/zookeeper
@@ -78,3 +86,5 @@ zookeeper:
     - 2181
   expose:
     - 2181
+  extra_hosts:
+   - "dockerhost.summercamp.local:192.168.0.100"

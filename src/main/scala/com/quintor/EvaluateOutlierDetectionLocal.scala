@@ -23,6 +23,8 @@ object EvaluateOutlierDetectionLocal extends EvaluateOutlierDetection {
     "metadata.broker.list" -> "localhost:9092"
   )
 
+  override def sparkMaster: String = "localhost"
+
   override def nameTopic: String = UUID.randomUUID().toString
 
   override def nameApp: String = this.getClass.getSimpleName

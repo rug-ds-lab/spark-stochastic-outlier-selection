@@ -19,8 +19,10 @@ object EvaluateOutlierDetectionDistributed extends EvaluateOutlierDetection {
   }
 
   override def configSpark: Map[String, String] = Map(
-    "metadata.broker.list" -> sys.env("ADDR_SPARK")
+    "metadata.broker.list" -> sys.env("ADDR_KAFKA")
   )
+
+  override def sparkMaster: String = sys.env("ADDR_SPARK")
 
   override def nameTopic: String = UUID.randomUUID().toString
 
@@ -40,4 +42,5 @@ object EvaluateOutlierDetectionDistributed extends EvaluateOutlierDetection {
     performOutlierDetection(n)
     System.out.println("Done")
   }
+
 }

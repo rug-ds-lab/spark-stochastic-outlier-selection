@@ -17,8 +17,9 @@ import scala.util.Random
  */
 trait EvaluateOutlierDetection {
   val LS = System.getProperty("line.separator")
-
   val m = 10
+
+  def sparkMaster: String
 
   def configKafka: Properties
 
@@ -42,7 +43,7 @@ trait EvaluateOutlierDetection {
 
   def performOutlierDetection(n: Int): Unit = {
 
-    val conf = new SparkConf().setAppName(nameApp)
+    val conf = new SparkConf().setAppName(nameApp).setMaster(sparkMaster)
     val sc = new SparkContext(conf)
 
     val offsetRanges = Array[OffsetRange](
