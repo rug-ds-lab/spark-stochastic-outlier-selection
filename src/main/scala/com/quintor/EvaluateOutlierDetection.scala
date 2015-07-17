@@ -49,7 +49,7 @@ trait EvaluateOutlierDetection {
       OffsetRange.create(nameTopic, 0, 0, n)
     )
 
-    val rdd = KafkaUtils.createRDD[String, Array[Double], StringDecoder, ArrayDoubleDecoder](sc, configSpark, offsetRanges);
+    val rdd = KafkaUtils.createRDD[String, Array[Double], StringDecoder, ArrayDoubleDecoder](sc, configSpark, offsetRanges)
 
     // Start recording.
     val now = System.nanoTime
@@ -59,7 +59,7 @@ trait EvaluateOutlierDetection {
 
     val micros = (System.nanoTime - now) / 1000
 
-    val fw = new java.io.FileWriter("/tmp/test.txt", true);
+    val fw = new java.io.FileWriter("/tmp/test.txt", true)
     fw.write(Calendar.getInstance().getTime() + "," + outcol.length + "," + micros + LS + output.toDebugString + LS + LS + LS + LS)
     fw.close()
   }
