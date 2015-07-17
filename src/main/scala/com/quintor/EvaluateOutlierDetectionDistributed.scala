@@ -11,6 +11,7 @@ object EvaluateOutlierDetectionDistributed extends EvaluateOutlierDetection {
 
     props.put("client.id", UUID.randomUUID().toString)
     props.put("metadata.broker.list", sys.env("ADDR_KAFKA"))
+    props.put("bootstrap.servers", sys.env("ADDR_KAFKA"))
     props.put("serializer.class", "com.quintor.serializer.ArrayDoubleEncoder")
     props.put("key.serializer.class", "kafka.serializer.StringEncoder")
 
