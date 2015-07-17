@@ -38,13 +38,11 @@ assemblyMergeStrategy in assembly := {
         MergeStrategy.discard
       case "pom.properties" :: xs =>
         MergeStrategy.discard
-      case "pom.xml" :: xs =>
-        MergeStrategy.discard
       case "services" :: xs =>
         MergeStrategy.filterDistinctLines
       case ("spring.schemas" :: Nil) | ("spring.handlers" :: Nil) =>
         MergeStrategy.filterDistinctLines
-      case _ => MergeStrategy.deduplicate
+      case _ => MergeStrategy.discard
     }
   case _ => MergeStrategy.first
 }
