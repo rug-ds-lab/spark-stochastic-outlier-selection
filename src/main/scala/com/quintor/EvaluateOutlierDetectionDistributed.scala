@@ -9,7 +9,6 @@ object EvaluateOutlierDetectionDistributed extends EvaluateOutlierDetection {
   override def configKafka: Properties = {
     val props = new Properties()
 
-    props.put("producer.type", "sync")
     props.put("client.id", UUID.randomUUID().toString)
     props.put("metadata.broker.list", sys.env("ADDR_KAFKA"))
     props.put("serializer.class", "com.quintor.serializer.ArrayDoubleEncoder")
@@ -36,7 +35,7 @@ object EvaluateOutlierDetectionDistributed extends EvaluateOutlierDetection {
     System.out.println("Done")
 
     // Wait 5 seconds to flush Kafka.
-    Thread.sleep(5000);
+    Thread.sleep(5000)
 
     System.out.println("Applying outlier detection")
     performOutlierDetection(n)

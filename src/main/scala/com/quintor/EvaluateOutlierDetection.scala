@@ -6,6 +6,7 @@ import breeze.linalg.DenseVector
 import com.quintor.serializer.ArrayDoubleDecoder
 import kafka.producer.{KeyedMessage, Producer, ProducerConfig}
 import kafka.serializer.StringDecoder
+import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 import org.apache.spark.mllib.outlier.StocasticOutlierDetection
 import org.apache.spark.streaming.kafka.{KafkaUtils, OffsetRange}
 import org.apache.spark.{SparkConf, SparkContext}
@@ -35,10 +36,8 @@ trait EvaluateOutlierDetection {
   }
 
   def populateKafka(n: Int): Unit = {
-    val producer = new Producer[String, Array[Double]](new ProducerConfig(configKafka))
-    (1 to n).foreach(pos => {
-      producer.send(new KeyedMessage(nameTopic, generateNormalVector))
-    })
+    val producer = new KafkaProducer[String, Array[Double]](configKafka)
+    (1 to n).foreach(pos => producer.send(new ProducerRecord(nameTopic, generateNormalVector)))
   }
 
   def performOutlierDetection(n: Int): Unit = {
