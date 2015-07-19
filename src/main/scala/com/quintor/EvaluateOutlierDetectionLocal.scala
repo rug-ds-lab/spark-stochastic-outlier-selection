@@ -1,34 +1,29 @@
 package com.quintor
 
-import java.util.{Properties, UUID}
+import java.util
+
+import org.apache.kafka.clients.producer.ProducerConfig
 
 /**
  * Created by Fokko on 26-6-15.
  */
 object EvaluateOutlierDetectionLocal extends EvaluateOutlierDetection {
 
-  override def configKafka: Properties = {
-    val props = new Properties()
+  override def configKafka: util.HashMap[String, Object] = {
+    val props = new util.HashMap[String, Object]()
 
-    props.put("producer.type", "sync")
-    props.put("client.id", UUID.randomUUID().toString)
-    props.put("metadata.broker.list", "localhost:9092")
-    props.put("serializer.class", "com.quintor.serializer.ArrayDoubleEncoder")
-    props.put("key.serializer.class", "kafka.serializer.StringEncoder")
+    props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "dockerhost.summercamp.local:9092")
 
     props
   }
 
   override def configSpark: Map[String, String] = Map(
-    "metadata.broker.list" -> "localhost:9092"
+    "metadata.broker.list" -> "dockerhost.summercamp.local:9092"
   )
 
-  override def sparkMaster: String = "localhost"
-
-  override def nameTopic: String = UUID.randomUUID().toString
+  override def sparkMaster: String = "spark://dockerhost.summercamp.local:7077"
 
   override def nameApp: String = this.getClass.getSimpleName
-
 
   def main(args: Array[String]) {
     val n = if (args.length > 0) {

@@ -1,16 +1,17 @@
 package com.quintor
 
-import java.util.{Calendar, Properties}
+import java.util.{Calendar, HashMap}
 
 import breeze.linalg.DenseVector
-import com.quintor.serializer.ArrayDoubleDecoder
-import kafka.producer.{KeyedMessage, Producer, ProducerConfig}
-import kafka.serializer.StringDecoder
+import kafka.serializer.{DefaultDecoder, StringDecoder}
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
+import org.apache.kafka.common.serialization.ByteArraySerializer
 import org.apache.spark.mllib.outlier.StocasticOutlierDetection
 import org.apache.spark.streaming.kafka.{KafkaUtils, OffsetRange}
 import org.apache.spark.{SparkConf, SparkContext}
 
+import scala.pickling.Defaults._
+import scala.pickling.binary._
 import scala.util.Random
 
 /**
@@ -22,13 +23,13 @@ trait EvaluateOutlierDetection {
 
   def sparkMaster: String
 
-  def configKafka: Properties
+  def configKafka: HashMap[String, Object]
 
   def configSpark: Map[String, String]
 
   def nameApp: String
 
-  def nameTopic: String
+  def nameTopic: String = "OutlierObservations"
 
   def generateNormalVector: Array[Double] = {
     val rnd = new Random()
@@ -36,8 +37,15 @@ trait EvaluateOutlierDetection {
   }
 
   def populateKafka(n: Int): Unit = {
-    val producer = new KafkaProducer[String, Array[Double]](configKafka)
-    (1 to n).foreach(pos => producer.send(new ProducerRecord(nameTopic, generateNormalVector)))
+    val producer = new KafkaProducer[String, Array[Byte]](
+      configKafka,
+      new org.apache.kafka.common.serialization.StringSerializer,
+      new ByteArraySerializer)
+    (1 to n).foreach(pos => {
+      System.out.println("Written: " + pos)
+      producer.send(new ProducerRecord(nameTopic, generateNormalVector.pickle.value))
+    })
+    producer.close()
   }
 
   def performOutlierDetection(n: Int): Unit = {
@@ -49,12 +57,12 @@ trait EvaluateOutlierDetection {
       OffsetRange.create(nameTopic, 0, 0, n)
     )
 
-    val rdd = KafkaUtils.createRDD[String, Array[Double], StringDecoder, ArrayDoubleDecoder](sc, configSpark, offsetRanges)
+    val rdd = KafkaUtils.createRDD[String, Array[Byte], StringDecoder, DefaultDecoder](sc, configSpark, offsetRanges)
 
     // Start recording.
     val now = System.nanoTime
 
-    val output = StocasticOutlierDetection.run(rdd.map(record => new DenseVector[Double](record._2).toVector))
+    val output = StocasticOutlierDetection.run(rdd.map(record => new DenseVector[Double](record._2.unpickle[Array[Double]]).toVector))
     val outcol = output.collect
 
     val micros = (System.nanoTime - now) / 1000

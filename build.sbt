@@ -12,6 +12,7 @@ libraryDependencies ++= Seq(
   "org.apache.spark" % "spark-core_2.10" % "1.4.0",
   "org.apache.spark" % "spark-mllib_2.10" % "1.4.0",
   "org.apache.spark" % "spark-streaming-kafka_2.10" % "1.4.0",
+
   "org.scala-lang.modules" %% "scala-pickling" % "0.10.1",
 
   "org.apache.kafka" % "kafka_2.10" % "0.8.2.1",
@@ -22,7 +23,7 @@ libraryDependencies ++= Seq(
 assemblyMergeStrategy in assembly := {
   case PathList("META-INF", xs @ _*) =>
     (xs map {_.toLowerCase}) match {
-      case ("manifest.mf" :: Nil) | ("index.list" :: Nil) | ("dependencies" :: Nil) =>
+        case ("manifest.mf" :: Nil) | ("index.list" :: Nil) | ("dependencies" :: Nil) =>
         MergeStrategy.discard
       case ps @ (x :: xs) if ps.last.endsWith(".sf") || ps.last.endsWith(".dsa") =>
         MergeStrategy.discard
