@@ -67,7 +67,7 @@ trait EvaluateOutlierDetection {
 
     val micros = (System.nanoTime - now) / 1000
 
-    val fw = new java.io.FileWriter("/tmp/test.txt", true)
+    val fw = new java.io.FileWriter("/tmp/results/test.txt", true)
     fw.write(Calendar.getInstance().getTime() + "," + outcol.length + "," + micros + LS + output.toDebugString + LS + LS + LS + LS)
     fw.close()
   }
