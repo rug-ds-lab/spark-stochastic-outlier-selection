@@ -41,10 +41,9 @@ trait EvaluateOutlierDetection {
       configKafka,
       new org.apache.kafka.common.serialization.StringSerializer,
       new ByteArraySerializer)
-    (1 to n).foreach(pos => {
-      System.out.println("Written: " + pos)
-      producer.send(new ProducerRecord(nameTopic, generateNormalVector.pickle.value))
-    })
+    (1 to n).foreach(pos => producer.send(new ProducerRecord(nameTopic, generateNormalVector.pickle.value)))
+
+    // Producer is not needed anymore, please close it te perserve resources
     producer.close()
   }
 
@@ -59,16 +58,32 @@ trait EvaluateOutlierDetection {
 
     val rdd = KafkaUtils.createRDD[String, Array[Byte], StringDecoder, DefaultDecoder](sc, configSpark, offsetRanges)
 
+    val finalPerplexity = 30
+
+
     // Start recording.
     val now = System.nanoTime
 
-    val output = StocasticOutlierDetection.run(rdd.map(record => new DenseVector[Double](record._2.unpickle[Array[Double]]).toVector))
-    val outcol = output.collect
+    val dMatrix = StocasticOutlierDetection.computeDistanceMatrix(rdd.map(record => new DenseVector[Double](record._2.unpickle[Array[Double]]).toVector))
 
-    val micros = (System.nanoTime - now) / 1000
+    val step1 = (System.nanoTime - now) / 1000;
+
+    val aMatrix = StocasticOutlierDetection.computeAfinity(dMatrix, finalPerplexity)
+
+    val step2 = (System.nanoTime - now) / 1000;
+
+    val bMatrix = StocasticOutlierDetection.computeBindingProbabilities(aMatrix)
+
+    val step3 = (System.nanoTime - now) / 1000;
+
+    val oMatrix = StocasticOutlierDetection.computeOutlierProbability(bMatrix)
+
+    val step4 = (System.nanoTime - now) / 1000;
+
+    val outcol = oMatrix.collect
 
     val fw = new java.io.FileWriter("/tmp/results/test.txt", true)
-    fw.write(Calendar.getInstance().getTime() + "," + outcol.length + "," + micros + LS + output.toDebugString + LS + LS + LS + LS)
+    fw.write(Calendar.getInstance().getTime() + "," + step2 + "," + step3 + "," + step4 + "," + outcol.length + "," + LS + oMatrix.toDebugString + LS + LS + LS + LS)
     fw.close()
   }
 }

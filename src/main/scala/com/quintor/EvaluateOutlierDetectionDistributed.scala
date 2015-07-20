@@ -34,7 +34,7 @@ object EvaluateOutlierDetectionDistributed extends EvaluateOutlierDetection {
     populateKafka(n)
     System.out.println("Done")
 
-    // Wait 5 seconds to flush Kafka.
+    // Wait 5 seconds to let Kafka flush.
     Thread.sleep(5000)
 
     System.out.println("Applying outlier detection")

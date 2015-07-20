@@ -1,0 +1,140 @@
+Sun Jul 19 20:26:37 UTC 2015,1000,68544529
+(1) ShuffledRDD[11] at foldByKey at StocasticOutlierDetection.scala:70 []
+ +-(1) MapPartitionsRDD[10] at flatMap at StocasticOutlierDetection.scala:70 []
+    |  MapPartitionsRDD[9] at map at StocasticOutlierDetection.scala:51 []
+    |  MapPartitionsRDD[8] at map at StocasticOutlierDetection.scala:48 []
+    |  MapPartitionsRDD[7] at map at StocasticOutlierDetection.scala:65 []
+    |  ShuffledRDD[6] at combineByKey at StocasticOutlierDetection.scala:61 []
+    +-(1) MapPartitionsRDD[5] at flatMap at StocasticOutlierDetection.scala:55 []
+       |  CartesianRDD[4] at cartesian at StocasticOutlierDetection.scala:55 []
+       |  MapPartitionsRDD[3] at map at StocasticOutlierDetection.scala:53 []
+       |  ZippedWithIndexRDD[2] at zipWithIndex at StocasticOutlierDetection.scala:53 []
+       |  MapPartitionsRDD[1] at map at EvaluateOutlierDetection.scala:65 []
+       |  KafkaRDD[0] at RDD at KafkaRDD.scala:45 []
+       |  MapPartitionsRDD[3] at map at StocasticOutlierDetection.scala:53 []
+       |  ZippedWithIndexRDD[2] at zipWithIndex at StocasticOutlierDetection.scala:53 []
+       |  MapPartitionsRDD[1] at map at EvaluateOutlierDetection.scala:65 []
+       |  KafkaRDD[0] at RDD at KafkaRDD.scala:45 []
+
+
+
+Sun Jul 19 20:33:14 UTC 2015,1000,69069887
+(1) ShuffledRDD[11] at foldByKey at StocasticOutlierDetection.scala:70 []
+ +-(1) MapPartitionsRDD[10] at flatMap at StocasticOutlierDetection.scala:70 []
+    |  MapPartitionsRDD[9] at map at StocasticOutlierDetection.scala:51 []
+    |  MapPartitionsRDD[8] at map at StocasticOutlierDetection.scala:48 []
+    |  MapPartitionsRDD[7] at map at StocasticOutlierDetection.scala:65 []
+    |  ShuffledRDD[6] at combineByKey at StocasticOutlierDetection.scala:61 []
+    +-(1) MapPartitionsRDD[5] at flatMap at StocasticOutlierDetection.scala:55 []
+       |  CartesianRDD[4] at cartesian at StocasticOutlierDetection.scala:55 []
+       |  MapPartitionsRDD[3] at map at StocasticOutlierDetection.scala:53 []
+       |  ZippedWithIndexRDD[2] at zipWithIndex at StocasticOutlierDetection.scala:53 []
+       |  MapPartitionsRDD[1] at map at EvaluateOutlierDetection.scala:65 []
+       |  KafkaRDD[0] at RDD at KafkaRDD.scala:45 []
+       |  MapPartitionsRDD[3] at map at StocasticOutlierDetection.scala:53 []
+       |  ZippedWithIndexRDD[2] at zipWithIndex at StocasticOutlierDetection.scala:53 []
+       |  MapPartitionsRDD[1] at map at EvaluateOutlierDetection.scala:65 []
+       |  KafkaRDD[0] at RDD at KafkaRDD.scala:45 []
+
+
+
+Sun Jul 19 20:35:04 UTC 2015,1000,78914509
+(1) ShuffledRDD[11] at foldByKey at StocasticOutlierDetection.scala:70 []
+ +-(1) MapPartitionsRDD[10] at flatMap at StocasticOutlierDetection.scala:70 []
+    |  MapPartitionsRDD[9] at map at StocasticOutlierDetection.scala:51 []
+    |  MapPartitionsRDD[8] at map at StocasticOutlierDetection.scala:48 []
+    |  MapPartitionsRDD[7] at map at StocasticOutlierDetection.scala:65 []
+    |  ShuffledRDD[6] at combineByKey at StocasticOutlierDetection.scala:61 []
+    +-(1) MapPartitionsRDD[5] at flatMap at StocasticOutlierDetection.scala:55 []
+       |  CartesianRDD[4] at cartesian at StocasticOutlierDetection.scala:55 []
+       |  MapPartitionsRDD[3] at map at StocasticOutlierDetection.scala:53 []
+       |  ZippedWithIndexRDD[2] at zipWithIndex at StocasticOutlierDetection.scala:53 []
+       |  MapPartitionsRDD[1] at map at EvaluateOutlierDetection.scala:65 []
+       |  KafkaRDD[0] at RDD at KafkaRDD.scala:45 []
+       |  MapPartitionsRDD[3] at map at StocasticOutlierDetection.scala:53 []
+       |  ZippedWithIndexRDD[2] at zipWithIndex at StocasticOutlierDetection.scala:53 []
+       |  MapPartitionsRDD[1] at map at EvaluateOutlierDetection.scala:65 []
+       |  KafkaRDD[0] at RDD at KafkaRDD.scala:45 []
+
+
+
+Sun Jul 19 20:36:59 UTC 2015,1000,74261920
+(1) ShuffledRDD[11] at foldByKey at StocasticOutlierDetection.scala:70 []
+ +-(1) MapPartitionsRDD[10] at flatMap at StocasticOutlierDetection.scala:70 []
+    |  MapPartitionsRDD[9] at map at StocasticOutlierDetection.scala:51 []
+    |  MapPartitionsRDD[8] at map at StocasticOutlierDetection.scala:48 []
+    |  MapPartitionsRDD[7] at map at StocasticOutlierDetection.scala:65 []
+    |  ShuffledRDD[6] at combineByKey at StocasticOutlierDetection.scala:61 []
+    +-(1) MapPartitionsRDD[5] at flatMap at StocasticOutlierDetection.scala:55 []
+       |  CartesianRDD[4] at cartesian at StocasticOutlierDetection.scala:55 []
+       |  MapPartitionsRDD[3] at map at StocasticOutlierDetection.scala:53 []
+       |  ZippedWithIndexRDD[2] at zipWithIndex at StocasticOutlierDetection.scala:53 []
+       |  MapPartitionsRDD[1] at map at EvaluateOutlierDetection.scala:65 []
+       |  KafkaRDD[0] at RDD at KafkaRDD.scala:45 []
+       |  MapPartitionsRDD[3] at map at StocasticOutlierDetection.scala:53 []
+       |  ZippedWithIndexRDD[2] at zipWithIndex at StocasticOutlierDetection.scala:53 []
+       |  MapPartitionsRDD[1] at map at EvaluateOutlierDetection.scala:65 []
+       |  KafkaRDD[0] at RDD at KafkaRDD.scala:45 []
+
+
+
+Sun Jul 19 20:38:56 UTC 2015,1000,70423105
+(1) ShuffledRDD[11] at foldByKey at StocasticOutlierDetection.scala:70 []
+ +-(1) MapPartitionsRDD[10] at flatMap at StocasticOutlierDetection.scala:70 []
+    |  MapPartitionsRDD[9] at map at StocasticOutlierDetection.scala:51 []
+    |  MapPartitionsRDD[8] at map at StocasticOutlierDetection.scala:48 []
+    |  MapPartitionsRDD[7] at map at StocasticOutlierDetection.scala:65 []
+    |  ShuffledRDD[6] at combineByKey at StocasticOutlierDetection.scala:61 []
+    +-(1) MapPartitionsRDD[5] at flatMap at StocasticOutlierDetection.scala:55 []
+       |  CartesianRDD[4] at cartesian at StocasticOutlierDetection.scala:55 []
+       |  MapPartitionsRDD[3] at map at StocasticOutlierDetection.scala:53 []
+       |  ZippedWithIndexRDD[2] at zipWithIndex at StocasticOutlierDetection.scala:53 []
+       |  MapPartitionsRDD[1] at map at EvaluateOutlierDetection.scala:65 []
+       |  KafkaRDD[0] at RDD at KafkaRDD.scala:45 []
+       |  MapPartitionsRDD[3] at map at StocasticOutlierDetection.scala:53 []
+       |  ZippedWithIndexRDD[2] at zipWithIndex at StocasticOutlierDetection.scala:53 []
+       |  MapPartitionsRDD[1] at map at EvaluateOutlierDetection.scala:65 []
+       |  KafkaRDD[0] at RDD at KafkaRDD.scala:45 []
+
+
+
+Sun Jul 19 20:41:32 UTC 2015,1000,102511240
+(1) ShuffledRDD[11] at foldByKey at StocasticOutlierDetection.scala:70 []
+ +-(1) MapPartitionsRDD[10] at flatMap at StocasticOutlierDetection.scala:70 []
+    |  MapPartitionsRDD[9] at map at StocasticOutlierDetection.scala:51 []
+    |  MapPartitionsRDD[8] at map at StocasticOutlierDetection.scala:48 []
+    |  MapPartitionsRDD[7] at map at StocasticOutlierDetection.scala:65 []
+    |  ShuffledRDD[6] at combineByKey at StocasticOutlierDetection.scala:61 []
+    +-(1) MapPartitionsRDD[5] at flatMap at StocasticOutlierDetection.scala:55 []
+       |  CartesianRDD[4] at cartesian at StocasticOutlierDetection.scala:55 []
+       |  MapPartitionsRDD[3] at map at StocasticOutlierDetection.scala:53 []
+       |  ZippedWithIndexRDD[2] at zipWithIndex at StocasticOutlierDetection.scala:53 []
+       |  MapPartitionsRDD[1] at map at EvaluateOutlierDetection.scala:65 []
+       |  KafkaRDD[0] at RDD at KafkaRDD.scala:45 []
+       |  MapPartitionsRDD[3] at map at StocasticOutlierDetection.scala:53 []
+       |  ZippedWithIndexRDD[2] at zipWithIndex at StocasticOutlierDetection.scala:53 []
+       |  MapPartitionsRDD[1] at map at EvaluateOutlierDetection.scala:65 []
+       |  KafkaRDD[0] at RDD at KafkaRDD.scala:45 []
+
+
+
+Sun Jul 19 20:45:49 UTC 2015,1000,181896786
+(1) ShuffledRDD[11] at foldByKey at StocasticOutlierDetection.scala:70 []
+ +-(1) MapPartitionsRDD[10] at flatMap at StocasticOutlierDetection.scala:70 []
+    |  MapPartitionsRDD[9] at map at StocasticOutlierDetection.scala:51 []
+    |  MapPartitionsRDD[8] at map at StocasticOutlierDetection.scala:48 []
+    |  MapPartitionsRDD[7] at map at StocasticOutlierDetection.scala:65 []
+    |  ShuffledRDD[6] at combineByKey at StocasticOutlierDetection.scala:61 []
+    +-(1) MapPartitionsRDD[5] at flatMap at StocasticOutlierDetection.scala:55 []
+       |  CartesianRDD[4] at cartesian at StocasticOutlierDetection.scala:55 []
+       |  MapPartitionsRDD[3] at map at StocasticOutlierDetection.scala:53 []
+       |  ZippedWithIndexRDD[2] at zipWithIndex at StocasticOutlierDetection.scala:53 []
+       |  MapPartitionsRDD[1] at map at EvaluateOutlierDetection.scala:65 []
+       |  KafkaRDD[0] at RDD at KafkaRDD.scala:45 []
+       |  MapPartitionsRDD[3] at map at StocasticOutlierDetection.scala:53 []
+       |  ZippedWithIndexRDD[2] at zipWithIndex at StocasticOutlierDetection.scala:53 []
+       |  MapPartitionsRDD[1] at map at EvaluateOutlierDetection.scala:65 []
+       |  KafkaRDD[0] at RDD at KafkaRDD.scala:45 []
+
+
+

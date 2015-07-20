@@ -69,17 +69,4 @@ object StocasticOutlierDetection {
   def computeOutlierProbability(rows: RDD[(Long, Vector[Double])]): RDD[(Long, Double)] =
     rows.flatMap(r => r._2.toArray.zipWithIndex.map(p => (p._2 + (if (p._2 >= r._1) 1L else 0L), p._1))).foldByKey(1.0)((a, b) => a * (1.0 - b))
 
-
-  def run(data: RDD[Vector[Double]], perplexity: Double = 30) = {
-    // Perplexity cannot be larger than n-1
-    val finalPerplexity = Math.min(data.count() - 1, perplexity)
-
-    val dMatrix = computeDistanceMatrix(data)
-    val aMatrix = computeAfinity(dMatrix, finalPerplexity)
-    val bMatrix = computeBindingProbabilities(aMatrix)
-    val oMatrix = computeOutlierProbability(bMatrix)
-
-    // Do a distributed sort, and then collect to driver
-    oMatrix
-  }
 }
