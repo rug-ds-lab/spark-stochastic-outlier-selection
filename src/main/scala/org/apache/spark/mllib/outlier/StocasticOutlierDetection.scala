@@ -1,7 +1,7 @@
 package org.apache.spark.mllib.outlier
 
-import breeze.linalg.functions.euclideanDistance
-import breeze.linalg.{DenseVector, Vector, sum}
+import breeze.linalg.{DenseVector, sum}
+import breeze.numerics.{pow, sqrt}
 import org.apache.spark.rdd.RDD
 
 import scala.language.implicitConversions
@@ -11,14 +11,16 @@ import scala.language.implicitConversions
  */
 object StocasticOutlierDetection {
   val tolerance: Double = 0.0
-  val maxIterations: Int = 50
+  val maxIterations: Int = 500
 
-  def binarySearch(affinity: Vector[Double],
+  val DEFAULT_PERPLEXITY = 30
+
+  def binarySearch(affinity: DenseVector[Double],
                    logPerplexity: Double,
                    iteration: Int = 0,
                    beta: Double = 1.0,
                    betaMin: Double = Double.NegativeInfinity,
-                   betaMax: Double = Double.PositiveInfinity): Vector[Double] = {
+                   betaMax: Double = Double.PositiveInfinity): DenseVector[Double] = {
 
     val newAffinity = affinity.map(d => Math.exp(-d * beta))
     val sumA = sum(newAffinity)
@@ -43,19 +45,21 @@ object StocasticOutlierDetection {
       newAffinity
   }
 
-  def computeAfinity(dMatrix: RDD[(Long, Vector[Double])], perplexity: Double): RDD[(Long, Vector[Double])] = {
+  def computeAfinity(dMatrix: RDD[(Long, DenseVector[Double])], perplexity: Double = DEFAULT_PERPLEXITY): RDD[(Long, DenseVector[Double])] = {
     val logPerplexity = Math.log(perplexity)
     dMatrix.map(r => (r._1, binarySearch(r._2, logPerplexity)))
   }
 
-  def computeBindingProbabilities(rows: RDD[(Long, Vector[Double])]) = rows.map(r => (r._1, r._2 :/ sum(r._2)))
+  def euclDistance(a: Array[Double], b: Array[Double]): Double = sqrt((a zip b).map { case (x, y) => pow(y - x, 2) }.sum)
 
-  def computeDistanceMatrix(data: RDD[Vector[Double]]) = computeDistanceMatrixPair(data.zipWithIndex.map(_.swap))
+  def computeBindingProbabilities(rows: RDD[(Long, DenseVector[Double])]): RDD[(Long, DenseVector[Double])] = rows.map(r => (r._1, r._2 :/ sum(r._2)))
 
-  def computeDistanceMatrixPair(data: RDD[(Long, Vector[Double])]): RDD[(Long, Vector[Double])] = data.cartesian(data).flatMap {
-    case (a: (Long, Vector[Double]), b: (Long, Vector[Double])) =>
+  def computeDistanceMatrix(data: RDD[Array[Double]]): RDD[(Long, DenseVector[Double])] = computeDistanceMatrixPair(data.zipWithUniqueId.map(_.swap))
+
+  def computeDistanceMatrixPair(data: RDD[(Long, Array[Double])]): RDD[(Long, DenseVector[Double])] = data.cartesian(data).flatMap {
+    case (a: (Long, Array[Double]), b: (Long, Array[Double])) =>
       if (a._1 != b._1) // Do not compute distance to self
-        Some(a._1, euclideanDistance(a._2, b._2))
+        Some(a._1, euclDistance(a._2, b._2))
       else
         None
   }.combineByKey(
@@ -63,23 +67,10 @@ object StocasticOutlierDetection {
       (c1: List[Double], v1: Double) => c1 :+ v1,
       (c1: List[Double], c2: List[Double]) => c1 ++ c2
     ).map {
-    case (a, b) => (a, new DenseVector(b.toArray[Double]).toVector)
+    case (a, b) => (a, new DenseVector(b.toArray))
   }
 
-  def computeOutlierProbability(rows: RDD[(Long, Vector[Double])]): RDD[(Long, Double)] =
+  def computeOutlierProbability(rows: RDD[(Long, DenseVector[Double])]): RDD[(Long, Double)] =
     rows.flatMap(r => r._2.toArray.zipWithIndex.map(p => (p._2 + (if (p._2 >= r._1) 1L else 0L), p._1))).foldByKey(1.0)((a, b) => a * (1.0 - b))
 
-
-  def run(data: RDD[Vector[Double]], perplexity: Double = 30) = {
-    // Perplexity cannot be larger than n-1
-    val finalPerplexity = Math.min(data.count() - 1, perplexity)
-
-    val dMatrix = computeDistanceMatrix(data)
-    val aMatrix = computeAfinity(dMatrix, finalPerplexity)
-    val bMatrix = computeBindingProbabilities(aMatrix)
-    val oMatrix = computeOutlierProbability(bMatrix)
-
-    // Do a distributed sort, and then collect to driver
-    oMatrix
-  }
 }

@@ -1,16 +1,16 @@
 package com.quintor
 
-import java.util.{Calendar, Properties}
+import java.util.{Calendar, HashMap}
 
-import breeze.linalg.DenseVector
-import com.quintor.serializer.ArrayDoubleDecoder
-import kafka.producer.{KeyedMessage, Producer, ProducerConfig}
-import kafka.serializer.StringDecoder
+import kafka.serializer.{DefaultDecoder, StringDecoder}
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
+import org.apache.kafka.common.serialization.ByteArraySerializer
 import org.apache.spark.mllib.outlier.StocasticOutlierDetection
 import org.apache.spark.streaming.kafka.{KafkaUtils, OffsetRange}
 import org.apache.spark.{SparkConf, SparkContext}
 
+import scala.pickling.Defaults._
+import scala.pickling.binary._
 import scala.util.Random
 
 /**
@@ -22,13 +22,13 @@ trait EvaluateOutlierDetection {
 
   def sparkMaster: String
 
-  def configKafka: Properties
+  def configKafka: HashMap[String, Object]
 
   def configSpark: Map[String, String]
 
   def nameApp: String
 
-  def nameTopic: String
+  def nameTopic: String = "OutlierObservations"
 
   def generateNormalVector: Array[Double] = {
     val rnd = new Random()
@@ -36,11 +36,17 @@ trait EvaluateOutlierDetection {
   }
 
   def populateKafka(n: Int): Unit = {
-    val producer = new KafkaProducer[String, Array[Double]](configKafka)
-    (1 to n).foreach(pos => producer.send(new ProducerRecord(nameTopic, generateNormalVector)))
+    val producer = new KafkaProducer[String, Array[Byte]](
+      configKafka,
+      new org.apache.kafka.common.serialization.StringSerializer,
+      new ByteArraySerializer)
+    (1 to n).foreach(pos => producer.send(new ProducerRecord(nameTopic, generateNormalVector.pickle.value)))
+
+    // Producer is not needed anymore, please close prevent leaking resources
+    producer.close()
   }
 
-  def performOutlierDetection(n: Int): Unit = {
+  def performOutlierDetection(n: Int, filename: String = "/tmp/results/test.txt"): Unit = {
 
     val conf = new SparkConf().setAppName(nameApp).setMaster(sparkMaster)
     val sc = new SparkContext(conf)
@@ -49,18 +55,35 @@ trait EvaluateOutlierDetection {
       OffsetRange.create(nameTopic, 0, 0, n)
     )
 
-    val rdd = KafkaUtils.createRDD[String, Array[Double], StringDecoder, ArrayDoubleDecoder](sc, configSpark, offsetRanges)
+    val rdd = KafkaUtils.createRDD[String, Array[Byte], StringDecoder, DefaultDecoder](sc, configSpark, offsetRanges)
+
+    rdd.checkpoint
+
+    val finalPerplexity = 30
 
     // Start recording.
     val now = System.nanoTime
 
-    val output = StocasticOutlierDetection.run(rdd.map(record => new DenseVector[Double](record._2).toVector))
-    val outcol = output.collect
+    val dMatrix = StocasticOutlierDetection.computeDistanceMatrix(rdd.map(record => record._2.unpickle[Array[Double]]))
 
-    val micros = (System.nanoTime - now) / 1000
+    val step1 = (System.nanoTime - now) / 1000
 
-    val fw = new java.io.FileWriter("/tmp/test.txt", true)
-    fw.write(Calendar.getInstance().getTime() + "," + outcol.length + "," + micros + LS + output.toDebugString + LS + LS + LS + LS)
+    val aMatrix = StocasticOutlierDetection.computeAfinity(dMatrix, finalPerplexity)
+
+    val step2 = (System.nanoTime - now) / 1000
+
+    val bMatrix = StocasticOutlierDetection.computeBindingProbabilities(aMatrix)
+
+    val step3 = (System.nanoTime - now) / 1000
+
+    val oMatrix = StocasticOutlierDetection.computeOutlierProbability(bMatrix)
+
+    val step4 = (System.nanoTime - now) / 1000
+
+    val outcol = oMatrix.collect
+
+    val fw = new java.io.FileWriter(filename, true)
+    fw.write(outcol.length + "," + Calendar.getInstance().getTime() + "," + outcol.length + "," + step1 + "," + step2 + "," + step3 + "," + step4 + LS)
     fw.close()
   }
 }

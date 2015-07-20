@@ -1,6 +1,6 @@
 master:
   image: gettyimages/spark
-  command: /usr/spark/bin/spark-class org.apache.spark.deploy.master.Master -h master
+  command: /usr/spark/bin/spark-class org.apache.spark.deploy.master.Master -h dockerhost.summercamp.local
   hostname: dockerhost.summercamp.local
   environment:
     SPARK_CONF_DIR: /conf
@@ -21,6 +21,8 @@ master:
   volumes:
     - ./conf/master:/conf
     - ./target/scala-2.10/:/tasks
+  extra_hosts:
+   - "dockerhost.summercamp.local:192.168.192.134"
 
 task:
   build: .
@@ -33,10 +35,12 @@ task:
     ADDR_KAFKA: "dockerhost.summercamp.local:9092"
   volumes:
     - ./results:/tmp/results
+  extra_hosts:
+   - "dockerhost.summercamp.local:192.168.192.134"
 
 worker:
   image: gettyimages/spark
-  command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
+  command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://dockerhost.summercamp.local:7077
   hostname: worker
   environment:
     SPARK_CONF_DIR: /conf
@@ -57,6 +61,8 @@ worker:
     - 8081
   volumes:
     - ./conf/worker:/conf
+  extra_hosts:
+   - "dockerhost.summercamp.local:192.168.192.134"
 
 kafka:
   image: wurstmeister/kafka
@@ -67,14 +73,19 @@ kafka:
   links:
     - zookeeper:zk
   environment:
-    KAFKA_ADVERTISED_HOST_NAME: 10.5.2.41
+    KAFKA_ADVERTISED_HOST_NAME: 192.168.192.134
     KAFKA_ZOOKEEPER_CONNECT: zk:2181
+    KAFKA_CREATE_TOPICS: "OutlierObservations:1:1"
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
+  extra_hosts:
+   - "dockerhost.summercamp.local:192.168.192.134"
 
 zookeeper:
   image: wurstmeister/zookeeper
   ports: 
-    - 2181
+    - 2181:2181
   expose:
     - 2181
+  extra_hosts:
+   - "dockerhost.summercamp.local:192.168.192.134"

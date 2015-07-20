@@ -1,19 +1,17 @@
 package com.quintor
 
-import java.util.{Properties, UUID}
+import java.util
+
+import org.apache.kafka.clients.producer.ProducerConfig
 
 /**
  * Created by Fokko on 26-6-15.
  */
 object EvaluateOutlierDetectionDistributed extends EvaluateOutlierDetection {
-  override def configKafka: Properties = {
-    val props = new Properties()
+  override def configKafka: util.HashMap[String, Object] = {
+    val props = new util.HashMap[String, Object]()
 
-    props.put("client.id", UUID.randomUUID().toString)
-    props.put("metadata.broker.list", sys.env("ADDR_KAFKA"))
-    props.put("bootstrap.servers", sys.env("ADDR_KAFKA"))
-    props.put("serializer.class", "com.quintor.serializer.ArrayDoubleEncoder")
-    props.put("key.serializer.class", "kafka.serializer.StringEncoder")
+    props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, sys.env("ADDR_KAFKA"))
 
     props
   }
@@ -24,8 +22,6 @@ object EvaluateOutlierDetectionDistributed extends EvaluateOutlierDetection {
 
   override def sparkMaster: String = sys.env("ADDR_SPARK")
 
-  override def nameTopic: String = UUID.randomUUID().toString
-
   override def nameApp: String = this.getClass.getSimpleName
 
   def main(args: Array[String]) {
@@ -35,11 +31,11 @@ object EvaluateOutlierDetectionDistributed extends EvaluateOutlierDetection {
     populateKafka(n)
     System.out.println("Done")
 
-    // Wait 5 seconds to flush Kafka.
+    // Wait 5 seconds to let Kafka flush.
     Thread.sleep(5000)
 
     System.out.println("Applying outlier detection")
-    performOutlierDetection(n)
+    performOutlierDetection(n, args(1))
     System.out.println("Done")
   }
 
