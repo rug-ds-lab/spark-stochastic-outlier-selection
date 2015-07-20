@@ -83,7 +83,7 @@ trait EvaluateOutlierDetection {
     val outcol = oMatrix.collect
 
     val fw = new java.io.FileWriter(filename, true)
-    fw.write(outcol.length + "," + Calendar.getInstance().getTime() + "," + step1 + "," + step2 + "," + step3 + "," + step4 + LScd Des)
+    fw.write(outcol.length + "," + Calendar.getInstance().getTime() + "," + step1 + "," + step2 + "," + step3 + "," + step4 + LS)
     fw.close()
   }
 }
