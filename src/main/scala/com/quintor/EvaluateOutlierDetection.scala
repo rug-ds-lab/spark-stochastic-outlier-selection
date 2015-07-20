@@ -47,7 +47,7 @@ trait EvaluateOutlierDetection {
     producer.close()
   }
 
-  def performOutlierDetection(n: Int): Unit = {
+  def performOutlierDetection(n: Int, filename: String = "/tmp/results/test.txt"): Unit = {
 
     val conf = new SparkConf().setAppName(nameApp).setMaster(sparkMaster)
     val sc = new SparkContext(conf)
@@ -66,24 +66,24 @@ trait EvaluateOutlierDetection {
 
     val dMatrix = StocasticOutlierDetection.computeDistanceMatrix(rdd.map(record => new DenseVector[Double](record._2.unpickle[Array[Double]]).toVector))
 
-    val step1 = (System.nanoTime - now) / 1000;
+    val step1 = (System.nanoTime - now) / 1000
 
     val aMatrix = StocasticOutlierDetection.computeAfinity(dMatrix, finalPerplexity)
 
-    val step2 = (System.nanoTime - now) / 1000;
+    val step2 = (System.nanoTime - now) / 1000
 
     val bMatrix = StocasticOutlierDetection.computeBindingProbabilities(aMatrix)
 
-    val step3 = (System.nanoTime - now) / 1000;
+    val step3 = (System.nanoTime - now) / 1000
 
     val oMatrix = StocasticOutlierDetection.computeOutlierProbability(bMatrix)
 
-    val step4 = (System.nanoTime - now) / 1000;
+    val step4 = (System.nanoTime - now) / 1000
 
     val outcol = oMatrix.collect
 
-    val fw = new java.io.FileWriter("/tmp/results/test.txt", true)
-    fw.write(Calendar.getInstance().getTime() + "," + step2 + "," + step3 + "," + step4 + "," + outcol.length + "," + LS + oMatrix.toDebugString + LS + LS + LS + LS)
+    val fw = new java.io.FileWriter(filename, true)
+    fw.write(outcol.length + "," + Calendar.getInstance().getTime() + "," + step1 + "," + step2 + "," + step3 + "," + step4)
     fw.close()
   }
 }

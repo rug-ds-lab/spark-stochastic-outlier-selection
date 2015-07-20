@@ -38,7 +38,7 @@ object EvaluateOutlierDetectionDistributed extends EvaluateOutlierDetection {
     Thread.sleep(5000)
 
     System.out.println("Applying outlier detection")
-    performOutlierDetection(n)
+    performOutlierDetection(n, args(1))
     System.out.println("Done")
   }
 
