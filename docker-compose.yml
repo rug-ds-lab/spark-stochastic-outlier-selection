@@ -1,7 +1,7 @@
 master:
   image: gettyimages/spark
-  command: /usr/spark/bin/spark-class org.apache.spark.deploy.master.Master -h dockerhost.summercamp.local
-  hostname: dockerhost.summercamp.local
+  command: /usr/spark/bin/spark-class org.apache.spark.deploy.master.Master -h master
+  hostname: master
   environment:
     SPARK_CONF_DIR: /conf
   expose:
@@ -21,27 +21,21 @@ master:
   volumes:
     - ./conf/master:/conf
     - ./target/scala-2.10/:/tasks
-  extra_hosts:
-   - "dockerhost.summercamp.local:192.168.0.100"
 
 task:
-  image: fokkodriesprong/outlierdetection
-  command: /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar 1000 /tmp/results/output.txt
+  image: gettyimages/spark
+  command: /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed --master spark://master:7077 /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar 1000 /tmp/results/output.txt
   links:
     - master
     - kafka
-  environment:
-    ADDR_SPARK: "spark://dockerhost.summercamp.local:7077"
-    ADDR_KAFKA: "dockerhost.summercamp.local:9092"
+    - zookeeper
   volumes:
     - ./results:/tmp/results
-  extra_hosts:
-   - "dockerhost.summercamp.local:192.168.0.100"
+    - ./target/scala-2.10/:/tmp/app/target/scala-2.10/
 
 worker:
   image: gettyimages/spark
-  command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://dockerhost.summercamp.local:7077
-  hostname: worker
+  command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
   environment:
     SPARK_CONF_DIR: /conf
     SPARK_WORKER_CORES: 1
@@ -61,25 +55,21 @@ worker:
     - 8081
   volumes:
     - ./conf/worker:/conf
-  extra_hosts:
-   - "dockerhost.summercamp.local:192.168.0.100"
 
 kafka:
   image: wurstmeister/kafka
   ports:
-    - 9092:9092 
+    - 9092
   expose:
     - 9092
   links:
-    - zookeeper:zk
+    - zookeeper
   environment:
-    KAFKA_ADVERTISED_HOST_NAME: 192.168.0.100
-    KAFKA_ZOOKEEPER_CONNECT: zk:2181
-    KAFKA_CREATE_TOPICS: "OutlierObservations:1:1"
+    KAFKA_ADVERTISED_HOST_NAME: 172.17.42.1
+    KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    KAFKA_CREATE_TOPICS: "OutlierObservations:${num}:1"
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
-  extra_hosts:
-   - "dockerhost.summercamp.local:192.168.0.100"
 
 zookeeper:
   image: wurstmeister/zookeeper
@@ -87,5 +77,3 @@ zookeeper:
     - 2181:2181
   expose:
     - 2181
-  extra_hosts:
-   - "dockerhost.summercamp.local:192.168.0.100"

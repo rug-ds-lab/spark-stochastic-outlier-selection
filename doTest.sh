@@ -1,16 +1,14 @@
 #!/bin/sh
 
-a=1
+a=2
 
+sbt assembly
 
 while [ $a -lt 11 ]
 do
    docker-compose kill
    docker-compose rm -f
-   docker-compose up -d master zookeeper worker
-   docker-compose up -d -e KAFKA_CREATE_TOPICS=OutlierObservations:$a:1 kafka
-   docker-compose scale kafka=$a
-   docker-compose scale worker=$a
+   docker-compose scale master=1 zookeeper=1 kafka=$a worker=$a
 
    sec=`expr $a \* 5`
    sleep $sec
