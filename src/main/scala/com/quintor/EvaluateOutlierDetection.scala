@@ -2,7 +2,6 @@ package com.quintor
 
 import java.util.{Calendar, HashMap}
 
-import breeze.linalg.DenseVector
 import kafka.serializer.{DefaultDecoder, StringDecoder}
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 import org.apache.kafka.common.serialization.ByteArraySerializer
@@ -43,7 +42,7 @@ trait EvaluateOutlierDetection {
       new ByteArraySerializer)
     (1 to n).foreach(pos => producer.send(new ProducerRecord(nameTopic, generateNormalVector.pickle.value)))
 
-    // Producer is not needed anymore, please close it te perserve resources
+    // Producer is not needed anymore, please close prevent leaking resources
     producer.close()
   }
 
@@ -60,11 +59,10 @@ trait EvaluateOutlierDetection {
 
     val finalPerplexity = 30
 
-
     // Start recording.
     val now = System.nanoTime
 
-    val dMatrix = StocasticOutlierDetection.computeDistanceMatrix(rdd.map(record => new DenseVector[Double](record._2.unpickle[Array[Double]]).toVector))
+    val dMatrix = StocasticOutlierDetection.computeDistanceMatrix(rdd.map(record => record._2.unpickle[Array[Double]]))
 
     val step1 = (System.nanoTime - now) / 1000
 
@@ -83,7 +81,7 @@ trait EvaluateOutlierDetection {
     val outcol = oMatrix.collect
 
     val fw = new java.io.FileWriter(filename, true)
-    fw.write(outcol.length + "," + Calendar.getInstance().getTime() + "," + step1 + "," + step2 + "," + step3 + "," + step4 + LS)
+    fw.write(outcol.length + "," + Calendar.getInstance().getTime() + "," + outcol.length + "," + step1 + "," + step2 + "," + step3 + "," + step4 + LS)
     fw.close()
   }
 }
