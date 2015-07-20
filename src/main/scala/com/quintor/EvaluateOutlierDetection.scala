@@ -40,20 +40,20 @@ trait EvaluateOutlierDetection {
       configKafka,
       new org.apache.kafka.common.serialization.StringSerializer,
       new ByteArraySerializer)
+
     (1 to n).foreach(pos => producer.send(new ProducerRecord(nameTopic, generateNormalVector.pickle.value)))
 
     // Producer is not needed anymore, please close prevent leaking resources
     producer.close()
   }
 
-  def performOutlierDetection(n: Int, filename: String = "/tmp/results/test.txt"): Unit = {
+  def performOutlierDetection(n: Int, paritions: Int = 1, filename: String = "/tmp/results/test.txt"): Unit = {
 
     val conf = new SparkConf().setAppName(nameApp).setMaster(sparkMaster)
     val sc = new SparkContext(conf)
 
-    val offsetRanges = Array[OffsetRange](
-      OffsetRange.create(nameTopic, 0, 0, n)
-    )
+    // Create the paritions
+    val offsetRanges = (0 until n).map( OffsetRange.create(nameTopic, _, 0, n) ).toArray
 
     val rdd = KafkaUtils.createRDD[String, Array[Byte], StringDecoder, DefaultDecoder](sc, configSpark, offsetRanges)
 
