@@ -57,8 +57,6 @@ trait EvaluateOutlierDetection {
 
     val rdd = KafkaUtils.createRDD[String, Array[Byte], StringDecoder, DefaultDecoder](sc, configSpark, offsetRanges)
 
-    rdd.checkpoint
-
     val finalPerplexity = 30
 
     // Start recording.

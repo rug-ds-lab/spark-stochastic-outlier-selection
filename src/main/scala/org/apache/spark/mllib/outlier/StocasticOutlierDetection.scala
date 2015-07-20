@@ -56,19 +56,23 @@ object StocasticOutlierDetection {
 
   def computeDistanceMatrix(data: RDD[Array[Double]]): RDD[(Long, DenseVector[Double])] = computeDistanceMatrixPair(data.zipWithUniqueId.map(_.swap))
 
-  def computeDistanceMatrixPair(data: RDD[(Long, Array[Double])]): RDD[(Long, DenseVector[Double])] = data.cartesian(data).flatMap {
-    case (a: (Long, Array[Double]), b: (Long, Array[Double])) =>
-      if (a._1 != b._1) // Do not compute distance to self
-        Some(a._1, euclDistance(a._2, b._2))
-      else
-        None
-  }.combineByKey(
-      (v1) => List(v1),
-      (c1: List[Double], v1: Double) => c1 :+ v1,
-      (c1: List[Double], c2: List[Double]) => c1 ++ c2
-    ).map {
-    case (a, b) => (a, new DenseVector(b.toArray))
+  def computeDistanceMatrixPair(data: RDD[(Long, Array[Double])]): RDD[(Long, DenseVector[Double])] = {
+    val dataCached = data.cache
+    dataCached.cartesian(dataCached).flatMap {
+      case (a: (Long, Array[Double]), b: (Long, Array[Double])) =>
+        if (a._1 != b._1) // Do not compute distance to self
+          Some(a._1, euclDistance(a._2, b._2))
+        else
+          None
+    }.combineByKey(
+        (v1) => List(v1),
+        (c1: List[Double], v1: Double) => c1 :+ v1,
+        (c1: List[Double], c2: List[Double]) => c1 ++ c2
+      ).map {
+      case (a, b) => (a, new DenseVector(b.toArray))
+    }
   }
+
 
   def computeOutlierProbability(rows: RDD[(Long, DenseVector[Double])]): RDD[(Long, Double)] =
     rows.flatMap(r => r._2.toArray.zipWithIndex.map(p => (p._2 + (if (p._2 >= r._1) 1L else 0L), p._1))).foldByKey(1.0)((a, b) => a * (1.0 - b))
