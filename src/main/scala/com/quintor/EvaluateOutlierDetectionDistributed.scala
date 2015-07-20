@@ -12,9 +12,6 @@ object EvaluateOutlierDetectionDistributed extends EvaluateOutlierDetection {
     val props = new util.HashMap[String, Object]()
 
     props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, sys.env("ADDR_KAFKA"))
-    props.put(ProducerConfig.COMPRESSION_TYPE_CONFIG, "none")
-    props.put(ProducerConfig.BATCH_SIZE_CONFIG, "200");
-    props.put(ProducerConfig.BLOCK_ON_BUFFER_FULL_CONFIG, "true")
 
     props
   }

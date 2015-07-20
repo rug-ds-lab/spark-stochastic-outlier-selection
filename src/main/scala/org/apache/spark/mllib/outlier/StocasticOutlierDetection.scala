@@ -11,7 +11,9 @@ import scala.language.implicitConversions
  */
 object StocasticOutlierDetection {
   val tolerance: Double = 0.0
-  val maxIterations: Int = 50
+  val maxIterations: Int = 500
+
+  val DEFAULT_PERPLEXITY = 30
 
   def binarySearch(affinity: DenseVector[Double],
                    logPerplexity: Double,
@@ -43,7 +45,7 @@ object StocasticOutlierDetection {
       newAffinity
   }
 
-  def computeAfinity(dMatrix: RDD[(Long, DenseVector[Double])], perplexity: Double): RDD[(Long, DenseVector[Double])] = {
+  def computeAfinity(dMatrix: RDD[(Long, DenseVector[Double])], perplexity: Double = DEFAULT_PERPLEXITY): RDD[(Long, DenseVector[Double])] = {
     val logPerplexity = Math.log(perplexity)
     dMatrix.map(r => (r._1, binarySearch(r._2, logPerplexity)))
   }
