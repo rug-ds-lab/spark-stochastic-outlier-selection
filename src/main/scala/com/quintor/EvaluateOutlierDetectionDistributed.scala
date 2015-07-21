@@ -49,7 +49,7 @@ object EvaluateOutlierDetectionDistributed {
       new org.apache.kafka.common.serialization.StringSerializer,
       new ByteArraySerializer)
 
-    (1 to n).foreach(pos => producer.send(new ProducerRecord(nameTopic, generateNormalVector.pickle.value)))
+    (1 to (n+partitions)).foreach(pos => producer.send(new ProducerRecord(nameTopic, generateNormalVector.pickle.value)))
 
     // Producer is not needed anymore, please close prevent leaking resources
     producer.close()
