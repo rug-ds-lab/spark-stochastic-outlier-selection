@@ -23,7 +23,7 @@ master:
     - ./target/scala-2.10/:/tasks
 
 task:
-  image: gettyimages/spark
+  image: fokkodriesprong/outlierdetection
   command: /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed --master spark://master:7077 /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar 1000 /tmp/results/output.txt
   links:
     - master
@@ -31,7 +31,6 @@ task:
     - zookeeper
   volumes:
     - ./results:/tmp/results
-    - ./target/scala-2.10/:/tmp/app/target/scala-2.10/
 
 worker:
   image: gettyimages/spark
@@ -65,7 +64,7 @@ kafka:
   links:
     - zookeeper
   environment:
-    KAFKA_ADVERTISED_HOST_NAME: 10.0.4.189
+    KAFKA_ADVERTISED_HOST_NAME: 10.5.2.41
     KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
