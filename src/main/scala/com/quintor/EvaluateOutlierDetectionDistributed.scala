@@ -38,7 +38,7 @@ object EvaluateOutlierDetectionDistributed {
 
     val configKafka = new util.HashMap[String, Object]()
     configKafka.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaServer)
-    configKafka.put(ProducerConfig.ACKS_CONFIG, "1")
+    configKafka.put(ProducerConfig.ACKS_CONFIG, "all")
 
     val configSpark = Map("metadata.broker.list" -> kafkaServer)
 
@@ -49,7 +49,7 @@ object EvaluateOutlierDetectionDistributed {
       new org.apache.kafka.common.serialization.StringSerializer,
       new ByteArraySerializer)
 
-    (1 to n).foreach(pos => producer.send(new ProducerRecord(nameTopic, generateNormalVector.pickle.value)))
+    (1 to (n+partitions)).foreach(pos => producer.send(new ProducerRecord(nameTopic, generateNormalVector.pickle.value)))
 
     // Producer is not needed anymore, please close prevent leaking resources
     producer.close()
@@ -65,9 +65,9 @@ object EvaluateOutlierDetectionDistributed {
     val sc = new SparkContext(conf)
 
     // Create the partitions
-    val rest = n - (Math.floor(n.toDouble / partitions.toDouble)*partitions.toDouble)
+    val rest = n - (Math.floor(n.toDouble / partitions.toDouble) * partitions.toDouble)
     val offsetRanges = (0 until partitions).map(partition =>
-      if(partition < rest)
+      if (partition < rest)
         OffsetRange.create(nameTopic, partition, 0, Math.ceil(n.toDouble / partitions.toDouble).toLong)
       else
         OffsetRange.create(nameTopic, partition, 0, Math.floor(n.toDouble / partitions.toDouble).toLong)
@@ -99,7 +99,7 @@ object EvaluateOutlierDetectionDistributed {
     val outcol = oMatrix.collect
 
     val fw = new java.io.FileWriter(outputFile, true)
-    fw.write(outcol.length + "," + Calendar.getInstance().getTime() + "," + partitions + "," + outcol.length + "," + step1 + "," + step2 + "," + step3 + "," + step4 + LS)
+    fw.write(Calendar.getInstance().getTime() + "," + partitions + "," + outcol.length + "," + step1 + "," + step2 + "," + step3 + "," + step4 + LS)
     fw.close()
 
     System.out.println("Done")
