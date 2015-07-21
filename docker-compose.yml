@@ -1,7 +1,7 @@
 master:
   image: gettyimages/spark
-  command: /usr/spark/bin/spark-class org.apache.spark.deploy.master.Master -h dockerhost.summercamp.local
-  hostname: dockerhost.summercamp.local
+  command: /usr/spark/bin/spark-class org.apache.spark.deploy.master.Master -h master
+  hostname: master
   environment:
     SPARK_CONF_DIR: /conf
   expose:
@@ -23,21 +23,19 @@ master:
     - ./target/scala-2.10/:/tasks
 
 task:
-  image: fokkodriesprong/outlierdetection
-  command: /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar 1000
+  image: gettyimages/spark
+  command: /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed --master spark://master:7077 /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar 1000 /tmp/results/output.txt
   links:
     - master
     - kafka
-  environment:
-    ADDR_SPARK: "spark://dockerhost.summercamp.local:7077"
-    ADDR_KAFKA: "dockerhost.summercamp.local:9092"
+    - zookeeper
   volumes:
     - ./results:/tmp/results
+    - ./target/scala-2.10/:/tmp/app/target/scala-2.10/
 
 worker:
   image: gettyimages/spark
-  command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://dockerhost.summercamp.local:7077
-  hostname: worker
+  command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
   environment:
     SPARK_CONF_DIR: /conf
     SPARK_WORKER_CORES: 1
@@ -61,15 +59,14 @@ worker:
 kafka:
   image: wurstmeister/kafka
   ports:
-    - 9092:9092 
+    - 9092
   expose:
     - 9092
   links:
-    - zookeeper:zk
+    - zookeeper
   environment:
     KAFKA_ADVERTISED_HOST_NAME: dockerhost.summercamp.local
     KAFKA_ZOOKEEPER_CONNECT: zk:2181
-    KAFKA_CREATE_TOPICS: "OutlierObservations:1:1"
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
 
