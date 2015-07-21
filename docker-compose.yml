@@ -24,7 +24,7 @@ master:
 
 task:
   image: gettyimages/spark
-  command: /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed --master spark://master:7077 /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar 1000 /tmp/results/output.txt
+  command: /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed --master spark://master:7077 /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar 1000 1 OutlierObservations /tmp/results/memoryser2.txt
   links:
     - master
     - kafka
@@ -35,11 +35,11 @@ task:
 
 worker:
   image: gettyimages/spark
-  command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker
+  command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
   environment:
     SPARK_CONF_DIR: /conf
-    SPARK_WORKER_CORES: 2
-    SPARK_WORKER_MEMORY: 6g
+#    SPARK_WORKER_CORES: 2
+#    SPARK_WORKER_MEMORY: 6g
     SPARK_WORKER_PORT: 8881
     SPARK_WORKER_WEBUI_PORT: 8081
   links:
@@ -65,7 +65,7 @@ kafka:
   links:
     - zookeeper
   environment:
-    KAFKA_ADVERTISED_HOST_NAME: 10.0.4.189
+    KAFKA_ADVERTISED_HOST_NAME: 192.168.192.134
     KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
