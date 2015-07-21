@@ -63,6 +63,7 @@ object EvaluateOutlierDetectionDistributed {
 
     val conf = new SparkConf().setAppName("OutlierDetection").setMaster("spark://master:7077")
     val sc = new SparkContext(conf)
+    
     // Create the partitions
     val offsetRanges = (0 until partitions).map(partition =>
       if(partition < (Math.floor(n / partitions)*partitions))
