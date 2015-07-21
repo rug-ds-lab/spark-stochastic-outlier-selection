@@ -38,7 +38,7 @@ object EvaluateOutlierDetectionDistributed {
 
     val configKafka = new util.HashMap[String, Object]()
     configKafka.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaServer)
-    configKafka.put(ProducerConfig.ACKS_CONFIG, "1")
+    configKafka.put(ProducerConfig.ACKS_CONFIG, "all")
 
     val configSpark = Map("metadata.broker.list" -> kafkaServer)
 
@@ -65,9 +65,9 @@ object EvaluateOutlierDetectionDistributed {
     val sc = new SparkContext(conf)
 
     // Create the partitions
-    val rest = n - (Math.floor(n.toDouble / partitions.toDouble)*partitions.toDouble)
+    val rest = n - (Math.floor(n.toDouble / partitions.toDouble) * partitions.toDouble)
     val offsetRanges = (0 until partitions).map(partition =>
-      if(partition < rest)
+      if (partition < rest)
         OffsetRange.create(nameTopic, partition, 0, Math.ceil(n.toDouble / partitions.toDouble).toLong)
       else
         OffsetRange.create(nameTopic, partition, 0, Math.floor(n.toDouble / partitions.toDouble).toLong)
