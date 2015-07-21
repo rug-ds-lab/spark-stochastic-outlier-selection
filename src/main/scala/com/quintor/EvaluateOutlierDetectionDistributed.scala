@@ -99,7 +99,7 @@ object EvaluateOutlierDetectionDistributed {
     val outcol = oMatrix.collect
 
     val fw = new java.io.FileWriter(outputFile, true)
-    fw.write(outcol.length + "," + Calendar.getInstance().getTime() + "," + partitions + "," + outcol.length + "," + step1 + "," + step2 + "," + step3 + "," + step4 + LS)
+    fw.write(Calendar.getInstance().getTime() + "," + partitions + "," + outcol.length + "," + step1 + "," + step2 + "," + step3 + "," + step4 + LS)
     fw.close()
 
     System.out.println("Done")
