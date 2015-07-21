@@ -63,13 +63,12 @@ object EvaluateOutlierDetectionDistributed {
 
     val conf = new SparkConf().setAppName("OutlierDetection").setMaster("spark://master:7077")
     val sc = new SparkContext(conf)
-
     // Create the partitions
     val offsetRanges = (0 until partitions).map(partition =>
-      if(partition < n - Math.floor(n / partitions))
-        OffsetRange.create(nameTopic, partition, 0, Math.ceil(n / partitions).toLong)
+      if(partition < (Math.floor(n / partitions)*partitions))
+        OffsetRange.create(nameTopic, partition, 0, Math.ceil(n.toDouble / partitions.toDouble).toLong)
       else
-        OffsetRange.create(nameTopic, partition, 0, Math.floor(n / partitions).toLong)
+        OffsetRange.create(nameTopic, partition, 0, Math.floor(n.toDouble / partitions.toDouble).toLong)
     ).toArray
 
     val rdd = KafkaUtils.createRDD[String, Array[Byte], StringDecoder, DefaultDecoder](sc, configSpark, offsetRanges)
