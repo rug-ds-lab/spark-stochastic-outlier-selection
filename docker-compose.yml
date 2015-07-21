@@ -38,8 +38,8 @@ worker:
   command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
   environment:
     SPARK_CONF_DIR: /conf
-    SPARK_WORKER_CORES: 1
-    SPARK_WORKER_MEMORY: 2g
+    SPARK_WORKER_CORES: 2
+    SPARK_WORKER_MEMORY: 6g
     SPARK_WORKER_PORT: 8881
     SPARK_WORKER_WEBUI_PORT: 8081
   links:
