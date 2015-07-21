@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1b72c34e-1547-4145-9838-133d07f7fbd7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetection.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetection.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetectionDistributed.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetectionDistributed.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/org/apache/spark/mllib/outlier/StocasticOutlierDetection.scala" afterPath="$PROJECT_DIR$/src/main/scala/org/apache/spark/mllib/outlier/StocasticOutlierDetection.scala" />
     </list>
     <ignored path="QuintorSparkOutlier.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EvaluateOutlierDetection.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EvaluateOutlierDetection.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetection.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44745222" vertical-offset="763" max-vertical-offset="1710">
-              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="871" max-vertical-offset="1674">
+              <caret line="68" column="66" selection-start-line="68" selection-start-column="66" selection-end-line="68" selection-end-column="66" />
               <folding>
                 <element signature="e#21#57#0" expanded="true" />
               </folding>
@@ -77,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StocasticOutlierDetection.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StocasticOutlierDetection.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/mllib/outlier/StocasticOutlierDetection.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="61" max-vertical-offset="1476">
-              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+            <state vertical-scroll-proportion="-0.42993632" vertical-offset="540" max-vertical-offset="1476">
+              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
               <folding>
                 <element signature="e#40#79#0" expanded="true" />
               </folding>
@@ -138,8 +136,8 @@
         <option value="$PROJECT_DIR$/docker-compose-build.yml" />
         <option value="$PROJECT_DIR$/src/test/scala/org/apache/spark/mllib/outlier/StocasticOutlierDetectionTest.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetectionDistributed.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetection.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/org/apache/spark/mllib/outlier/StocasticOutlierDetection.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetection.scala" />
       </list>
     </option>
   </component>
@@ -1042,12 +1040,12 @@
       <workItem from="1437242949040" duration="18240000" />
       <workItem from="1437326168626" duration="1043000" />
       <workItem from="1437335745439" duration="869000" />
-      <workItem from="1437377457333" duration="5957000" />
+      <workItem from="1437377457333" duration="6654000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398695000" />
+    <option name="totallyTimeSpent" value="399392000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="308" width="1307" height="772" extended-state="6" />
@@ -1468,12 +1466,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/mllib/outlier/StocasticOutlierDetection.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetection.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="61" max-vertical-offset="1476">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="871" max-vertical-offset="1674">
+          <caret line="68" column="66" selection-start-line="68" selection-start-column="66" selection-end-line="68" selection-end-column="66" />
           <folding>
-            <element signature="e#40#79#0" expanded="true" />
+            <element signature="e#21#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1486,12 +1484,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/quintor/EvaluateOutlierDetection.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/org/apache/spark/mllib/outlier/StocasticOutlierDetection.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44745222" vertical-offset="763" max-vertical-offset="1710">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.42993632" vertical-offset="540" max-vertical-offset="1476">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
           <folding>
-            <element signature="e#21#57#0" expanded="true" />
+            <element signature="e#40#79#0" expanded="true" />
           </folding>
         </state>
       </provider>

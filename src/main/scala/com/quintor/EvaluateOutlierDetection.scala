@@ -59,8 +59,6 @@ trait EvaluateOutlierDetection {
 
     rdd.checkpoint
 
-    val finalPerplexity = 30
-
     // Start recording.
     val now = System.nanoTime
 
@@ -68,7 +66,7 @@ trait EvaluateOutlierDetection {
 
     val step1 = (System.nanoTime - now) / 1000
 
-    val aMatrix = StocasticOutlierDetection.computeAfinity(dMatrix, finalPerplexity)
+    val aMatrix = StocasticOutlierDetection.computeAfinity(dMatrix)
 
     val step2 = (System.nanoTime - now) / 1000
 
