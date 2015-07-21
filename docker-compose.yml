@@ -35,7 +35,7 @@ task:
 
 worker:
   image: gettyimages/spark
-  command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
+  command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker
   environment:
     SPARK_CONF_DIR: /conf
     SPARK_WORKER_CORES: 2
