@@ -38,6 +38,7 @@ object EvaluateOutlierDetectionDistributed {
 
     val configKafka = new util.HashMap[String, Object]()
     configKafka.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaServer)
+    configKafka.put(ProducerConfig.ACKS_CONFIG, "1")
 
     val configSpark = Map("metadata.broker.list" -> kafkaServer)
 
@@ -48,7 +49,7 @@ object EvaluateOutlierDetectionDistributed {
       new org.apache.kafka.common.serialization.StringSerializer,
       new ByteArraySerializer)
 
-    (1 to n).foreach(pos =>      producer.send(new ProducerRecord(nameTopic, generateNormalVector.pickle.value)))
+    (1 to n).foreach(pos => producer.send(new ProducerRecord(nameTopic, generateNormalVector.pickle.value)))
 
     // Producer is not needed anymore, please close prevent leaking resources
     producer.close()
@@ -64,7 +65,12 @@ object EvaluateOutlierDetectionDistributed {
     val sc = new SparkContext(conf)
 
     // Create the partitions
-    val offsetRanges = (0 until partitions).map(OffsetRange.create(nameTopic, _, 0, n)).toArray
+    val offsetRanges = (0 until partitions).map(partition =>
+      if(partition < n - Math.floor(n / partitions))
+        OffsetRange.create(nameTopic, partition, 0, Math.ceil(n / partitions).toLong)
+      else
+        OffsetRange.create(nameTopic, partition, 0, Math.floor(n / partitions).toLong)
+    ).toArray
 
     val rdd = KafkaUtils.createRDD[String, Array[Byte], StringDecoder, DefaultDecoder](sc, configSpark, offsetRanges)
 
