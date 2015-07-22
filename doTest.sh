@@ -18,7 +18,7 @@ do
    		sleep $sec
 
 		docker-compose run kafka /opt/kafka_2.10-0.8.2.1/bin/kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partition $a --topic $topic
-		docker-compose run task /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed --executor-memory=6g --total-executor-cores 100 --master spark://master:7077 /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar 10000 $a $topic /tmp/results/final.txt
+		docker-compose run task /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar 10000 $a $topic /tmp/results/final.txt
 
 		a=`expr $a + 1`
 	done
