@@ -1,10 +1,8 @@
 package com.quintor
 
-import java.util
 import java.util.Calendar
 
 import kafka.serializer.{DefaultDecoder, StringDecoder}
-import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord}
 import org.apache.spark.mllib.outlier.StocasticOutlierDetection
 import org.apache.spark.streaming.kafka.{KafkaUtils, OffsetRange}
 import org.apache.spark.{SparkConf, SparkContext}
@@ -27,37 +25,13 @@ object EvaluateOutlierDetectionDistributed {
   }
 
   def main(args: Array[String]) {
-
     val n = Integer.parseInt(args(0))
     val partitions = Integer.parseInt(args(1))
-    val parititonsPerCpu = Integer.parseInt(args(2))
+    val partitionsPerCpu = Integer.parseInt(args(2))
     val nameTopic = args(3)
     val outputFile = args(4)
 
-    val kafkaServer = (1 to partitions).map("kafka_" + _ + ":9092").reduceLeft((a, b) => a + "," + b);
-
-    val configKafka = new util.HashMap[String, Object]()
-    configKafka.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaServer)
-    configKafka.put(ProducerConfig.ACKS_CONFIG, "all")
-
-    val configSpark = Map("metadata.broker.list" -> kafkaServer)
-
-    System.out.println("Populating Kafka: " + kafkaServer)
-
-    val producer = new KafkaProducer[String, Array[Double]](
-      configKafka,
-      new org.apache.kafka.common.serialization.StringSerializer,
-      new com.quintor.serializer.ArrayDoubleSerializer)
-
-    (1 to (n+partitions)).foreach(pos => producer.send(new ProducerRecord(nameTopic, generateNormalVector)))
-
-    // Producer is not needed anymore, please close prevent leaking resources
-    producer.close()
-
-    System.out.println("Done")
-
-    // Wait 5 seconds to let Kafka flush.
-    Thread.sleep(5000)
+    val configSpark = Map("metadata.broker.list" -> (1 to partitions).map("kafka_" + _ + ":9092").reduceLeft((a, b) => a + "," + b))
 
     System.out.println("Applying outlier detection")
 
@@ -74,11 +48,11 @@ object EvaluateOutlierDetectionDistributed {
     ).toArray
 
     val rdd = KafkaUtils.createRDD[String, Array[Byte], StringDecoder, DefaultDecoder](sc, configSpark, offsetRanges)
-    val rddPersisted = rdd.map(record => record._2.unpickle[Array[Double]]).repartition(partitions * parititonsPerCpu).persist()
+    val rddPersisted = rdd.map(record => record._2.unpickle[Array[Double]]).repartition(partitions * partitionsPerCpu).persist()
 
     System.out.println("Input partitions: " + rddPersisted.partitions.length)
 
-    // Start recording.
+    // Start recording
     val now = System.nanoTime
 
     val dMatrix = StocasticOutlierDetection.computeDistanceMatrix(rddPersisted)
