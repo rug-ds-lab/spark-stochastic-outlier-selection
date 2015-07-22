@@ -5,7 +5,7 @@ docker-compose rm -f
 
 docker-compose scale master=1 zookeeper=1 kafka=1 worker=1
 
-a=1
+a=8
 n=500
 
 while [ $a -lt 11 ]
