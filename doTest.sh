@@ -4,7 +4,6 @@
 a=1
 b=1
 
-
 while [ $b -lt 11 ]
 do
 	while [ $a -lt 11 ]
