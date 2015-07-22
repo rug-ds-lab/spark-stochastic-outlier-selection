@@ -30,8 +30,9 @@ object EvaluateOutlierDetectionDistributed {
 
     val n = Integer.parseInt(args(0))
     val partitions = Integer.parseInt(args(1))
-    val nameTopic = args(2)
-    val outputFile = args(3)
+    val parititonsPerCpu = Integer.parseInt(args(2))
+    val nameTopic = args(3)
+    val outputFile = args(4)
 
     val kafkaServer = (1 to partitions).map("kafka_" + _ + ":9092").reduceLeft((a, b) => a + "," + b);
 
@@ -73,7 +74,9 @@ object EvaluateOutlierDetectionDistributed {
     ).toArray
 
     val rdd = KafkaUtils.createRDD[String, Array[Byte], StringDecoder, DefaultDecoder](sc, configSpark, offsetRanges)
-    val rddPersisted = rdd.map(record => record._2.unpickle[Array[Double]]).persist()
+    val rddPersisted = rdd.map(record => record._2.unpickle[Array[Double]]).repartition(partitions * parititonsPerCpu).persist()
+
+    System.out.println("Input partitions: " + rddPersisted.partitions.length)
 
     // Start recording.
     val now = System.nanoTime
