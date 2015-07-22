@@ -1,0 +1,107 @@
+Attaching to sparkoutlierdetection_master_1, sparkoutlierdetection_worker_1, sparkoutlierdetection_zookeeper_1, sparkoutlierdetection_kafka_1, sparkoutlierdetection_task_1
+[32mzookeeper_1 | [0mJMX enabled by default
+[32mzookeeper_1 | [0mUsing config: /opt/zookeeper-3.4.6/bin/../conf/zoo.cfg
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,314 [myid:] - INFO  [main:QuorumPeerConfig@103] - Reading configuration from: /opt/zookeeper-3.4.6/bin/../conf/zoo.cfg
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,326 [myid:] - INFO  [main:DatadirCleanupManager@78] - autopurge.snapRetainCount set to 3
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,327 [myid:] - INFO  [main:DatadirCleanupManager@79] - autopurge.purgeInterval set to 1
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,330 [myid:] - WARN  [main:QuorumPeerMain@113] - Either no config or no quorum defined in config, running  in standalone mode
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,334 [myid:] - INFO  [PurgeTask:DatadirCleanupManager$PurgeTask@138] - Purge task started.
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,370 [myid:] - INFO  [PurgeTask:DatadirCleanupManager$PurgeTask@144] - Purge task completed.
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,374 [myid:] - INFO  [main:QuorumPeerConfig@103] - Reading configuration from: /opt/zookeeper-3.4.6/bin/../conf/zoo.cfg
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,375 [myid:] - INFO  [main:ZooKeeperServerMain@95] - Starting server
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,389 [myid:] - INFO  [main:Environment@100] - Server environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,390 [myid:] - INFO  [main:Environment@100] - Server environment:host.name=792da406b0c6
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,390 [myid:] - INFO  [main:Environment@100] - Server environment:java.version=1.7.0_65
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,390 [myid:] - INFO  [main:Environment@100] - Server environment:java.vendor=Oracle Corporation
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,390 [myid:] - INFO  [main:Environment@100] - Server environment:java.home=/usr/lib/jvm/java-7-openjdk-amd64/jre
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,391 [myid:] - INFO  [main:Environment@100] - Server environment:java.class.path=/opt/zookeeper-3.4.6/bin/../build/classes:/opt/zookeeper-3.4.6/bin/../build/lib/*.jar:/opt/zookeeper-3.4.6/bin/../lib/slf4j-log4j12-1.6.1.jar:/opt/zookeeper-3.4.6/bin/../lib/slf4j-api-1.6.1.jar:/opt/zookeeper-3.4.6/bin/../lib/netty-3.7.0.Final.jar:/opt/zookeeper-3.4.6/bin/../lib/log4j-1.2.16.jar:/opt/zookeeper-3.4.6/bin/../lib/jline-0.9.94.jar:/opt/zookeeper-3.4.6/bin/../zookeeper-3.4.6.jar:/opt/zookeeper-3.4.6/bin/../src/java/lib/*.jar:/opt/zookeeper-3.4.6/bin/../conf:
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,391 [myid:] - INFO  [main:Environment@100] - Server environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,391 [myid:] - INFO  [main:Environment@100] - Server environment:java.io.tmpdir=/tmp
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,395 [myid:] - INFO  [main:Environment@100] - Server environment:java.compiler=<NA>
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,395 [myid:] - INFO  [main:Environment@100] - Server environment:os.name=Linux
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,395 [myid:] - INFO  [main:Environment@100] - Server environment:os.arch=amd64
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,395 [myid:] - INFO  [main:Environment@100] - Server environment:os.version=3.13.0-55-generic
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,395 [myid:] - INFO  [main:Environment@100] - Server environment:user.name=root
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,395 [myid:] - INFO  [main:Environment@100] - Server environment:user.home=/root
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,396 [myid:] - INFO  [main:Environment@100] - Server environment:user.dir=/opt/zookeeper-3.4.6
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,397 [myid:] - INFO  [main:ZooKeeperServer@755] - tickTime set to 2000
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,398 [myid:] - INFO  [main:ZooKeeperServer@764] - minSessionTimeout set to -1
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,398 [myid:] - INFO  [main:ZooKeeperServer@773] - maxSessionTimeout set to -1
+[32mzookeeper_1 | [0m2015-07-22 09:16:42,448 [myid:] - INFO  [main:NIOServerCnxnFactory@94] - binding to port 0.0.0.0/0.0.0.0:2181
+[36mmaster_1    | [0mUsing Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+[36mmaster_1    | [0m15/07/22 09:16:42 INFO Master: Registered signal handlers for [TERM, HUP, INT]
+[35mkafka_1     | [0m[2015-07-22 09:16:43,653] INFO Verifying properties (kafka.utils.VerifiableProperties)
+[33mworker_1    | [0mUsing Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+[33mworker_1    | [0m15/07/22 09:16:43 INFO Worker: Registered signal handlers for [TERM, HUP, INT]
+[35mkafka_1     | [0m[2015-07-22 09:16:43,714] INFO Property advertised.host.name is overridden to 192.168.192.134 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,714] INFO Property advertised.port is overridden to 32912 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,715] INFO Property broker.id is overridden to 1 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,715] INFO Property log.cleaner.enable is overridden to false (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,715] INFO Property log.dirs is overridden to /kafka/kafka-logs-1 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,716] INFO Property log.retention.check.interval.ms is overridden to 300000 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,716] INFO Property log.retention.hours is overridden to 168 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,716] INFO Property log.segment.bytes is overridden to 1073741824 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,717] INFO Property num.io.threads is overridden to 8 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,717] INFO Property num.network.threads is overridden to 3 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,717] INFO Property num.partitions is overridden to 1 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,718] INFO Property num.recovery.threads.per.data.dir is overridden to 1 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,718] INFO Property port is overridden to 9092 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,718] INFO Property socket.receive.buffer.bytes is overridden to 102400 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,718] INFO Property socket.request.max.bytes is overridden to 104857600 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,719] INFO Property socket.send.buffer.bytes is overridden to 102400 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,720] WARN Property version is not valid (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,720] INFO Property zookeeper.connect is overridden to zookeeper:2181 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,720] INFO Property zookeeper.connection.timeout.ms is overridden to 6000 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,793] INFO [Kafka Server 1], starting (kafka.server.KafkaServer)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,796] INFO [Kafka Server 1], Connecting to zookeeper on zookeeper:2181 (kafka.server.KafkaServer)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,835] INFO Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,835] INFO Client environment:host.name=f4002b867d8c (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,835] INFO Client environment:java.version=1.6.0_35 (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,835] INFO Client environment:java.vendor=Sun Microsystems Inc. (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,835] INFO Client environment:java.home=/usr/lib/jvm/java-6-openjdk-amd64/jre (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,835] INFO Client environment:java.class.path=:/opt/kafka_2.10-0.8.2.1/bin/../core/build/dependant-libs-2.10*/*.jar:/opt/kafka_2.10-0.8.2.1/bin/../examples/build/libs//kafka-examples*.jar:/opt/kafka_2.10-0.8.2.1/bin/../contrib/hadoop-consumer/build/libs//kafka-hadoop-consumer*.jar:/opt/kafka_2.10-0.8.2.1/bin/../contrib/hadoop-producer/build/libs//kafka-hadoop-producer*.jar:/opt/kafka_2.10-0.8.2.1/bin/../clients/build/libs/kafka-clients*.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/jopt-simple-3.2.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/kafka-clients-0.8.2.1.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/kafka_2.10-0.8.2.1-javadoc.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/kafka_2.10-0.8.2.1-scaladoc.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/kafka_2.10-0.8.2.1-sources.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/kafka_2.10-0.8.2.1-test.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/kafka_2.10-0.8.2.1.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/log4j-1.2.16.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/lz4-1.2.0.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/metrics-core-2.2.0.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/scala-library-2.10.4.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/slf4j-api-1.7.6.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/slf4j-log4j12-1.6.1.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/snappy-java-1.1.1.6.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/zkclient-0.3.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/zookeeper-3.4.6.jar:/opt/kafka_2.10-0.8.2.1/bin/../core/build/libs/kafka_2.10*.jar (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,836] INFO Client environment:java.library.path=/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64/server:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64:/usr/lib/jvm/java-6-openjdk-amd64/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,836] INFO Client environment:java.io.tmpdir=/tmp (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,836] INFO Client environment:java.compiler=<NA> (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,836] INFO Client environment:os.name=Linux (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,836] INFO Client environment:os.arch=amd64 (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,836] INFO Client environment:os.version=3.13.0-55-generic (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,836] INFO Client environment:user.name=root (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,836] INFO Client environment:user.home=/root (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,836] INFO Client environment:user.dir=/ (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,835] INFO Starting ZkClient event thread. (org.I0Itec.zkclient.ZkEventThread)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,838] INFO Initiating client connection, connectString=zookeeper:2181 sessionTimeout=6000 watcher=org.I0Itec.zkclient.ZkClient@1a28651c (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,881] INFO Opening socket connection to server zookeeper_1/172.17.1.82:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[32mzookeeper_1 | [0m2015-07-22 09:16:43,891 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@197] - Accepted socket connection from /172.17.1.83:53530
+[35mkafka_1     | [0m[2015-07-22 09:16:43,899] INFO Socket connection established to zookeeper_1/172.17.1.82:2181, initiating session (org.apache.zookeeper.ClientCnxn)
+[32mzookeeper_1 | [0m2015-07-22 09:16:43,910 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@868] - Client attempting to establish new session at /172.17.1.83:53530
+[32mzookeeper_1 | [0m2015-07-22 09:16:43,915 [myid:] - INFO  [SyncThread:0:FileTxnLog@199] - Creating new log file: log.1
+[32mzookeeper_1 | [0m2015-07-22 09:16:43,950 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@617] - Established session 0x14eb50cf6920000 with negotiated timeout 6000 for client /172.17.1.83:53530
+[35mkafka_1     | [0m[2015-07-22 09:16:43,953] INFO Session establishment complete on server zookeeper_1/172.17.1.82:2181, sessionid = 0x14eb50cf6920000, negotiated timeout = 6000 (org.apache.zookeeper.ClientCnxn)
+[35mkafka_1     | [0m[2015-07-22 09:16:43,956] INFO zookeeper state changed (SyncConnected) (org.I0Itec.zkclient.ZkClient)
+[36mmaster_1    | [0m15/07/22 09:16:44 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[32mzookeeper_1 | [0m2015-07-22 09:16:44,045 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x14eb50cf6920000 type:create cxid:0x4 zxid:0x3 txntype:-1 reqpath:n/a Error Path:/brokers Error:KeeperErrorCode = NoNode for /brokers
+[32mzookeeper_1 | [0m2015-07-22 09:16:44,079 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x14eb50cf6920000 type:create cxid:0xa zxid:0x7 txntype:-1 reqpath:n/a Error Path:/config Error:KeeperErrorCode = NoNode for /config
+[32mzookeeper_1 | [0m2015-07-22 09:16:44,097 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x14eb50cf6920000 type:create cxid:0x10 zxid:0xb txntype:-1 reqpath:n/a Error Path:/admin Error:KeeperErrorCode = NoNode for /admin
+[36mmaster_1    | [0m15/07/22 09:16:44 INFO SecurityManager: Changing view acls to: root
+[36mmaster_1    | [0m15/07/22 09:16:44 INFO SecurityManager: Changing modify acls to: root
+[36mmaster_1    | [0m15/07/22 09:16:44 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+[35mkafka_1     | [0m[2015-07-22 09:16:44,225] INFO Log directory '/kafka/kafka-logs-1' not found, creating it. (kafka.log.LogManager)
+[35mkafka_1     | [0m[2015-07-22 09:16:44,264] INFO Loading logs. (kafka.log.LogManager)
+[35mkafka_1     | [0m[2015-07-22 09:16:44,280] INFO Logs loading complete. (kafka.log.LogManager)
+[35mkafka_1     | [0m[2015-07-22 09:16:44,281] INFO Starting log cleanup with a period of 300000 ms. (kafka.log.LogManager)
+[35mkafka_1     | [0m[2015-07-22 09:16:44,295] INFO Starting log flusher with a default period of 9223372036854775807 ms. (kafka.log.LogManager)
+[35mkafka_1     | [0m[2015-07-22 09:16:44,384] INFO Awaiting socket connections on 0.0.0.0:9092. (kafka.network.Acceptor)
+[35mkafka_1     | [0m[2015-07-22 09:16:44,385] INFO [Socket Server on Broker 1], Started (kafka.network.SocketServer)
+[35mkafka_1     | [0m[2015-07-22 09:16:44,543] INFO Will not load MX4J, mx4j-tools.jar is not in the classpath (kafka.utils.Mx4jLoader$)
+[35mkafka_1     | [0m[2015-07-22 09:16:44,642] INFO 1 successfully elected as leader (kafka.server.ZookeeperLeaderElector)
+[32mzookeeper_1 | [0m2015-07-22 09:16:44,661 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x14eb50cf6920000 type:setData cxid:0x1a zxid:0xf txntype:-1 reqpath:n/a Error Path:/controller_epoch Error:KeeperErrorCode = NoNode for /controller_epoch
+[33mworker_1    | [0m15/07/22 09:16:44 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[32mzookeeper_1 | [0m2015-07-22 09:16:44,839 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x14eb50cf6920000 type:delete cxid:0x27 zxid:0x11 txntype:-1 reqpath:n/a Error Path:/admin/preferred_replica_election Error:KeeperErrorCode = NoNode for /admin/preferred_replica_election
+[35mkafka_1     | [0m[2015-07-22 09:16:44,958] INFO Registered broker 1 at path /brokers/ids/1 with address 192.168.192.134:32912. (kafka.utils.ZkUtils$)
+[35mkafka_1     | [0m[2015-07-22 09:16:44,995] INFO [Kafka Server 1], started (kafka.server.KafkaServer)
+[33mworker_1    | [0m15/07/22 09:16:45 INFO SecurityManager: Changing view acls to: root
+[33mworker_1    | [0m15/07/22 09:16:45 INFO SecurityManager: Changing modify acls to: root
+[33mworker_1    | [0m15/07/22 09:16:45 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+[35mkafka_1     | [0m[2015-07-22 09:16:45,133] INFO New leader is 1 (kafka.server.ZookeeperLeaderElector$LeaderChangeListener)
+Gracefully stopping... (press Ctrl+C again to force)

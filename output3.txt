@@ -1,0 +1,800 @@
+[0m[[0minfo[0m] [0mLoading project definition from /home/fokko/Desktop/SparkOutlierDetection/project[0m
+[0m[[0minfo[0m] [0mSet current project to QuintorSparkOutlier (in build file:/home/fokko/Desktop/SparkOutlierDetection/)[0m
+[0m[[0minfo[0m] [0mIncluding from cache: metrics-jvm-3.1.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-net-2.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: parquet-common-1.6.0rc3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: metrics-json-3.1.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: metrics-graphite-3.1.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: parquet-encoding-1.6.0rc3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: parquet-generator-1.6.0rc3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: parquet-hadoop-1.6.0rc3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jackson-module-scala_2.10-2.4.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: akka-remote_2.10-2.3.4-spark.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jackson-annotations-2.4.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: parquet-format-2.2.0-rc1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: parquet-jackson-1.6.0rc3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: ivy-2.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jackson-mapper-asl-1.9.11.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: oro-2.0.8.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jackson-core-asl-1.9.11.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: tachyon-client-0.6.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: akka-actor_2.10-2.3.4-spark.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: config-1.2.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jodd-core-3.6.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: tachyon-0.6.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-codec-1.5.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-io-2.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: netty-3.8.0.Final.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-graphx_2.10-1.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: pyrolite-4.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: core-1.1.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: protobuf-java-2.5.0-spark.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: uncommons-maths-1.2.2a.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: akka-slf4j_2.10-2.3.4-spark.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: json4s-jackson_2.10-3.2.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: py4j-0.8.2.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: json4s-core_2.10-3.2.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: json4s-ast_2.10-3.2.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: paranamer-2.6.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: scalap-2.10.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jackson-databind-2.4.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jackson-core-2.4.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: scala-library-2.10.5.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-mllib_2.10-1.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jersey-core-1.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-streaming_2.10-1.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: mesos-0.21.1-shaded-protobuf.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: stream-2.7.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: metrics-core-3.1.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: arpack_combined_all-0.1-javadoc.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: arpack_combined_all-0.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-sql_2.10-1.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-catalyst_2.10-1.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: quasiquotes_2.10-2.0.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: parquet-column-1.6.0rc3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: pmml-model-1.1.15.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: pmml-agent-1.1.15.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: pmml-schema-1.1.15.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-streaming-kafka_2.10-1.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jaxb-impl-2.2.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-core_2.10-1.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: chill_2.10-0.5.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: chill-java-0.5.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jaxb-core-2.2.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jaxb-api-2.2.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: istack-commons-runtime-2.16.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: kryo-2.21.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: reflectasm-1.07-shaded.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: minlog-1.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: FastInfoset-1.2.12.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: objenesis-1.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jsr173_api-1.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: hadoop-client-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jopt-simple-3.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: zkclient-0.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: kafka_2.10-0.8.2.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: scala-pickling_2.10-0.10.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: metrics-core-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: kafka-clients-0.8.2.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: zookeeper-3.4.6.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: breeze_2.10-0.11.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: breeze-macros_2.10-0.11.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: hadoop-common-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: opencsv-2.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: hadoop-annotations-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jsr305-1.3.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-cli-1.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jtransforms-2.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-math-2.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: xmlenc-0.52.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-httpclient-3.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-logging-1.1.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: log4j-1.2.17.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-lang-2.5.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-configuration-1.6.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-collections-3.2.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-digester-1.8.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-beanutils-1.7.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-beanutils-core-1.8.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: avro-1.7.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-compress-1.4.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: xz-1.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: protobuf-java-2.5.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: hadoop-auth-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: scala-compiler-2.10.5.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spire_2.10-0.7.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spire-macros_2.10-0.7.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: scala-reflect-2.10.5.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-network-shuffle_2.10-1.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-unsafe_2.10-1.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: cglib-2.2.1-v20090111.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-lang3-3.3.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jets3t-0.7.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: asm-3.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jersey-test-framework-grizzly2-1.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: curator-recipes-2.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: curator-framework-2.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: curator-client-2.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jersey-server-1.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jersey-json-1.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jline-0.9.94.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jettison-1.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: stax-api-1.0.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-math3-3.4.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jackson-jaxrs-1.8.8.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jackson-xc-1.8.8.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jersey-guice-1.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: hadoop-yarn-client-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: slf4j-api-1.7.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jul-to-slf4j-1.7.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jcl-over-slf4j-1.7.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: hadoop-hdfs-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: slf4j-log4j12-1.7.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jetty-util-6.1.26.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: compress-lzf-1.0.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: guava-14.0.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: javax.servlet-3.0.0.v201112011016.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: snappy-java-1.1.1.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: hadoop-mapreduce-client-app-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: hadoop-mapreduce-client-core-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: lz4-1.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: RoaringBitmap-0.4.5.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: hadoop-mapreduce-client-common-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: hadoop-yarn-server-common-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: hadoop-mapreduce-client-shuffle-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: hadoop-mapreduce-client-jobclient-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-launcher_2.10-1.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: unused-1.0.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: hadoop-yarn-common-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: hadoop-yarn-api-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-network-common_2.10-1.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: guice-3.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: javax.inject-1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: aopalliance-1.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: netty-all-4.0.23.Final.jar[0m
+[0m[[0minfo[0m] [0m[32mStocasticOutlierDetectionTest:[0m[0m
+[0m[[0minfo[0m] [0m[32mComputing the distance matrix [0m[0m
+[0m[[0minfo[0m] [0m[32m- should give symmetrical distances[0m[0m
+[0m[[0minfo[0m] [0m[32mComputing the distance matrix [0m[0m
+[0m[[0minfo[0m] [0m[32m- should give the correct distances[0m[0m
+[0m[[0minfo[0m] [0m[32mComputing the perplexity of the vector [0m[0m
+[0m[[0minfo[0m] [0m[32m- should give the correct error[0m[0m
+[0m[[0minfo[0m] [0m[32mComputing the affinity matrix [0m[0m
+[0m[[0minfo[0m] [0m[32m- should give the correct affinity[0m[0m
+[0m[[0minfo[0m] [0m[32mVerify the binding probabilities [0m[0m
+[0m[[0minfo[0m] [0m[32m- should give the correct probabilities[0m[0m
+[0m[[0minfo[0m] [0m[32mVerifying the product [0m[0m
+[0m[[0minfo[0m] [0m[32m- should should provide valid products[0m[0m
+[0m[[0minfo[0m] [0m[32mVerifying the output of the SOS algorithm [0m[0m
+[0m[[0minfo[0m] [0m[32m- should assign the one true outlier[0m[0m
+[0m[[0minfo[0m] [0m[36mRun completed in 8 seconds, 137 milliseconds.[0m[0m
+[0m[[0minfo[0m] [0m[36mTotal number of tests run: 7[0m[0m
+[0m[[0minfo[0m] [0m[36mSuites: completed 1, aborted 0[0m[0m
+[0m[[0minfo[0m] [0m[36mTests: succeeded 7, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0minfo[0m] [0m[32mAll tests passed.[0m[0m
+[0m[[0minfo[0m] [0mChecking every *.class/*.jar file's SHA-1.[0m
+[0m[[0minfo[0m] [0mMerging files...[0m
+[0m[[33mwarn[0m] [0mMerging 'LICENSE' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/ASL2.0' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/DEPENDENCIES' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/ECLIPSEF.RSA' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/ECLIPSEF.SF' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/INDEX.LIST' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/LICENSE' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/LICENSE.txt' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/MANIFEST.MF' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/NOTICE' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/NOTICE.txt' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/README.txt' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/eclipse.inf' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/io.netty.versions.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/jboss-beans.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/jersey-module-version' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/license/LICENSE.base64.txt' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/license/LICENSE.commons-logging.txt' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/license/LICENSE.felix.txt' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/license/LICENSE.jboss-logging.txt' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/license/LICENSE.jsr166y.txt' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/license/LICENSE.jzlib.txt' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/license/LICENSE.log4j.txt' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/license/LICENSE.protobuf.txt' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/license/LICENSE.slf4j.txt' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/license/LICENSE.webbit.txt' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.clearspring.analytics/stream/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.clearspring.analytics/stream/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.esotericsoftware.kryo/kryo/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.esotericsoftware.kryo/kryo/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.esotericsoftware.minlog/minlog/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.esotericsoftware.minlog/minlog/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.esotericsoftware.reflectasm/reflectasm/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.esotericsoftware.reflectasm/reflectasm/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.fasterxml.jackson.core/jackson-annotations/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.fasterxml.jackson.core/jackson-annotations/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.fasterxml.jackson.core/jackson-core/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.fasterxml.jackson.core/jackson-core/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.github.fommil.netlib/core/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.github.fommil.netlib/core/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.github.rwl/jtransforms/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.github.rwl/jtransforms/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.google.guava/guava/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.google.guava/guava/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.google.protobuf/protobuf-java/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.google.protobuf/protobuf-java/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.ning/compress-lzf/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.ning/compress-lzf/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.istack/istack-commons-runtime/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.istack/istack-commons-runtime/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.jersey.contribs/jersey-guice/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.jersey.contribs/jersey-guice/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.jersey.jersey-test-framework/jersey-test-framework-grizzly2/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.jersey.jersey-test-framework/jersey-test-framework-grizzly2/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.jersey/jersey-core/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.jersey/jersey-core/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.jersey/jersey-json/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.jersey/jersey-json/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.jersey/jersey-server/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.jersey/jersey-server/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.xml.fastinfoset/FastInfoset/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.xml.fastinfoset/FastInfoset/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.xml.txw2/txw2/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.sun.xml.txw2/txw2/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.thoughtworks.paranamer/paranamer/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.thoughtworks.paranamer/paranamer/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.twitter/parquet-column/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.twitter/parquet-column/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.twitter/parquet-common/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.twitter/parquet-common/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.twitter/parquet-encoding/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.twitter/parquet-encoding/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.twitter/parquet-format/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.twitter/parquet-format/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.twitter/parquet-generator/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.twitter/parquet-generator/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.twitter/parquet-hadoop/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.twitter/parquet-hadoop/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.twitter/parquet-jackson/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.twitter/parquet-jackson/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.yammer.metrics/metrics-core/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/com.yammer.metrics/metrics-core/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-cli/commons-cli/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-cli/commons-cli/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-codec/commons-codec/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-codec/commons-codec/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-collections/commons-collections/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-collections/commons-collections/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-configuration/commons-configuration/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-configuration/commons-configuration/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-io/commons-io/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-io/commons-io/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-lang/commons-lang/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-lang/commons-lang/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-logging/commons-logging/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-logging/commons-logging/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-net/commons-net/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/commons-net/commons-net/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/io.dropwizard.metrics/metrics-core/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/io.dropwizard.metrics/metrics-core/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/io.dropwizard.metrics/metrics-graphite/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/io.dropwizard.metrics/metrics-graphite/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/io.dropwizard.metrics/metrics-json/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/io.dropwizard.metrics/metrics-json/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/io.dropwizard.metrics/metrics-jvm/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/io.dropwizard.metrics/metrics-jvm/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/io.netty/netty-all/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/io.netty/netty-all/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/io.netty/netty/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/io.netty/netty/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/javax.xml.bind/jaxb-api/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/javax.xml.bind/jaxb-api/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/jline/jline/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/jline/jline/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/log4j/log4j/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/log4j/log4j/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/net.razorvine/pyrolite/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/net.razorvine/pyrolite/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/net.sf.jopt-simple/jopt-simple/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/net.sf.jopt-simple/jopt-simple/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/net.sf.opencsv/opencsv/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/net.sf.opencsv/opencsv/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/net.sf.py4j/py4j/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/net.sf.py4j/py4j/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.avro/avro/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.avro/avro/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.commons/commons-compress/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.commons/commons-compress/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.commons/commons-lang3/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.commons/commons-lang3/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.commons/commons-math/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.commons/commons-math/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.commons/commons-math3/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.commons/commons-math3/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.curator/curator-client/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.curator/curator-client/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.curator/curator-framework/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.curator/curator-framework/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.curator/curator-recipes/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.curator/curator-recipes/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-annotations/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-annotations/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-auth/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-auth/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-client/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-client/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-common/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-common/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-hdfs/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-hdfs/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-mapreduce-client-app/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-mapreduce-client-app/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-mapreduce-client-common/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-mapreduce-client-common/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-mapreduce-client-core/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-mapreduce-client-core/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-mapreduce-client-jobclient/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-mapreduce-client-jobclient/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-mapreduce-client-shuffle/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-mapreduce-client-shuffle/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-yarn-api/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-yarn-api/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-yarn-client/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-yarn-client/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-yarn-common/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-yarn-common/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-yarn-server-common/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.hadoop/hadoop-yarn-server-common/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.mesos/mesos/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.mesos/mesos/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-catalyst_2.10/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-catalyst_2.10/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-core_2.10/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-core_2.10/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-graphx_2.10/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-graphx_2.10/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-launcher_2.10/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-launcher_2.10/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-mllib_2.10/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-mllib_2.10/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-network-common_2.10/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-network-common_2.10/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-network-shuffle_2.10/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-network-shuffle_2.10/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-sql_2.10/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-sql_2.10/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-streaming-kafka_2.10/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-streaming-kafka_2.10/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-streaming_2.10/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-streaming_2.10/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-unsafe_2.10/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.apache.spark/spark-unsafe_2.10/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.codehaus.jettison/jettison/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.codehaus.jettison/jettison/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-continuation/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-continuation/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-http/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-http/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-io/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-io/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-plus/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-plus/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-security/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-security/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-server/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-server/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-servlet/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-servlet/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-util/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.eclipse.jetty/jetty-util/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.jpmml/pmml-agent/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.jpmml/pmml-agent/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.jpmml/pmml-model/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.jpmml/pmml-model/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.jpmml/pmml-schema/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.jpmml/pmml-schema/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.mortbay.jetty/jetty-util/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.mortbay.jetty/jetty-util/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.roaringbitmap/RoaringBitmap/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.roaringbitmap/RoaringBitmap/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.slf4j/jcl-over-slf4j/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.slf4j/jcl-over-slf4j/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.slf4j/jul-to-slf4j/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.slf4j/jul-to-slf4j/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.slf4j/slf4j-api/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.slf4j/slf4j-api/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.slf4j/slf4j-log4j12/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.slf4j/slf4j-log4j12/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.spark-project.protobuf/protobuf-java/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.spark-project.protobuf/protobuf-java/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.spark-project.spark/unused/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.spark-project.spark/unused/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.tachyonproject/tachyon-client/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.tachyonproject/tachyon-client/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.tachyonproject/tachyon/pom.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/maven/org.tachyonproject/tachyon/pom.xml' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/native/libnetty-transport-native-epoll.so' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/pack.properties' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/services/javax.ws.rs.ext.MessageBodyReader' with strategy 'filterDistinctLines'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/services/javax.ws.rs.ext.MessageBodyWriter' with strategy 'filterDistinctLines'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/services/org.apache.hadoop.fs.FileSystem' with strategy 'filterDistinctLines'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/services/org.apache.hadoop.mapreduce.protocol.ClientProtocolProvider' with strategy 'filterDistinctLines'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/services/org.apache.hadoop.security.SecurityInfo' with strategy 'filterDistinctLines'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/services/org.apache.hadoop.security.token.TokenIdentifier' with strategy 'filterDistinctLines'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/services/org.apache.hadoop.security.token.TokenRenewer' with strategy 'filterDistinctLines'[0m
+[0m[[33mwarn[0m] [0mMerging 'META-INF/taglib.tld' with strategy 'discard'[0m
+[0m[[33mwarn[0m] [0mMerging 'NOTICE' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'about.html' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/minlog/Log$Logger.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/minlog/Log.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/AccessClassLoader.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/ConstructorAccess.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/FieldAccess.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/MethodAccess.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/AnnotationVisitor.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/AnnotationWriter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/Attribute.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/ByteVector.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/ClassReader.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/ClassVisitor.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/ClassWriter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/Edge.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/FieldVisitor.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/FieldWriter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/Frame.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/Handle.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/Handler.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/Item.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/Label.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/MethodVisitor.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/MethodWriter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/Opcodes.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/esotericsoftware/reflectasm/shaded/org/objectweb/asm/Type.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/google/common/base/Absent.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/google/common/base/Function.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/google/common/base/Optional$1$1.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/google/common/base/Optional$1.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/google/common/base/Optional.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/google/common/base/Present.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/google/common/base/Supplier.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/Builder.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/ByteArrayDataSource.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/FinalArrayList.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/FragmentContentHandler.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/Interned.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/NotNull.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/Nullable.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/Pool$Impl.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/Pool.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/SAXException2.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/SAXParseException2.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/XMLStreamException2.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/XMLStreamReaderToContentHandler$1.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/XMLStreamReaderToContentHandler.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/localization/Localizable.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/localization/LocalizableMessage.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/localization/LocalizableMessageFactory.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/localization/Localizer.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/localization/NullLocalizable.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'com/sun/istack/logging/Logger.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/XMLConstants.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/namespace/NamespaceContext.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/namespace/QName.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/EventFilter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/FactoryConfigurationError.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/FactoryFinder$1.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/FactoryFinder$ClassLoaderFinder.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/FactoryFinder$ClassLoaderFinderConcrete.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/FactoryFinder.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/Location.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/StreamFilter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/XMLEventFactory.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/XMLEventReader.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/XMLEventWriter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/XMLInputFactory.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/XMLOutputFactory.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/XMLReporter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/XMLResolver.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/XMLStreamConstants.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/XMLStreamException.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/XMLStreamReader.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/XMLStreamWriter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/events/Attribute.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/events/Characters.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/events/Comment.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/events/DTD.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/events/EndDocument.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/events/EndElement.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/events/EntityDeclaration.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/events/EntityReference.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/events/Namespace.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/events/NotationDeclaration.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/events/ProcessingInstruction.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/events/StartDocument.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/events/StartElement.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/events/XMLEvent.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/util/EventReaderDelegate.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/util/StreamReaderDelegate.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/util/XMLEventAllocator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'javax/xml/stream/util/XMLEventConsumer.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/BasicDynaBean.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/BasicDynaClass.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/BeanAccessLanguageException.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/BeanUtils.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/BeanUtilsBean$1.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/BeanUtilsBean.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/ConstructorUtils.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/ContextClassLoaderLocal.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/ConversionException.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/ConvertUtils.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/ConvertUtilsBean.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/Converter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/ConvertingWrapDynaBean.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/DynaBean.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/DynaClass.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/DynaProperty.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/JDBCDynaClass.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/LazyDynaBean.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/LazyDynaClass.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/LazyDynaMap.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/MappedPropertyDescriptor.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/MethodUtils$MethodDescriptor.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/MethodUtils.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/MutableDynaClass.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/NestedNullException.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/PropertyUtils.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/PropertyUtilsBean.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/ResultSetDynaClass.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/ResultSetIterator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/RowSetDynaClass.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/WrapDynaBean.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/WrapDynaClass.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/AbstractArrayConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/BigDecimalConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/BigIntegerConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/BooleanArrayConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/BooleanConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/ByteArrayConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/ByteConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/CharacterArrayConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/CharacterConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/ClassConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/DoubleArrayConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/DoubleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/FileConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/FloatArrayConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/FloatConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/IntegerArrayConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/IntegerConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/LongArrayConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/LongConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/ShortArrayConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/ShortConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/SqlDateConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/SqlTimeConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/SqlTimestampConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/StringArrayConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/StringConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/converters/URLConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/BaseLocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/LocaleBeanUtils$Descriptor.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/LocaleBeanUtils.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/LocaleBeanUtilsBean$1.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/LocaleBeanUtilsBean$Descriptor.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/LocaleBeanUtilsBean.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/LocaleConvertUtils.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/LocaleConvertUtilsBean.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/LocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/converters/BigDecimalLocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/converters/BigIntegerLocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/converters/ByteLocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/converters/DateLocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/converters/DecimalLocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/converters/DoubleLocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/converters/FloatLocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/converters/IntegerLocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/converters/LongLocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/converters/ShortLocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/converters/SqlDateLocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/converters/SqlTimeLocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/converters/SqlTimestampLocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/beanutils/locale/converters/StringLocaleConverter.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/collections/ArrayStack.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/collections/Buffer.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/collections/BufferUnderflowException.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/collections/FastHashMap$1.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/collections/FastHashMap$CollectionView$CollectionViewIterator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/collections/FastHashMap$CollectionView.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/collections/FastHashMap$EntrySet.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/collections/FastHashMap$KeySet.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/collections/FastHashMap$Values.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/collections/FastHashMap.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/logging/Log.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/logging/LogConfigurationException.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/logging/LogFactory.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/logging/impl/NoOpLog.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/logging/impl/SimpleLog$1.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/commons/logging/impl/SimpleLog.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/hadoop/yarn/factories/package-info.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/hadoop/yarn/factory/providers/package-info.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/hadoop/yarn/util/package-info.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/apache/spark/unused/UnusedStubClass.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/Objenesis.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/ObjenesisBase.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/ObjenesisException.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/ObjenesisHelper.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/ObjenesisSerializer.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/ObjenesisStd.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/NullInstantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/ObjectInstantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/SerializationInstantiatorHelper.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/basic/AccessibleInstantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/basic/ConstructorInstantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/basic/NewInstanceInstantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/basic/ObjectInputStreamInstantiator$MockStream.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/basic/ObjectInputStreamInstantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/basic/ObjectStreamClassInstantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/gcj/GCJInstantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/gcj/GCJInstantiatorBase$DummyStream.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/gcj/GCJInstantiatorBase.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/gcj/GCJSerializationInstantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/jrockit/JRockit131Instantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/jrockit/JRockitLegacyInstantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/perc/PercInstantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/perc/PercSerializationInstantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/sun/Sun13Instantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/sun/Sun13InstantiatorBase.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/sun/Sun13SerializationInstantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/sun/SunReflectionFactoryInstantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/instantiator/sun/SunReflectionFactorySerializationInstantiator.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/strategy/BaseInstantiatorStrategy.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/strategy/InstantiatorStrategy.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/strategy/SerializingInstantiatorStrategy.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'org/objenesis/strategy/StdInstantiatorStrategy.class' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'reference.conf' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mMerging 'rootdoc.txt' with strategy 'first'[0m
+[0m[[33mwarn[0m] [0mStrategy 'discard' was applied to 240 files[0m
+[0m[[33mwarn[0m] [0mStrategy 'filterDistinctLines' was applied to 7 files[0m
+[0m[[33mwarn[0m] [0mStrategy 'first' was applied to 231 files[0m
+[0m[[0minfo[0m] [0mAssembly up to date: /home/fokko/Desktop/SparkOutlierDetection/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar[0m
+[0m[[32msuccess[0m] [0mTotal time: 16 s, completed Jul 22, 2015 11:04:14 AM[0m
+Going to remove sparkoutlierdetection_task_1, sparkoutlierdetection_kafka_1, sparkoutlierdetection_zookeeper_1, sparkoutlierdetection_worker_1, sparkoutlierdetection_master_1
+Attaching to sparkoutlierdetection_master_1, sparkoutlierdetection_worker_1, sparkoutlierdetection_zookeeper_1, sparkoutlierdetection_kafka_1, sparkoutlierdetection_task_1
+[32mzookeeper_1 | [0mJMX enabled by default
+[32mzookeeper_1 | [0mUsing config: /opt/zookeeper-3.4.6/bin/../conf/zoo.cfg
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,352 [myid:] - INFO  [main:QuorumPeerConfig@103] - Reading configuration from: /opt/zookeeper-3.4.6/bin/../conf/zoo.cfg
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,362 [myid:] - INFO  [main:DatadirCleanupManager@78] - autopurge.snapRetainCount set to 3
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,362 [myid:] - INFO  [main:DatadirCleanupManager@79] - autopurge.purgeInterval set to 1
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,364 [myid:] - WARN  [main:QuorumPeerMain@113] - Either no config or no quorum defined in config, running  in standalone mode
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,368 [myid:] - INFO  [PurgeTask:DatadirCleanupManager$PurgeTask@138] - Purge task started.
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,404 [myid:] - INFO  [PurgeTask:DatadirCleanupManager$PurgeTask@144] - Purge task completed.
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,415 [myid:] - INFO  [main:QuorumPeerConfig@103] - Reading configuration from: /opt/zookeeper-3.4.6/bin/../conf/zoo.cfg
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,416 [myid:] - INFO  [main:ZooKeeperServerMain@95] - Starting server
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,437 [myid:] - INFO  [main:Environment@100] - Server environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,437 [myid:] - INFO  [main:Environment@100] - Server environment:host.name=7c6fe86d396a
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,437 [myid:] - INFO  [main:Environment@100] - Server environment:java.version=1.7.0_65
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,438 [myid:] - INFO  [main:Environment@100] - Server environment:java.vendor=Oracle Corporation
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,438 [myid:] - INFO  [main:Environment@100] - Server environment:java.home=/usr/lib/jvm/java-7-openjdk-amd64/jre
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,438 [myid:] - INFO  [main:Environment@100] - Server environment:java.class.path=/opt/zookeeper-3.4.6/bin/../build/classes:/opt/zookeeper-3.4.6/bin/../build/lib/*.jar:/opt/zookeeper-3.4.6/bin/../lib/slf4j-log4j12-1.6.1.jar:/opt/zookeeper-3.4.6/bin/../lib/slf4j-api-1.6.1.jar:/opt/zookeeper-3.4.6/bin/../lib/netty-3.7.0.Final.jar:/opt/zookeeper-3.4.6/bin/../lib/log4j-1.2.16.jar:/opt/zookeeper-3.4.6/bin/../lib/jline-0.9.94.jar:/opt/zookeeper-3.4.6/bin/../zookeeper-3.4.6.jar:/opt/zookeeper-3.4.6/bin/../src/java/lib/*.jar:/opt/zookeeper-3.4.6/bin/../conf:
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,439 [myid:] - INFO  [main:Environment@100] - Server environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,439 [myid:] - INFO  [main:Environment@100] - Server environment:java.io.tmpdir=/tmp
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,445 [myid:] - INFO  [main:Environment@100] - Server environment:java.compiler=<NA>
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,446 [myid:] - INFO  [main:Environment@100] - Server environment:os.name=Linux
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,447 [myid:] - INFO  [main:Environment@100] - Server environment:os.arch=amd64
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,447 [myid:] - INFO  [main:Environment@100] - Server environment:os.version=3.13.0-55-generic
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,447 [myid:] - INFO  [main:Environment@100] - Server environment:user.name=root
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,448 [myid:] - INFO  [main:Environment@100] - Server environment:user.home=/root
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,448 [myid:] - INFO  [main:Environment@100] - Server environment:user.dir=/opt/zookeeper-3.4.6
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,450 [myid:] - INFO  [main:ZooKeeperServer@755] - tickTime set to 2000
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,450 [myid:] - INFO  [main:ZooKeeperServer@764] - minSessionTimeout set to -1
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,450 [myid:] - INFO  [main:ZooKeeperServer@773] - maxSessionTimeout set to -1
+[32mzookeeper_1 | [0m2015-07-22 09:04:19,491 [myid:] - INFO  [main:NIOServerCnxnFactory@94] - binding to port 0.0.0.0/0.0.0.0:2181
+[36mmaster_1    | [0mUsing Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+[36mmaster_1    | [0m15/07/22 09:04:20 INFO Master: Registered signal handlers for [TERM, HUP, INT]
+[35mkafka_1     | [0m[2015-07-22 09:04:20,926] INFO Verifying properties (kafka.utils.VerifiableProperties)
+[33mworker_1    | [0mUsing Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+[35mkafka_1     | [0m[2015-07-22 09:04:21,012] INFO Property advertised.host.name is overridden to 192.168.192.134 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,012] INFO Property advertised.port is overridden to 32906 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,012] INFO Property broker.id is overridden to 1 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,013] INFO Property log.cleaner.enable is overridden to false (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,013] INFO Property log.dirs is overridden to /kafka/kafka-logs-1 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,013] INFO Property log.retention.check.interval.ms is overridden to 300000 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,014] INFO Property log.retention.hours is overridden to 168 (kafka.utils.VerifiableProperties)
+[33mworker_1    | [0m15/07/22 09:04:21 INFO Worker: Registered signal handlers for [TERM, HUP, INT]
+[35mkafka_1     | [0m[2015-07-22 09:04:21,014] INFO Property log.segment.bytes is overridden to 1073741824 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,014] INFO Property num.io.threads is overridden to 8 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,014] INFO Property num.network.threads is overridden to 3 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,015] INFO Property num.partitions is overridden to 1 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,015] INFO Property num.recovery.threads.per.data.dir is overridden to 1 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,015] INFO Property port is overridden to 9092 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,016] INFO Property socket.receive.buffer.bytes is overridden to 102400 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,017] INFO Property socket.request.max.bytes is overridden to 104857600 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,018] INFO Property socket.send.buffer.bytes is overridden to 102400 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,019] WARN Property version is not valid (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,020] INFO Property zookeeper.connect is overridden to zookeeper:2181 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,020] INFO Property zookeeper.connection.timeout.ms is overridden to 6000 (kafka.utils.VerifiableProperties)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,113] INFO [Kafka Server 1], starting (kafka.server.KafkaServer)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,117] INFO [Kafka Server 1], Connecting to zookeeper on zookeeper:2181 (kafka.server.KafkaServer)
+[36mmaster_1    | [0m15/07/22 09:04:21 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[35mkafka_1     | [0m[2015-07-22 09:04:21,156] INFO Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,157] INFO Starting ZkClient event thread. (org.I0Itec.zkclient.ZkEventThread)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,161] INFO Client environment:host.name=4f7cd564266b (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,161] INFO Client environment:java.version=1.6.0_35 (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,162] INFO Client environment:java.vendor=Sun Microsystems Inc. (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,163] INFO Client environment:java.home=/usr/lib/jvm/java-6-openjdk-amd64/jre (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,163] INFO Client environment:java.class.path=:/opt/kafka_2.10-0.8.2.1/bin/../core/build/dependant-libs-2.10*/*.jar:/opt/kafka_2.10-0.8.2.1/bin/../examples/build/libs//kafka-examples*.jar:/opt/kafka_2.10-0.8.2.1/bin/../contrib/hadoop-consumer/build/libs//kafka-hadoop-consumer*.jar:/opt/kafka_2.10-0.8.2.1/bin/../contrib/hadoop-producer/build/libs//kafka-hadoop-producer*.jar:/opt/kafka_2.10-0.8.2.1/bin/../clients/build/libs/kafka-clients*.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/jopt-simple-3.2.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/kafka-clients-0.8.2.1.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/kafka_2.10-0.8.2.1-javadoc.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/kafka_2.10-0.8.2.1-scaladoc.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/kafka_2.10-0.8.2.1-sources.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/kafka_2.10-0.8.2.1-test.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/kafka_2.10-0.8.2.1.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/log4j-1.2.16.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/lz4-1.2.0.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/metrics-core-2.2.0.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/scala-library-2.10.4.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/slf4j-api-1.7.6.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/slf4j-log4j12-1.6.1.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/snappy-java-1.1.1.6.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/zkclient-0.3.jar:/opt/kafka_2.10-0.8.2.1/bin/../libs/zookeeper-3.4.6.jar:/opt/kafka_2.10-0.8.2.1/bin/../core/build/libs/kafka_2.10*.jar (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,164] INFO Client environment:java.library.path=/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64/server:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64:/usr/lib/jvm/java-6-openjdk-amd64/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,164] INFO Client environment:java.io.tmpdir=/tmp (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,164] INFO Client environment:java.compiler=<NA> (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,164] INFO Client environment:os.name=Linux (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,165] INFO Client environment:os.arch=amd64 (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,165] INFO Client environment:os.version=3.13.0-55-generic (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,165] INFO Client environment:user.name=root (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,165] INFO Client environment:user.home=/root (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,166] INFO Client environment:user.dir=/ (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,168] INFO Initiating client connection, connectString=zookeeper:2181 sessionTimeout=6000 watcher=org.I0Itec.zkclient.ZkClient@125f7833 (org.apache.zookeeper.ZooKeeper)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,223] INFO Opening socket connection to server sparkoutlierdetection_zookeeper_1/172.17.1.67:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,233] INFO Socket connection established to sparkoutlierdetection_zookeeper_1/172.17.1.67:2181, initiating session (org.apache.zookeeper.ClientCnxn)
+[32mzookeeper_1 | [0m2015-07-22 09:04:21,235 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@197] - Accepted socket connection from /172.17.1.68:44442
+[32mzookeeper_1 | [0m2015-07-22 09:04:21,249 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@868] - Client attempting to establish new session at /172.17.1.68:44442
+[32mzookeeper_1 | [0m2015-07-22 09:04:21,253 [myid:] - INFO  [SyncThread:0:FileTxnLog@199] - Creating new log file: log.1
+[32mzookeeper_1 | [0m2015-07-22 09:04:21,303 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@617] - Established session 0x14eb501a07b0000 with negotiated timeout 6000 for client /172.17.1.68:44442
+[35mkafka_1     | [0m[2015-07-22 09:04:21,307] INFO Session establishment complete on server sparkoutlierdetection_zookeeper_1/172.17.1.67:2181, sessionid = 0x14eb501a07b0000, negotiated timeout = 6000 (org.apache.zookeeper.ClientCnxn)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,311] INFO zookeeper state changed (SyncConnected) (org.I0Itec.zkclient.ZkClient)
+[32mzookeeper_1 | [0m2015-07-22 09:04:21,432 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x14eb501a07b0000 type:create cxid:0x4 zxid:0x3 txntype:-1 reqpath:n/a Error Path:/brokers Error:KeeperErrorCode = NoNode for /brokers
+[36mmaster_1    | [0m15/07/22 09:04:21 INFO SecurityManager: Changing view acls to: root
+[36mmaster_1    | [0m15/07/22 09:04:21 INFO SecurityManager: Changing modify acls to: root
+[36mmaster_1    | [0m15/07/22 09:04:21 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+[32mzookeeper_1 | [0m2015-07-22 09:04:21,490 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x14eb501a07b0000 type:create cxid:0xa zxid:0x7 txntype:-1 reqpath:n/a Error Path:/config Error:KeeperErrorCode = NoNode for /config
+[32mzookeeper_1 | [0m2015-07-22 09:04:21,529 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x14eb501a07b0000 type:create cxid:0x10 zxid:0xb txntype:-1 reqpath:n/a Error Path:/admin Error:KeeperErrorCode = NoNode for /admin
+[35mkafka_1     | [0m[2015-07-22 09:04:21,689] INFO Log directory '/kafka/kafka-logs-1' not found, creating it. (kafka.log.LogManager)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,703] INFO Loading logs. (kafka.log.LogManager)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,714] INFO Logs loading complete. (kafka.log.LogManager)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,715] INFO Starting log cleanup with a period of 300000 ms. (kafka.log.LogManager)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,721] INFO Starting log flusher with a default period of 9223372036854775807 ms. (kafka.log.LogManager)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,801] INFO Awaiting socket connections on 0.0.0.0:9092. (kafka.network.Acceptor)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,804] INFO [Socket Server on Broker 1], Started (kafka.network.SocketServer)
+[35mkafka_1     | [0m[2015-07-22 09:04:21,948] INFO Will not load MX4J, mx4j-tools.jar is not in the classpath (kafka.utils.Mx4jLoader$)
+[35mkafka_1     | [0m[2015-07-22 09:04:22,029] INFO 1 successfully elected as leader (kafka.server.ZookeeperLeaderElector)
+[32mzookeeper_1 | [0m2015-07-22 09:04:22,051 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x14eb501a07b0000 type:setData cxid:0x1a zxid:0xf txntype:-1 reqpath:n/a Error Path:/controller_epoch Error:KeeperErrorCode = NoNode for /controller_epoch
+[33mworker_1    | [0m15/07/22 09:04:22 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[32mzookeeper_1 | [0m2015-07-22 09:04:22,204 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x14eb501a07b0000 type:delete cxid:0x27 zxid:0x11 txntype:-1 reqpath:n/a Error Path:/admin/preferred_replica_election Error:KeeperErrorCode = NoNode for /admin/preferred_replica_election
+[35mkafka_1     | [0m[2015-07-22 09:04:22,305] INFO Registered broker 1 at path /brokers/ids/1 with address 192.168.192.134:32906. (kafka.utils.ZkUtils$)
+[35mkafka_1     | [0m[2015-07-22 09:04:22,354] INFO [Kafka Server 1], started (kafka.server.KafkaServer)
+[35mkafka_1     | [0m[2015-07-22 09:04:22,514] INFO New leader is 1 (kafka.server.ZookeeperLeaderElector$LeaderChangeListener)
+[33mworker_1    | [0m15/07/22 09:04:22 INFO SecurityManager: Changing view acls to: root
+[33mworker_1    | [0m15/07/22 09:04:22 INFO SecurityManager: Changing modify acls to: root
+[33mworker_1    | [0m15/07/22 09:04:22 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+[31mtask_1      | [0mPopulating Kafka: kafka_1:9092
+[31mtask_1      | [0mlog4j:WARN No appenders could be found for logger (org.apache.kafka.clients.producer.ProducerConfig).
+[31mtask_1      | [0mlog4j:WARN Please initialize the log4j system properly.
+[31mtask_1      | [0mlog4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+[36mmaster_1    | [0m15/07/22 09:04:23 INFO Slf4jLogger: Slf4jLogger started
+[36mmaster_1    | [0m15/07/22 09:04:23 INFO Remoting: Starting remoting
+[32mzookeeper_1 | [0m2015-07-22 09:04:23,791 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x14eb501a07b0000 type:setData cxid:0x33 zxid:0x13 txntype:-1 reqpath:n/a Error Path:/config/topics/OutlierObservations Error:KeeperErrorCode = NoNode for /config/topics/OutlierObservations
+[32mzookeeper_1 | [0m2015-07-22 09:04:23,811 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x14eb501a07b0000 type:create cxid:0x34 zxid:0x14 txntype:-1 reqpath:n/a Error Path:/config/topics Error:KeeperErrorCode = NodeExists for /config/topics
+[35mkafka_1     | [0m[2015-07-22 09:04:23,821] INFO Topic creation {"version":1,"partitions":{"0":[1]}} (kafka.admin.AdminUtils$)
+[35mkafka_1     | [0m[2015-07-22 09:04:23,827] INFO [KafkaApi-1] Auto creation of topic OutlierObservations with 1 partitions and replication factor 1 is successful! (kafka.server.KafkaApis)
+[36mmaster_1    | [0m15/07/22 09:04:24 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkMaster@master:7077]
+[33mworker_1    | [0m15/07/22 09:04:24 INFO Slf4jLogger: Slf4jLogger started
+[36mmaster_1    | [0m15/07/22 09:04:24 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+[33mworker_1    | [0m15/07/22 09:04:24 INFO Remoting: Starting remoting
+[36mmaster_1    | [0m15/07/22 09:04:24 INFO Utils: Successfully started service on port 6066.
+[36mmaster_1    | [0m15/07/22 09:04:24 INFO StandaloneRestServer: Started REST server for submitting applications on port 6066
+[36mmaster_1    | [0m15/07/22 09:04:24 INFO Master: Starting Spark master at spark://master:7077
+[36mmaster_1    | [0m15/07/22 09:04:24 INFO Master: Running Spark version 1.4.1
+[36mmaster_1    | [0m15/07/22 09:04:24 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+[36mmaster_1    | [0m15/07/22 09:04:24 INFO MasterWebUI: Started MasterWebUI at http://172.17.1.65:8080
+[33mworker_1    | [0m15/07/22 09:04:24 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkWorker@172.17.1.66:8881]
+[33mworker_1    | [0m15/07/22 09:04:24 INFO Utils: Successfully started service 'sparkWorker' on port 8881.
+[36mmaster_1    | [0m15/07/22 09:04:24 INFO Master: I have been elected leader! New state: ALIVE
+[33mworker_1    | [0m15/07/22 09:04:24 INFO Worker: Starting Spark worker 172.17.1.66:8881 with 2 cores, 4.0 GB RAM
+[33mworker_1    | [0m15/07/22 09:04:24 INFO Worker: Running Spark version 1.4.1
+[33mworker_1    | [0m15/07/22 09:04:24 INFO Worker: Spark home: /usr/spark
+[33mworker_1    | [0m15/07/22 09:04:25 INFO Utils: Successfully started service 'WorkerUI' on port 8081.
+[33mworker_1    | [0m15/07/22 09:04:25 INFO WorkerWebUI: Started WorkerWebUI at http://172.17.1.66:8081
+[33mworker_1    | [0m15/07/22 09:04:25 INFO Worker: Connecting to master akka.tcp://sparkMaster@master:7077/user/Master...
+[36mmaster_1    | [0m15/07/22 09:04:25 INFO Master: Registering worker 172.17.1.66:8881 with 2 cores, 4.0 GB RAM
+[33mworker_1    | [0m15/07/22 09:04:25 INFO Worker: Successfully registered with master spark://master:7077
+[32mzookeeper_1 | [0m2015-07-22 09:04:52,820 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x14eb501a07b0000 type:create cxid:0x279 zxid:0x17 txntype:-1 reqpath:n/a Error Path:/brokers/topics/OutlierObservations/partitions/0 Error:KeeperErrorCode = NoNode for /brokers/topics/OutlierObservations/partitions/0
+[32mzookeeper_1 | [0m2015-07-22 09:04:52,826 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x14eb501a07b0000 type:create cxid:0x27a zxid:0x18 txntype:-1 reqpath:n/a Error Path:/brokers/topics/OutlierObservations/partitions Error:KeeperErrorCode = NoNode for /brokers/topics/OutlierObservations/partitions
+Gracefully stopping... (press Ctrl+C again to force)
