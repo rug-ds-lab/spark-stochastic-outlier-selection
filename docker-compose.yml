@@ -29,7 +29,7 @@ task:
     - kafka
     - zookeeper
   environment:
-    SPARK_EXECUTOR_MEMORY: 4g
+    SPARK_EXECUTOR_MEMORY: 1g
   volumes:
     - ./results:/tmp/results
 
@@ -41,7 +41,7 @@ worker:
   environment:
     SPARK_CONF_DIR: /conf
     SPARK_WORKER_CORES: 2
-    SPARK_WORKER_MEMORY: 4g
+    SPARK_WORKER_MEMORY: 1g
     SPARK_WORKER_PORT: 8881
     SPARK_WORKER_WEBUI_PORT: 8081
   links:
