@@ -26,12 +26,12 @@ object EvaluateOutlierDetectionDistributed {
 
   def main(args: Array[String]) {
     val n = Integer.parseInt(args(0))
-    val partitions = Integer.parseInt(args(1))
-    val partitionsPerCpu = Integer.parseInt(args(2))
+    val brokers = Integer.parseInt(args(1))
+    val partitions = Integer.parseInt(args(2))
     val nameTopic = args(3)
     val outputFile = args(4)
 
-    val configSpark = Map("metadata.broker.list" -> (1 to partitions).map("kafka_" + _ + ":9092").reduceLeft((a, b) => a + "," + b))
+    val configSpark = Map("metadata.broker.list" -> (1 to brokers).map("kafka_" + _ + ":9092").reduceLeft((a, b) => a + "," + b))
 
     System.out.println("Applying outlier detection")
 
@@ -48,7 +48,7 @@ object EvaluateOutlierDetectionDistributed {
     ).toArray
 
     val rdd = KafkaUtils.createRDD[String, Array[Byte], StringDecoder, DefaultDecoder](sc, configSpark, offsetRanges)
-    val rddPersisted = rdd.map(record => record._2.unpickle[Array[Double]]).repartition(partitions * partitionsPerCpu).persist()
+    val rddPersisted = rdd.map(record => record._2.unpickle[Array[Double]]).persist()
 
     System.out.println("Input partitions: " + rddPersisted.partitions.length)
 
