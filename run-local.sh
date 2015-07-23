@@ -21,7 +21,7 @@ do
 
         docker-compose run generator sbt "run $n $workers $partitions OutlierObservations$workers"
 
-        docker-compose run task /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed --master spark://master:7077 /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar $n $workers $partitions OutlierObservations$workers /tmp/results/scaling.txt
+        docker-compose run task /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed --master spark://master:7077 /tmp/app/target/scala-2.10/SparkOutlierDetection.jar $n $workers $partitions OutlierObservations$workers /tmp/results/scaling.txt
 
         docker-compose run kafka /opt/kafka_2.10-0.8.2.1/bin/kafka-topics.sh --zookeeper zookeeper:2181 --delete --topic OutlierObservations$workers
 

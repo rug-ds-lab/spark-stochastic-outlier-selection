@@ -4,8 +4,6 @@ version := "1.0"
 
 scalaVersion := "2.10.5"
 
-resolvers += Resolver.jcenterRepo
-
 resolvers += "Spark Packages Repo" at "http://dl.bintray.com/spark-packages/maven"
 
 resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
@@ -23,6 +21,12 @@ libraryDependencies ++= Seq(
 
   "org.scalatest" % "scalatest_2.10" % "2.2.4" % "test"
 )
+
+test in assembly := {}
+
+assemblyJarName in assembly := "SparkOutlierDetection.jar"
+
+mainClass in assembly := Some("com.quintor.EvaluateOutlierDetectionDistributed")
 
 assemblyMergeStrategy in assembly := {
   case PathList("META-INF", xs @ _*) =>
@@ -53,3 +57,4 @@ assemblyMergeStrategy in assembly := {
     }
   case _ => MergeStrategy.first
 }
+

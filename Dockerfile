@@ -10,7 +10,6 @@ RUN apt-get -y --force-yes install sbt
 ADD . /tmp/app
 WORKDIR /tmp/app
 
-RUN sbt compile
 RUN sbt assembly
 
-CMD /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed --master spark://dockerhost.summercamp.local:7077 /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar
+CMD /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed --master spark://dockerhost.summercamp.local:7077 /tmp/app/target/scala-2.10/SparkOutlierDetection.jar
