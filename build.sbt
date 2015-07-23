@@ -4,6 +4,8 @@ version := "1.0"
 
 scalaVersion := "2.10.5"
 
+resolvers += Resolver.jcenterRepo
+
 resolvers += "Spark Packages Repo" at "http://dl.bintray.com/spark-packages/maven"
 
 resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
