@@ -23,7 +23,7 @@ master:
     - ./target/scala-2.10/:/tasks
 
 task:
-  build: .
+  image: fokkodriesprong/outlierdetection
   links:
     - master
     - kafka

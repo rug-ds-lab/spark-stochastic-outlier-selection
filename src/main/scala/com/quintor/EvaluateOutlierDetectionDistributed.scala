@@ -40,7 +40,7 @@ object EvaluateOutlierDetectionDistributed {
 
     // Create the partitions
     val rest = n - (Math.floor(n.toDouble / partitions.toDouble) * partitions.toDouble)
-    val offsetRanges = (0 until partitions).map(partition =>
+    val offsetRanges = (0 to partitions).map(partition =>
       if (partition < rest)
         OffsetRange.create(nameTopic, partition, 0, Math.ceil(n.toDouble / partitions.toDouble).toLong)
       else
