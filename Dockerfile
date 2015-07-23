@@ -9,6 +9,6 @@ RUN apt-get update && apt-get -y --force-yes install sbt
 ADD . /tmp/app
 WORKDIR /tmp/app
 
-RUN sbt compile
+RUN sbt package
 
 CMD sbt "run 1000 1 3 OutlierObservations /tmp/results/yay.txt"

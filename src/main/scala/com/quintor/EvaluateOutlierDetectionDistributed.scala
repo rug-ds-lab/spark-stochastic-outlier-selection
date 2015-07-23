@@ -36,9 +36,11 @@ object EvaluateOutlierDetectionDistributed {
     System.out.println("Applying outlier detection")
 
     val conf = new SparkConf().setMaster("spark://master:7077").setAppName("OutlierDetection-" + partitions + "-" + n)
+
     val sc = new SparkContext(conf)
     sc.addJar("spark-streaming-kafka_2.10-1.4.1.jar")
     sc.addJar("kafka_2.10-0.8.2.1.jar")
+    sc.addJar("target/scala-2.10/quintorsparkoutlier_2.10-1.0.jar")
 
     // Create the partitions
     val rest = n - (Math.floor(n.toDouble / partitions.toDouble) * partitions.toDouble)
