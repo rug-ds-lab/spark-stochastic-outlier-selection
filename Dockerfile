@@ -1,4 +1,4 @@
-FROM gettyimages/spark
+FROM java:8
 
 MAINTAINER Fokko Driesprong <fokko@driesprong.frl>
 
@@ -10,6 +10,6 @@ RUN apt-get -y --force-yes install sbt
 ADD . /tmp/app
 WORKDIR /tmp/app
 
-RUN sbt assembly
+RUN sbt compile
 
-CMD /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed --master spark://dockerhost.summercamp.local:7077 /tmp/app/target/scala-2.10/SparkOutlierDetection.jar
+CMD sbt "run 1000 1 3 OutlierObservations /tmp/results/yay.txt"
