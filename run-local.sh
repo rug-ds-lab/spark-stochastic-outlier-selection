@@ -3,9 +3,9 @@
 docker-compose kill
 docker-compose rm -f
 
-docker-compose up -d master zookeeper kafka worker
+docker-compose scale master=1 zookeeper=1 kafka=1 worker=1
 
-sleep 5
+sleep 3
 
 workers=1
 n=500
