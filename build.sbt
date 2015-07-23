@@ -10,6 +10,8 @@ resolvers += "Spark Packages Repo" at "http://dl.bintray.com/spark-packages/mave
 
 resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 
+resolvers += "Bintray sbt plugin releases" at "http://dl.bintray.com/sbt/sbt-plugin-releases/"
+
 libraryDependencies ++= Seq(
   "org.apache.spark" % "spark-core_2.10" % "1.4.0",
   "org.apache.spark" % "spark-mllib_2.10" % "1.4.0",
