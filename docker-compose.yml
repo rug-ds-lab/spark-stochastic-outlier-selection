@@ -24,13 +24,13 @@ master:
 
 task:
   image: fokkodriesprong/outlierdetection
-  command: /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed --master spark://master:7077 /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar 1000 1 4 OutlierObservations /tmp/results/result.txt
+  command: /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed  --master spark://master:7077 /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar 500 1 3 OutlierObservations /tmp/results/res.txt
   links:
     - master
     - kafka
     - zookeeper
   environment:
-    SPARK_EXECUTOR_MEMORY: 4g
+    SPARK_EXECUTOR_MEMORY: 6g
   volumes:
     - ./results:/tmp/results
 
@@ -42,7 +42,7 @@ worker:
   environment:
     SPARK_CONF_DIR: /conf
     SPARK_WORKER_CORES: 2
-    SPARK_WORKER_MEMORY: 4g
+    SPARK_WORKER_MEMORY: 6g
     SPARK_WORKER_PORT: 8881
     SPARK_WORKER_WEBUI_PORT: 8081
   links:
@@ -68,7 +68,7 @@ kafka:
   links:
     - zookeeper
   environment:
-    KAFKA_ADVERTISED_HOST_NAME: 10.0.4.189
+    KAFKA_ADVERTISED_HOST_NAME: 10.5.2.41
     KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     KAFKA_DELETE_TOPIC_ENABLE: 'true'
   volumes:

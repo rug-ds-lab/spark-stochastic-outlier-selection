@@ -35,7 +35,8 @@ object EvaluateOutlierDetectionDistributed {
 
     System.out.println("Applying outlier detection")
 
-    val conf = new SparkConf().setAppName("OutlierDetection-" + partitions + "-" + n)
+    val conf = new SparkConf().setMaster("spark://master:7077").setAppName("OutlierDetection-" + partitions + "-" + n)
+
     val sc = new SparkContext(conf)
 
     // Create the partitions

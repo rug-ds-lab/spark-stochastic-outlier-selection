@@ -4,18 +4,10 @@ version := "1.0"
 
 scalaVersion := "2.10.5"
 
-resolvers += Resolver.jcenterRepo
-
-resolvers += "Spark Packages Repo" at "http://dl.bintray.com/spark-packages/maven"
-
-resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
-
-resolvers += "Bintray sbt plugin releases" at "http://dl.bintray.com/sbt/sbt-plugin-releases/"
-
 libraryDependencies ++= Seq(
-  "org.apache.spark" % "spark-core_2.10" % "1.4.0",
-  "org.apache.spark" % "spark-mllib_2.10" % "1.4.0",
-  "org.apache.spark" % "spark-streaming-kafka_2.10" % "1.4.0",
+  "org.apache.spark" % "spark-core_2.10" % "1.4.1" % "provided",
+  "org.apache.spark" % "spark-mllib_2.10" % "1.4.1",
+  "org.apache.spark" % "spark-streaming-kafka_2.10" % "1.4.1",
 
   "org.scala-lang.modules" %% "scala-pickling" % "0.10.1",
 
@@ -24,10 +16,11 @@ libraryDependencies ++= Seq(
   "org.scalatest" % "scalatest_2.10" % "2.2.4" % "test"
 )
 
+
 assemblyMergeStrategy in assembly := {
   case PathList("META-INF", xs @ _*) =>
     (xs map {_.toLowerCase}) match {
-        case ("manifest.mf" :: Nil) | ("index.list" :: Nil) | ("dependencies" :: Nil) =>
+      case ("manifest.mf" :: Nil) | ("index.list" :: Nil) | ("dependencies" :: Nil) =>
         MergeStrategy.discard
       case ps @ (x :: xs) if ps.last.endsWith(".sf") || ps.last.endsWith(".dsa") =>
         MergeStrategy.discard
