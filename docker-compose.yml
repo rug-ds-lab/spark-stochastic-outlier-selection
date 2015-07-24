@@ -24,6 +24,7 @@ master:
 
 task:
   image: fokkodriesprong/outlierdetection
+  command: /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed  --master spark://master:7077 /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar 500 1 3 OutlierObservations /tmp/results/res.txt
   links:
     - master
     - kafka
