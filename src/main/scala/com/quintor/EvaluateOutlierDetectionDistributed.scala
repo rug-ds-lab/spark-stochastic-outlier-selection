@@ -60,7 +60,7 @@ object EvaluateOutlierDetectionDistributed {
 
     val step1 = System.nanoTime - now
 
-    val aMatrix = StocasticOutlierDetection.computeAfinity(dMatrix)
+    val aMatrix = StocasticOutlierDetection.computeAffinityMatrix(dMatrix)
 
     val step2 = System.nanoTime - now
 
