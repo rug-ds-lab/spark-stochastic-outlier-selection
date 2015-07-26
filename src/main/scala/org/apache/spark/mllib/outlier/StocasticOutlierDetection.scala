@@ -54,8 +54,8 @@ object StocasticOutlierDetection {
 
   def euclDistance(a: Array[Double], b: Array[Double]): Double = sqrt((a zip b).map { case (x, y) => pow(y - x, 2) }.sum)
 
-  def computeBindingProbabilities(rows: RDD[(Long, DenseVector[Double])]): RDD[(Long, DenseVector[Double])] =
-    rows.map(r => (r._1, r._2 :/ sum(r._2)))
+  def computeBindingProbabilities(rows: RDD[(Long, DenseVector[Double])]): RDD[(Long, Array[Double])] =
+    rows.map(r => (r._1, (r._2 :/ sum(r._2)).toArray))
 
   def computeDistanceMatrix(data: RDD[Array[Double]]): RDD[(Long, Array[Double])] = computeDistanceMatrixPair(data.zipWithUniqueId.map(_.swap))
 
@@ -74,7 +74,7 @@ object StocasticOutlierDetection {
       case (a, b) => (a, b.toArray)
     }
 
-  def computeOutlierProbability(rows: RDD[(Long, DenseVector[Double])]):
+  def computeOutlierProbability(rows: RDD[(Long, Array[Double])]):
   RDD[(Long, Double)] =
     rows.flatMap(r => r._2.toArray.zipWithIndex.map(p =>
       (p._2 + (if (p._2 >= r._1) 1L else 0L), p._1))).foldByKey(1.0)((a, b) => a * (1.0 - b))

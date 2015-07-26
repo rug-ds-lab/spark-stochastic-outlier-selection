@@ -141,16 +141,16 @@ class StocasticOutlierDetectionTest extends FlatSpec with Matchers with BeforeAn
 
     val data = sc.parallelize(
       Seq(
-        (0L, new DenseVector(Array(0.5, 0.3))),
-        (1L, new DenseVector(Array(0.25, 0.1))),
-        (2L, new DenseVector(Array(0.8, 0.8)))
+        (0L, Array(0.5, 0.3)),
+        (1L, Array(0.25, 0.1)),
+        (2L, Array(0.8, 0.8))
       ))
 
     val oMatrix = StocasticOutlierDetection.computeOutlierProbability(data).map(_._2).sortBy(dist => dist).collect()
 
-    val out0 = ((1.0 - 0.5) * (1.0 - 0.0) * (1.0 - 0.8));
-    val out1 = ((1.0 - 0.0) * (1.0 - 0.25) * (1.0 - 0.8));
-    val out2 = ((1.0 - 0.3) * (1.0 - 0.1) * (1.0 - 0));
+    val out0 = (1.0 - 0.5) * (1.0 - 0.0) * (1.0 - 0.8)
+    val out1 = (1.0 - 0.0) * (1.0 - 0.25) * (1.0 - 0.8)
+    val out2 = (1.0 - 0.3) * (1.0 - 0.1) * (1.0 - 0)
 
     assert(oMatrix.length == 3)
 
