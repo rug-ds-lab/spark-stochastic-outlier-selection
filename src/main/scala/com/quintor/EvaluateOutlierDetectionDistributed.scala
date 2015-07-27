@@ -54,7 +54,7 @@ object EvaluateOutlierDetectionDistributed {
     System.out.println("Input partitions: " + rddPersisted.partitions.length)
 
     // Start recording
-    val now = Math.round(System.nanoTime / 1e6)
+    val now = System.nanoTime
 
     val dMatrix = StocasticOutlierDetection.computeDistanceMatrix(rddPersisted)
 
