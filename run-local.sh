@@ -7,17 +7,20 @@ docker-compose up -d master zookeeper kafka worker
 
 sleep 3
 
-workers=1
+workers=8
 n=500
 c=1
-
-docker-compose scale kafka=$workers worker=$workers
+part=24
 
 
 while [ $workers -lt 11 ]
 do
     b=1
 
+
+    docker-compose scale kafka=$workers worker=$workers
+    sleep 10
+	
     echo "Creating topic with $part partitions"
 
     docker-compose run kafka /opt/kafka_2.10-0.8.2.1/bin/kafka-topics.sh \
@@ -27,12 +30,10 @@ do
                 --partition $part \
                 --topic OutlierObservations$c
 
+    docker-compose run generator sbt "run $n $workers $part OutlierObservations$c"
+
     while [ $b -lt 11 ]
     do
-        part=`expr $workers \* 3`
-
-        docker-compose run generator sbt "run $n $workers $part OutlierObservations$c"
-
         docker-compose run task /usr/spark/bin/spark-submit \
                                     --class com.quintor.EvaluateOutlierDetectionDistributed \
                                     --master spark://master:7077 /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar \
@@ -41,10 +42,11 @@ do
         b=`expr $b + 1`
     done
 
-    docker-compose run kafka /opt/kafka_2.10-0.8.2.1/bin/kafka-topics.sh \
-                    --zookeeper zookeeper:2181 \
-                    --delete \
-                    --topic OutlierObservations$c
+    docker-compose kill
+    docker-compose rm -f
+
+    docker-compose up -d master zookeeper kafka worker
+    sleep 10
 
     c=`expr $c + 1`
     n=`expr $n \* 2`
