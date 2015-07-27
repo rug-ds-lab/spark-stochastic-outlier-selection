@@ -30,7 +30,7 @@ class StocasticOutlierDetectionTest extends FlatSpec with Matchers with BeforeAn
 
     val dMatrix = StocasticOutlierDetection.computeDistanceMatrix(data).map(_._2).sortBy(dist => sum(dist)).collect()
 
-    dMatrix(0).toArray should be(dMatrix(1).toArray)
+    dMatrix(0) should be(dMatrix(1))
   }
 
   "Computing the distance matrix " should "give the correct distances" in {
@@ -44,9 +44,9 @@ class StocasticOutlierDetectionTest extends FlatSpec with Matchers with BeforeAn
 
     val dMatrix = StocasticOutlierDetection.computeDistanceMatrix(data).map(_._2).sortBy(dist => sum(dist)).collect()
 
-    dMatrix(0).toArray should be(Array(Math.sqrt(2.0), Math.sqrt(10.0)))
-    dMatrix(1).toArray should be(Array(Math.sqrt(2.0), Math.sqrt(16.0)))
-    dMatrix(2).toArray should be(Array(Math.sqrt(16.0), Math.sqrt(10.0)))
+    dMatrix(0) should be(Array(Math.sqrt(2.0), Math.sqrt(10.0)))
+    dMatrix(1) should be(Array(Math.sqrt(2.0), Math.sqrt(16.0)))
+    dMatrix(2) should be(Array(Math.sqrt(16.0), Math.sqrt(10.0)))
   }
 
   "Computing the perplexity of the vector " should "give the correct error" in {
@@ -86,7 +86,7 @@ class StocasticOutlierDetectionTest extends FlatSpec with Matchers with BeforeAn
       ))
 
     val dMatrix = StocasticOutlierDetection.computeDistanceMatrix(data)
-    val aMatrix = StocasticOutlierDetection.computeAfinity(dMatrix, perplexity).map(_._2).sortBy(dist => sum(dist)).collect()
+    val aMatrix = StocasticOutlierDetection.computeAffinityMatrix(dMatrix, perplexity).map(_._2).sortBy(dist => sum(dist)).collect()
 
     assert(aMatrix.length == 5)
     assert(aMatrix(0)(0) === 1.65024581e-06)
@@ -141,16 +141,16 @@ class StocasticOutlierDetectionTest extends FlatSpec with Matchers with BeforeAn
 
     val data = sc.parallelize(
       Seq(
-        (0L, new DenseVector(Array(0.5, 0.3))),
-        (1L, new DenseVector(Array(0.25, 0.1))),
-        (2L, new DenseVector(Array(0.8, 0.8)))
+        (0L, Array(0.5, 0.3)),
+        (1L, Array(0.25, 0.1)),
+        (2L, Array(0.8, 0.8))
       ))
 
     val oMatrix = StocasticOutlierDetection.computeOutlierProbability(data).map(_._2).sortBy(dist => dist).collect()
 
-    val out0 = ((1.0 - 0.5) * (1.0 - 0.0) * (1.0 - 0.8));
-    val out1 = ((1.0 - 0.0) * (1.0 - 0.25) * (1.0 - 0.8));
-    val out2 = ((1.0 - 0.3) * (1.0 - 0.1) * (1.0 - 0));
+    val out0 = (1.0 - 0.5) * (1.0 - 0.0) * (1.0 - 0.8)
+    val out1 = (1.0 - 0.0) * (1.0 - 0.25) * (1.0 - 0.8)
+    val out2 = (1.0 - 0.3) * (1.0 - 0.1) * (1.0 - 0)
 
     assert(oMatrix.length == 3)
 
@@ -177,7 +177,7 @@ class StocasticOutlierDetectionTest extends FlatSpec with Matchers with BeforeAn
     // Process the steps of the algorithm
     val dMatrix = StocasticOutlierDetection.computeDistanceMatrix(data)
 
-    val aMatrix = StocasticOutlierDetection.computeAfinity(dMatrix, perplexity)
+    val aMatrix = StocasticOutlierDetection.computeAffinityMatrix(dMatrix, perplexity)
 
     val bMatrix = StocasticOutlierDetection.computeBindingProbabilities(aMatrix)
 
