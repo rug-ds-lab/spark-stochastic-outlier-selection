@@ -54,28 +54,30 @@ object EvaluateOutlierDetectionDistributed {
     System.out.println("Input partitions: " + rddPersisted.partitions.length)
 
     // Start recording
-    val now = System.nanoTime
+    val now = Math.round((System.nanoTime - now) / 1e6)
 
     val dMatrix = StocasticOutlierDetection.computeDistanceMatrix(rddPersisted)
 
-    val step1 = System.nanoTime - now
+    val step1 = Math.round((System.nanoTime - now) / 1e6)
 
     val aMatrix = StocasticOutlierDetection.computeAffinityMatrix(dMatrix)
 
-    val step2 = System.nanoTime - now
+    val step2 = Math.round((System.nanoTime - now) / 1e6)
 
     val bMatrix = StocasticOutlierDetection.computeBindingProbabilities(aMatrix)
 
-    val step3 = System.nanoTime - now
+    val step3 = Math.round((System.nanoTime - now) / 1e6)
 
     val oMatrix = StocasticOutlierDetection.computeOutlierProbability(bMatrix)
 
-    val step4 = System.nanoTime - now
+    val step4 = Math.round((System.nanoTime - now) / 1e6)
 
     val outcol = oMatrix.collect
 
+    val step5 = Math.round((System.nanoTime - now) / 1e6)
+
     val fw = new java.io.FileWriter(outputFile, true)
-    fw.write(Calendar.getInstance().getTime() + "," + partitions + "," + outcol.length + "," + step1 + "," + step2 + "," + step3 + "," + step4 + LS)
+    fw.write(Calendar.getInstance().getTime() + "," + partitions + "," + outcol.length + "," + step1 + "," + step2 + "," + step3 + "," + step4 + "," + step5 + LS)
     fw.close()
 
     System.out.println("Done")
