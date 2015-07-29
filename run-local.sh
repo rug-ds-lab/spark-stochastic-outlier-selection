@@ -32,12 +32,12 @@ do
 
     docker-compose run generator sbt "run $n $workers $part OutlierObservations$c"
 
-    while [ $b -lt 11 ]
+    while [ $b -lt 6 ]
     do
         docker-compose run task /usr/spark/bin/spark-submit \
                                     --class com.quintor.EvaluateOutlierDetectionDistributed \
                                     --master spark://master:7077 /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar \
-                                    $n $workers $part OutlierObservations$c /tmp/results/yay.txt
+                                    $n $workers $part OutlierObservations$c /tmp/results/yay3.txt
 
         b=`expr $b + 1`
     done
