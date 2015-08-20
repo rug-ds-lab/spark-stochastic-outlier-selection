@@ -39,6 +39,7 @@ object EvaluateOutlierDetectionDistributed {
       .setMaster("spark://master:7077")
       .setAppName("OutlierDetection-" + partitions + "-" + n)
       .setExecutorEnv("spark.eventLog.enabled", "true")
+      .setExecutorEnv("spark.eventLog.dir", "file:/tmp/spark-events")
 
     val sc = new SparkContext(conf)
 
