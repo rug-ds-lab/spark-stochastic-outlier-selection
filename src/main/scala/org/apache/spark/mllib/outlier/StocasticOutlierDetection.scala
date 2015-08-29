@@ -76,7 +76,6 @@ object StocasticOutlierDetection {
 
   def computeOutlierProbability(rows: RDD[(Long, Array[Double])]):
   RDD[(Long, Double)] =
-    rows.flatMap(r => r._2.toArray.zipWithIndex.map(p =>
+    rows.flatMap(r => r._2.zipWithIndex.map(p =>
       (p._2 + (if (p._2 >= r._1) 1L else 0L), p._1))).foldByKey(1.0)((a, b) => a * (1.0 - b))
-
 }
