@@ -21,6 +21,7 @@ master:
   volumes:
     - ./conf/master:/conf
     - ./target/scala-2.10/:/tasks
+    - /tmp/spark-events/:/tmp/spark-events
 
 task:
   image: fokkodriesprong/outlierdetection
@@ -30,7 +31,7 @@ task:
     - kafka
     - zookeeper
   environment:
-    SPARK_EXECUTOR_MEMORY: 6g
+    SPARK_EXECUTOR_MEMORY: 2g
   volumes:
     - ./results:/tmp/results
 
@@ -41,10 +42,9 @@ worker:
   command: /usr/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077
   environment:
     SPARK_CONF_DIR: /conf
-    SPARK_WORKER_CORES: 2
-    SPARK_WORKER_MEMORY: 6g
+    SPARK_WORKER_CORES: 1
+    SPARK_WORKER_MEMORY: 2g
     SPARK_WORKER_PORT: 8881
-    SPARK_WORKER_WEBUI_PORT: 8081
   links:
     - master
   expose:
@@ -58,6 +58,7 @@ worker:
     - 8081
   volumes:
     - ./conf/worker:/conf
+    - /tmp/spark-events/:/tmp/spark-events
 
 kafka:
   image: wurstmeister/kafka
@@ -68,7 +69,7 @@ kafka:
   links:
     - zookeeper
   environment:
-    KAFKA_ADVERTISED_HOST_NAME: 10.5.2.41
+    KAFKA_ADVERTISED_HOST_NAME: 192.168.192.134
     KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     KAFKA_DELETE_TOPIC_ENABLE: 'true'
   volumes:
