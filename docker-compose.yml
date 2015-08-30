@@ -20,20 +20,7 @@ master:
     - 8080:8080
   volumes:
     - ./conf/master:/conf
-    - ./target/scala-2.10/:/tasks
-    - /tmp/spark-events/:/tmp/spark-events
-
-task:
-  image: fokkodriesprong/outlierdetection
-  command: /usr/spark/bin/spark-submit --class com.quintor.EvaluateOutlierDetectionDistributed  --master spark://master:7077 /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar 500 1 3 OutlierObservations /tmp/results/res.txt
-  links:
-    - master
-    - kafka
-    - zookeeper
-  environment:
-    SPARK_EXECUTOR_MEMORY: 2g
-  volumes:
-    - ./results:/tmp/results
+    - ./events/:/tmp/spark-events/
 
 worker:
   image: gettyimages/spark
@@ -58,7 +45,36 @@ worker:
     - 8081
   volumes:
     - ./conf/worker:/conf
-    - /tmp/spark-events/:/tmp/spark-events
+    - ./events/:/tmp/spark-events/
+
+task:
+  image: fokkodriesprong/outlierdetection
+  command: /usr/spark/bin/spark-submit /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar 500 1 3 OutlierObservations /tmp/results/res.txt
+  links:
+    - master
+    - kafka
+    - zookeeper
+    - history
+  environment:
+    SPARK_CONF_DIR: /conf
+  volumes:
+    - ./conf/submit:/conf
+    - ./results:/tmp/results
+    - ./events/:/tmp/spark-events/
+
+history:
+  image: gettyimages/spark
+  command: /usr/spark/bin/spark-class org.apache.spark.deploy.history.HistoryServer
+  environment:
+    SPARK_CONF_DIR: /conf
+  expose:
+    - 18080
+  ports:
+    - 18080:18080
+  volumes:
+    - ./conf/submit:/conf
+    - ./results:/tmp/results
+    - ./events/:/tmp/spark-events/
 
 kafka:
   image: wurstmeister/kafka

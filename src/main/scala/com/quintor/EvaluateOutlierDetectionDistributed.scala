@@ -36,10 +36,7 @@ object EvaluateOutlierDetectionDistributed {
     System.out.println("Applying outlier detection")
 
     val conf = new SparkConf()
-      .setMaster("spark://master:7077")
       .setAppName("OutlierDetection-" + partitions + "-" + n)
-      .setExecutorEnv("spark.eventLog.enabled", "true")
-      .setExecutorEnv("spark.eventLog.dir", "file:/tmp/spark-events")
 
     val sc = new SparkContext(conf)
 
@@ -84,6 +81,7 @@ object EvaluateOutlierDetectionDistributed {
     fw.write(Calendar.getInstance().getTime() + "," + partitions + "," + outcol.length + "," + step1 + "," + step2 + "," + step3 + "," + step4 + "," + step5 + LS)
     fw.close()
 
+    sc.stop()
     System.out.println("Done")
   }
 
