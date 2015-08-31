@@ -32,13 +32,13 @@ docker-compose run kafka /opt/kafka_2.10-0.8.2.1/bin/kafka-topics.sh \
 
 docker-compose run generator sbt "run $n $workers $part OutlierObservations"
 
-while [ $b -lt 11 ]
-do
+#while [ $b -lt 11 ]
+#do
     docker-compose run task /usr/spark/bin/spark-submit \
                                 --class com.quintor.EvaluateOutlierDetectionDistributed \
                                 --master spark://master:7077 /tmp/app/target/scala-2.10/QuintorSparkOutlier-assembly-1.0.jar \
                                 $n $workers $part OutlierObservations /tmp/results/yay12.txt
 
     b=`expr $b + 1`
-done
+#done
 
