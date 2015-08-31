@@ -1,6 +1,9 @@
 *.class
 *.log
 
+# Fokko specific
+events/*
+
 # sbt specific
 .cache
 .history
