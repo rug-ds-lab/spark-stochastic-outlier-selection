@@ -31,7 +31,6 @@ worker:
     SPARK_CONF_DIR: /conf
     SPARK_WORKER_CORES: 1
     SPARK_WORKER_MEMORY: 2g
-    SPARK_WORKER_PORT: 8881
   links:
     - master
   expose:
@@ -73,7 +72,6 @@ history:
     - 18080:18080
   volumes:
     - ./conf/submit:/conf
-    - ./results:/tmp/results
     - ./events/:/tmp/spark-events/
 
 kafka:
@@ -85,7 +83,7 @@ kafka:
   links:
     - zookeeper
   environment:
-    KAFKA_ADVERTISED_HOST_NAME: 192.168.192.134
+    KAFKA_ADVERTISED_HOST_NAME: 192.168.0.107
     KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     KAFKA_DELETE_TOPIC_ENABLE: 'true'
   volumes:

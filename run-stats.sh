@@ -3,21 +3,20 @@
 docker-compose kill
 docker-compose rm -f
 
-docker-compose up -d master zookeeper kafka worker history
-
-sleep 3
+docker-compose up -d master zookeeper kafka worker
 
 workers=4
-n=100
+n=9600
 c=1
 part=12
 
 b=1
 
-rm -rf ./events
-mkdir ./events
-chmod -R 777 ./events
+#rm -rf ./events
+#mkdir ./events
+#chmod -R 777 ./events
 
+sleep 2
 docker-compose scale kafka=$workers worker=$workers
 sleep 10
 

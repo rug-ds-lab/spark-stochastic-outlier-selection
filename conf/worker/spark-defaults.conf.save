@@ -4,6 +4,9 @@ spark.replClassServer.port 7014
 spark.blockManager.port 7015
 spark.executor.port 7016
 
+spark.executor.cores 1
+spark.executor.memory 2g
+
 spark.port.maxRetries 4
 
 spark.executor.cores 1
